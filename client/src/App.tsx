@@ -1,4 +1,3 @@
-import "./App.css";
 // import AppProvider from "./Context/Appcontext";
 // import RouteApp from "./Router/routeApp.component";
 
