@@ -7,6 +7,8 @@ const app = express();
 const cors = require("cors");
 require("./DB/db");
 const TRAINING = require("./Routes/Training-route.js");
+
+
 //! const passport = require("passport");
 //! require("./Config/passport")(passport);
 
