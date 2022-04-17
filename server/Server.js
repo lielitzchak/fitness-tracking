@@ -7,7 +7,7 @@ const app = express();
 const cors = require("cors");
 require("./DB/db");
 const TRAINING = require("./Routes/Training-route.js");
-
+const USER = require("./Routes/User-route.js");
 
 //! const passport = require("passport");
 //! require("./Config/passport")(passport);
@@ -23,9 +23,10 @@ app.listen(port, () => {
 });
 
 app.use("/training", TRAINING);
-app.use("/", () => {
-  console.log("the '/' route was hit");
-});
+app.use("/user", USER);
+app.use("/", () => console.log("all with /"));
+
+// add heroku.
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static(path.join(__dirname, "../client/build")));
 //   app.get("*", (req, res) => {
