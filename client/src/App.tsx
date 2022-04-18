@@ -1,13 +1,18 @@
 import "./index.css";
-import Home from "./Components/Home/Home.component";
 import AppProvider from "./Context/Appcontext";
 import RouteApp from "./Router/routeApp.component";
-
+import Footer from "./Components/Layout/Footer/Footer.component";
 function App() {
   return (
-    <Home />
+    <>
+      {/* <AuthProvider> */} {/* authorization for the all app */}
+      {/* <ThemeProvider> */} {/*  theme for the all app  */}
+      <RouteApp />
+        <Footer /> {/*need to be inside router app */}{/*  router for the all app  */}
+      {/* </ThemeProvider> */}
+      {/* </AuthProvider> */}
+    </>
     // <AppProvider>
-    //   <RouteApp />
     // </AppProvider>
   );
 }
