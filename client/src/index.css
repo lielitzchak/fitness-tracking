@@ -5,21 +5,35 @@
           box-sizing: border-box;
 }
 
-@media only screen and (min-width: 1024px) {
-  * body {
-    background-color: #107fa4;
-  }
+* body {
+  background-color: #E5E5E5;
 }
 
-@media only screen and (min-width: 10px) and (max-width: 451px) {
-  * body {
-    background-color: lightgreen;
-  }
+* .footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
-@media only screen and (min-width: 451px) and (max-width: 1024px) {
-  * body {
-    background-color: yellow;
-  }
+* .footer img {
+  width: 100%;
 }
 /*# sourceMappingURL=index.css.map */
