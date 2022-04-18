@@ -1,0 +1,16 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: center;
+
+    img {
+        width: 100%;
+    }
+}
