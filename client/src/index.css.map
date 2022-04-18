@@ -1,11 +1,15 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,CAAC,CAAC;EACE,MAAM,EAAE,CAAC;EACT,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,UAAU;CAIzB;;ACPD,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,MAAM;EDAzC,ACCI,CDDH,CCCG,IAAI,CAAC;IACD,gBAAgB,EAAE,OAAiB;GACtC;;;ACHL,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,IAAI,OAAO,SAAS,EAAE,KAAK;EFA9D,AECI,CFDH,CECG,IAAI,CAAC;IACD,gBAAgB,EAAE,UAAU;GAC/B;;;ACHL,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK,OAAO,SAAS,EAAE,MAAM;EHAhE,AGCI,CHDH,CGCG,IAAI,CAAC;IACD,gBAAgB,EAAE,MAAM;GAC3B",
+    "mappings": "AAAA,AAAA,CAAC,CAAC;EACE,MAAM,EAAE,CAAC;EACT,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,UAAU;CAiBzB;;AApBD,AAKI,CALH,CAKG,IAAI,CAAC;EACD,gBAAgB,EAAE,OAAO;CAC5B;;AAPL,AKAA,CLAC,CKAD,OAAO,CAAC;EACJ,QAAQ,EAAE,KAAK;EACf,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,CAAC;EACR,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,SAAS,EAAE,MAAM;EACjB,eAAe,EAAE,YAAY;EAC7B,WAAW,EAAE,OAAO;EACpB,aAAa,EAAE,MAAM;CAKxB;;ALfD,AKYI,CLZH,CKAD,OAAO,CAYH,GAAG,CAAC;EACA,KAAK,EAAE,IAAI;CACd",
     "sources": [
         "index.scss",
-        "Components/Home/_Home-Desktop.scss",
-        "Components/Home/_Home-Mobile.scss",
-        "Components/Home/_Home-Tablet.scss"
+        "Components/Layout/Header/_Header-Desktop.scss",
+        "Components/Layout/Header/_Header-Mobile.scss",
+        "Components/Layout/Header/_Header-Tablet.scss",
+        "Components/Layout/Footer/_Footer-Desktop.scss",
+        "Components/Layout/Footer/_Footer-Mobile.scss",
+        "Components/Layout/Footer/_Footer-Tablet.scss",
+        "Components/Pages/page403/_page403.scss"
     ],
     "names": [],
     "file": "index.css"
