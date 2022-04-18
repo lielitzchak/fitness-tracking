@@ -5,7 +5,21 @@
           box-sizing: border-box;
 }
 
-* * {
-  text-color: pink;
+@media only screen and (min-width: 1024px) {
+  * body {
+    background-color: #107fa4;
+  }
+}
+
+@media only screen and (min-width: 10px) and (max-width: 451px) {
+  * body {
+    background-color: lightgreen;
+  }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 1024px) {
+  * body {
+    background-color: yellow;
+  }
 }
 /*# sourceMappingURL=index.css.map */
