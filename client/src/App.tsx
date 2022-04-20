@@ -8,7 +8,6 @@ function App() {
       {/* <AuthProvider> */} {/* authorization for the all app */}
       {/* <ThemeProvider> */} {/*  theme for the all app  */}
       <RouteApp />
-      <Footer />
       {/*need to be inside router app */}
       {/*  router for the all app  */}
       {/* </ThemeProvider> */}

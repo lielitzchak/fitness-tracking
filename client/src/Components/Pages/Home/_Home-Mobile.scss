@@ -1,5 +1,22 @@
-@media only screen and (min-width: 10px) and (max-width: 451px) {
-    body {
-        background-color: lightgreen;
+
+    @import url('https://fonts.googleapis.com/css2?family=Kite+One&display=swap');
+
+    .categories {
+        display: flex;
+        justify-content: space-between;
+        align-self: start;
+        margin: 3%;
+        background-color: rgba(229, 229, 229, 255);
+        border-radius: 7px 0px 0px 7px;
+
+        h1 {
+            font-family: 'Kite One', sans-serif;
+
+        }
+
+        img {
+            border-radius: 7px 0px 0px 7px;
+            width: 50%;
+            height: auto;
+        }
     }
-}
