@@ -4,15 +4,29 @@
     box-sizing: border-box;
 
     body {
-        background-color: #E5E5E5;
+        background-color: rgba(212, 211, 211, 255)
     }
 
-    @import "./Components/Layout/Header/Header-Desktop";
-    @import "./Components/Layout/Header/Header-Mobile";
-    @import "./Components/Layout/Header/Header-Tablet";
-    @import "./Components/Layout/Footer/Footer-Desktop";
-    @import "./Components/Layout/Footer/Footer-Mobile";
-    @import "./Components/Layout/Footer/Footer-Tablet";
+    @media only screen and (min-width:451px) and (max-width:1024px) {
+        @import "./Components/Layout/Header/Header-Tablet";
+        @import "./Components/Layout/Footer/Footer-Tablet";
+        @import "./Components/Pages/Home/Home-Tablet";
+    }
+
+    @media only screen and (min-width: 10px) and (max-width: 451px) {
+        @import "./Components/Layout/Header/Header-Mobile";
+        @import "./Components/Layout/Footer/Footer-Mobile";
+        @import "./Components/Pages/Home/Home-Mobile";
+
+
+    }
+
+    @media only screen and (min-width: 1024px) {
+        @import "./Components/Layout/Header/Header-Desktop";
+        @import "./Components/Layout/Footer/Footer-Desktop";
+        @import "./Components/Pages/Home/Home-Desktop";
+
+    }
     @import "./Components/Pages/page404/page404";
     @import "./Components/Pages/page403/page403";
 }
