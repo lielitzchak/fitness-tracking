@@ -2,12 +2,29 @@ import React from "react";
 
 export default function page404() {
   return (
-    <div>
-      <div className="wrapper"></div>
-      <div className="errortext"></div>
-      <div className="error"></div>
-      <div className="looks"></div>
-      <div className="errorbk"></div>
+    <div className="page404">
+    <div className="stage">
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+      <div className="layer"></div>
+    </div>
     </div>
   );
 }
