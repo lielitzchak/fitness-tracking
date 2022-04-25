@@ -4,15 +4,9 @@ import RouteApp from "./Router/routeApp.component";
 import Footer from "./Components/Layout/Footer/Footer.component";
 function App() {
   return (
-    <>
-      {/* <AuthProvider> */} {/* authorization for the all app */}
-      {/* <ThemeProvider> */} {/*  theme for the all app  */}
+    <AppProvider>
       <RouteApp />
-      {/*need to be inside router app */}
-      {/*  router for the all app  */}
-      {/* </ThemeProvider> */}
-      {/* </AuthProvider> */}
-    </>
+    </AppProvider>
   );
 }
 

@@ -74,6 +74,10 @@
   }
   * .categories h1 {
     font-family: 'Kite One', sans-serif;
+    margin: 51px 72px 0 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   * .categories img {
     border-radius: 7px 0px 0px 7px;
