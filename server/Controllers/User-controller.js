@@ -1,5 +1,4 @@
-const UserRouter = require("express").Router();
-const UserModel = require("../models/User");
+const UserModel = require("../Models/User-model");
 
 module.exports = {
   getAllUsers: (request, response) => {

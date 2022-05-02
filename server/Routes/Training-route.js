@@ -1,5 +1,5 @@
 const trainingRoute = require("express").Router();
-const trainingController = require("../Controllers/Training");
+const trainingController = require("../Controllers/Training-controller");
 
 trainingRoute.get("/", trainingController.getAllTraining);
 trainingRoute.get("/:id", trainingController.getTrainingById);
