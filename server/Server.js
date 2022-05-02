@@ -1,3 +1,11 @@
+// let valueOfMyCode = {
+//   DATE: "02.05.2022",
+//   TypeScript: 37.9,
+//   javascript: 28.8,
+//   HTML: 16.0,
+//   CSS: 9.0,
+//   SCSS: 8.3,
+// };
 let result = require("dotenv").config();
 if (result.error) {
   console.log(result.error);

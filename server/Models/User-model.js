@@ -6,6 +6,6 @@ const User = new mongoose.Schema({
   admin: Boolean,
   email: { type: String, required: true, unique: true },
 
-});
+} , { timestamps: true });
 
 module.exports = mongoose.model("User", User);
