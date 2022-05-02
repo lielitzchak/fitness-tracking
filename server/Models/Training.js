@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 
 const Training = new mongoose.Schema({
+  Exeresie: String,
   Set: String,
   Reps: String,
   Weight: String,
-  Date: String,
+  Date: Date,
   Notes: String,
 });
 
