@@ -59,7 +59,10 @@
     width: 57%;
     height: auto;
   }
-  * .categories {
+  * .Home .HomeLink {
+    text-decoration: none;
+  }
+  * .Home .HomeLink .categories {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -72,14 +75,14 @@
     background-color: #e5e5e5;
     border-radius: 7px 0px 0px 7px;
   }
-  * .categories h1 {
+  * .Home .HomeLink .categories h1 {
     font-family: 'Kite One', sans-serif;
     margin: 51px 72px 0 0;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  * .categories img {
+  * .Home .HomeLink .categories img {
     border-radius: 7px 0px 0px 7px;
     width: 50%;
     height: auto;

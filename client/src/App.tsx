@@ -1,14 +1,13 @@
 import "./index.css";
 import AppProvider from "./Context/Appcontext";
 import RouteApp from "./Router/routeApp.component";
-import Footer from "./Components/Layout/Footer/Footer.component";
-function App() {
+const App = (): JSX.Element => {
   return (
     <AppProvider>
       <RouteApp />
     </AppProvider>
   );
-}
+};
 
 export default App;
 
