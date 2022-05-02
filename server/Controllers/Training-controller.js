@@ -1,12 +1,12 @@
-const UserRouter = require("express").Router();
-const UserModel = require("../models/User");
+const trainingModel = require("../Models/Training-model");
 
 module.exports = {
-  getAllUsers: (request, response) => {
-    UserModel.find()
+  getAllTraining: (request, response) => {
+    trainingModel
+      .find()
       .then((data) => {
         data.length == 0
-          ? response.status(404).json({ message: "No users found" })
+          ? response.status(404).json({ message: "No training found" })
           : response.status(200).json(data);
       })
       .catch((err) => {
@@ -16,11 +16,12 @@ module.exports = {
         });
       });
   },
-  getUserById: (request, response) => {
-    UserModel.findById(request.params.id)
+  getTrainingById: (request, response) => {
+    trainingModel
+      .findById(request.params.id)
       .then((data) => {
         if (data == null || data == undefined || data == "") {
-          return response.status(404).json({ message: "No user found" });
+          return response.status(404).json({ message: "No training found" });
         }
         return response.status(200).json(data);
       })
@@ -31,8 +32,9 @@ module.exports = {
         });
       });
   },
-  createUser: (request, response) => {
-    UserModel.create(request.body)
+  createTraining: (request, response) => {
+    trainingModel
+      .create(request.body)
       .then((data) => {
         response.status(200).json(data);
       })
@@ -43,11 +45,12 @@ module.exports = {
         });
       });
   },
-  updateUser: (request, response) => {
-    UserModel.findByIdAndUpdate(request.params.id, request.body, { new: true })
+  updateTraining: (request, response) => {
+    trainingModel
+      .findByIdAndUpdate(request.params.id, request.body, { new: true })
       .then((data) => {
         data == null || data == undefined
-          ? response.status(404).json({ message: "No user found" })
+          ? response.status(404).json({ message: "No training found" })
           : response.status(200).json(data);
       })
       .catch((err) => {
@@ -57,12 +60,14 @@ module.exports = {
         });
       });
   },
-  deleteUser: (request, response) => {
-    UserModel.findByIdAndDelete(request.params.id)
+  deleteTraining: (request, response) => {
+    trainingModel
+      .findByIdAndDelete(request.params.id)
       .then((data) => {
         data == null || data == undefined
-          ? response.status(404).json({ message: "No user found" })
+          ? response.status(404).json({ message: "No training found" })
           : response.status(200).json(data);
+        response.status(200).json(data);
       })
       .catch((err) => {
         response.status(500).json({
