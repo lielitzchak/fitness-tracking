@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import { getRecipes } from "../../../service/Recipe-service";
 
-const Recipe = () => {
-  const [recipes, setRecipes] = useState([]);
-  useEffect(() => {
+const Recipe = (): JSX.Element => {
+  const [recipes, setRecipes]: any = useState([]);
+  useEffect((): void => {
     try {
-      async function fetchData() {
-        return await getRecipes().then((res) => {
-          setRecipes(res);
-          console.log(res);
-        });
-      }
-      fetchData();
+      getRecipes().then((res) => {
+        setRecipes(res);
+        console.log(res);
+      });
     } catch (error) {
       console.log(error);
     }
@@ -20,7 +17,7 @@ const Recipe = () => {
   return (
     <div>
       <div className="wrapper">
-        {recipes.map((recipe) => {
+        {recipes.map((recipe: any) => {
           return (
             <div key={recipe._id}>
               <div className="errortext">name: {recipe.Name}</div>

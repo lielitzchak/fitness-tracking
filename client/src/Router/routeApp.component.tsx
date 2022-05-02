@@ -11,6 +11,7 @@ const RouteApp = (): JSX.Element => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/gym" element={< />} /> */}
         <Route path="/gym" element={<Gym />} />
         <Route path="/recipe" element={<Recipe />} />
         <Route path="/*" element={<Page404 />} />

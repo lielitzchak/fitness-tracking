@@ -1,34 +1,31 @@
-// import React from "react";
 import { useEffect, useState } from "react";
 import getAllGym from "../../../service/Gym-service";
-const Gym = () => {
-  const [gym, setGym] = useState([]);
-  useEffect(() => {
+const Gym = (): JSX.Element => {
+  const [gym, setGym]: any = useState([]);
+  useEffect((): void => {
     try {
-      async function fetchGymData() {
-        return await getAllGym()
-          .then((res) => {
-            return setGym(res);
-          })
-          .catch((err) => console.log(err));
-      }
-      fetchGymData();
-    } catch (error) {
+      getAllGym()
+        .then((Response: Response) => setGym(Response))
+        .catch((err: Response) => console.log(err));
+    } catch (error: any) {
       console.log(error);
     }
   }, []);
 
   return (
     <div>
-      {gym.map((gym) => {
+      {gym.map((gym: any) => {
         return (
           <div key={gym._id}>
             <div className="errortext">Exeresie: {gym.Exeresie}</div>
+
             <div className="error">
               Reps
               {gym.Reps > 1 ? gym.Reps + " minutes" : gym.Reps + " minute"}
             </div>
+
             <div>Set: {gym.Set > 1 ? gym.Set + " sets" : gym.Set + " set"}</div>
+
             <div>Weight: {gym.Weight}</div>
           </div>
         );
@@ -36,4 +33,5 @@ const Gym = () => {
     </div>
   );
 };
+
 export default Gym;

@@ -4,7 +4,7 @@ import linkedin from "./pictures/linkedin_icon.png";
 import whatsapp from "./pictures/whatsapp_icon.png";
 import github from "./pictures/github_icon.png";
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
   return (
     <footer className="footer">
       <a

@@ -9,8 +9,8 @@ import basic_url from "./DataForAll";
 export const getRecipes = async (): Promise<any> => {
   try {
     return await fetch(`${basic_url}/recipe`)
-      .then((res) => res.json())
-      .catch((err) => console.log(err));
+      .then((res: Response) => res.json())
+      .catch((err: Response) => console.log(err));
   } catch (error) {
     console.log(error);
   }
