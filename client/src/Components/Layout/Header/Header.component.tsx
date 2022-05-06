@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -15,6 +15,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import { Link } from "react-router-dom";
 
 const Search: any = styled("div")(({ theme }) => ({
   position: "relative",
@@ -122,21 +123,31 @@ const Header = (): JSX.Element => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
+      <Link to={"/"}>
+        <MenuItem>
+          <IconButton
+            size="large"
+            aria-label="show 4 new mails"
+            color="inherit"
+          >
+            <img
+              src="https://cdn2.iconfinder.com/data/icons/picons-basic-2/57/basic2-158_home_house-512.png"
+              alt="icon home page"
+              color="inherit"
+              width="24"
+              height="24"
+            />
+          </IconButton>
+          <p>Home Page</p>
+        </MenuItem>
+      </Link>
       <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
+          <Badge badgeContent={54} color="error">
             <NotificationsIcon />
           </Badge>
         </IconButton>
@@ -183,7 +194,7 @@ const Header = (): JSX.Element => {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Search in app…"
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
