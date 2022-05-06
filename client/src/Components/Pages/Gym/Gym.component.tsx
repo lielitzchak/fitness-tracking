@@ -1,3 +1,4 @@
+import { response } from "express";
 import { useEffect, useState } from "react";
 import getAllGym from "../../../service/Gym-service";
 const Gym = (): JSX.Element => {
@@ -11,9 +12,8 @@ const Gym = (): JSX.Element => {
       console.log(error);
     }
   }, []);
-
   return (
-    <div>
+    <div> 
       {gym.map((gym: any) => {
         return (
           <div key={gym._id}>

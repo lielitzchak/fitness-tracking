@@ -29,13 +29,13 @@ const Home = (): JSX.Element => {
           <h1>Report</h1>
         </section>
       </Link>
-      <Link to={"/recipe"} className="HomeLink">
+      <Link to={"/recipes"} className="HomeLink">
         <section className="categories">
           <img
             src="https://images.unsplash.com/photo-1575153409612-907131447a36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHJlY2lwZXN8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
             alt=""
           />
-          <h1>Recipe</h1>
+          <h1>Recipes</h1>
         </section>
       </Link>
     </div>
