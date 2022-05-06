@@ -7,12 +7,13 @@ const NutritionalValuesSchema = new mongoose.Schema({
 const Recipe = new mongoose.Schema(
   {
     Name: String,
-    TimeToMake: String,
+    TimeToCook: String,
     vegan: Boolean,
     NutritionalValues: NutritionalValuesSchema,
     Candy: Boolean,
     Picture: String,
     isMilk: Boolean,
+    HowToMake: String,
   },
   { timestamps: true }
 );
@@ -31,4 +32,9 @@ module.exports = mongoose.model("Recipe", Recipe);
 //   "Candy": false,
 //   "Picture": "https://did.li/W2WfT",
 //   "MadeOfMilk": true,
+//  "HowToMake":"1. Put the dough in a pan.\n2. Put the sauce in a pan.\n3. Put the cheese
+// in a pan.\n4. Put the meat in a pan.\n5. Put the veggies in a pan.\n6. Put the sauce in a
+//  pan.\n7. Put the cheese in a pan.\n8. Put the meat in a pan.\n9. Put the veggies in a pan.\n10.
+// Put the sauce in a pan.\n11. Put the cheese in a pan.\n12. Put the meat in a pan.\n13. Put the veggies
+//  in a pan.
 // };
