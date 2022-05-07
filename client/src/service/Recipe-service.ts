@@ -16,6 +16,7 @@ export const getRecipes = async (): Promise<any> => {
   }
 };
 
+
 export const getRecipeById = async (id: string): Promise<any> => {
   try {
     return await fetch(`${basic_url}/recipe/${id}`)
