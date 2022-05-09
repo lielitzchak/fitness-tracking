@@ -16,7 +16,6 @@ export const getRecipes = async (): Promise<any> => {
   }
 };
 
-
 export const getRecipeById = async (id: string): Promise<any> => {
   try {
     return await fetch(`${basic_url}/recipe/${id}`)
@@ -38,7 +37,7 @@ export const PostRecipe = async (newRecipe: any): Promise<any> => {
       body: JSON.stringify(newRecipe),
     })
       .then((res: Response) => res.json())
-      .catch((err: Response) => console.log(err));
+      .catch((err: Response) => err.json());
   } catch (error) {
     console.log(error);
   }

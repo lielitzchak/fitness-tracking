@@ -34,15 +34,8 @@ module.exports = {
   createRecipe: (request, response) => {
     recipeModel
       .create(request.body)
-      .then((data) => {
-        response.status(200).json(data);
-      })
-      .catch((err) => {
-        response.status(500).json({
-          message: "Error",
-          error: err,
-        });
-      });
+      .then((data) => response.status(200).json(data))
+      .catch((err) => response.status(500).json({ message: err }));
   },
   updateRecipe: (request, response) => {
     recipeModel
