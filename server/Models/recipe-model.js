@@ -6,7 +6,10 @@ const NutritionalValuesSchema = new mongoose.Schema({
 });
 const Recipe = new mongoose.Schema(
   {
-    Name: String,
+    Name: {
+      type: String,
+      required: [true, "need to write the recipe's name."],
+    },
     TimeToCook: String,
     vegan: Boolean,
     NutritionalValues: NutritionalValuesSchema,
