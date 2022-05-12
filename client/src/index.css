@@ -14,28 +14,6 @@
   background-color: #d4d3d3;
 }
 
-@media only screen and (min-width: 451px) and (max-width: 1024px) {
-  * .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-left: 3%;
-  }
-  * .footer img {
-    width: 28.5%;
-    height: auto;
-  }
-}
-
 @media only screen and (min-width: 10px) and (max-width: 451px) {
   * {
   }
@@ -87,13 +65,71 @@
     width: 50%;
     height: auto;
   }
-  * .recipes {
+  * .Recipes .add-recipe {
+    width: 45px;
+    height: auto;
+  }
+  * .Recipes .Recipes-container {
+    background-color: #c2a3d1;
+    font-family: Arial, Helvetica, sans-serif;
+    place-items: center;
+    width: 100%;
+  }
+  * .Recipes .Recipes-container .container {
+    background-color: #fff;
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 25ch auto;
+        grid-template-columns: 25ch auto;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
+    width: 100%;
+  }
+  * .Recipes .Recipes-container .container img {
+    width: 76%;
+    height: auto;
+    border-radius: 5px 0 0 5px;
+  }
+  * .Recipes .Recipes-container .container .container__text {
+    padding: 40px 40px 0;
+  }
+  * .Recipes .Recipes-container .container .container__text h1 {
+    color: #351897;
+    font-weight: 400;
+  }
+  * .Recipes .Recipes-container .container .container__text h2 {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #818189;
+  }
+  * .Recipes .Recipes-container .container .container__text p {
+    color: #351897;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 1024px) {
+  * .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 3%;
   }
-  * .recipes img {
-    width: 50%;
+  * .footer img {
+    width: 28.5%;
     height: auto;
   }
 }
