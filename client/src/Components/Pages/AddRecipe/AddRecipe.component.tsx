@@ -9,7 +9,7 @@ const AddRecipe = (): JSX.Element => {
   const changMinByValue = (event: any) => {
     event.preventDefault();
     event.target.value > 1 ? setMin("minutes") : setMin("minute");
-    if (event.target.value == "") {
+    if (event.target.value === "") {
       setMin("");
     }
     console.log({ ...recipe, [event.target.name]: event.target.value });
@@ -18,13 +18,16 @@ const AddRecipe = (): JSX.Element => {
 
   const saveValue = (event: any) => {
     event.preventDefault();
+    event.target.value === "on"
+      ? setRecipe({ ...recipe, [event.target.name]: true })
+      : setRecipe({ ...recipe, [event.target.name]: false });
     setRecipe({ ...recipe, [event.target.name]: event.target.value });
     console.log({ ...recipe, [event.target.name]: event.target.value });
   };
 
   const clickOnSave = (event: any) => {
     event.preventDefault();
-    setRecipe(recipe);
+    // setRecipe(recipe);
     PostRecipe(recipe)
       .then((response: any) => setMessageFromServer(response.message))
       .catch((err: any) => setMessageFromServer(err));
