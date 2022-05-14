@@ -26,42 +26,36 @@ const Recipes = (): JSX.Element => {
           alt="add recipe"
         />
       </Link>
-      {recipes.map((recipe: any) => {
-        return (
-          <div className="Recipes-container" key={recipe._id}>
-            <div className="container">
-              <img src={recipe.Picture} alt={recipe.Name} />
-              <div className="container__text">
-                <h1>title:{recipe.Name}</h1>
-                <p>
-                  If you're fan of caramel cake, then you'll love our Caramel
-                  Cake Pancakes. We Complete these over-the-top pancakes with
-                  Caramel Syrup.
-                </p>
-                <div className="container__text__timing">
-                  <div className="container__text__timing_time">
-                    <h2>Hands-on Time</h2>
-                    <p>
-                      {recipe.TimeToCook}
-                      {recipe.TimeToCook > 1 ? "minutes" : "minute"}
-                    </p>
-                  </div>
-                  <div className="container__text__timing_time">
-                    <h2>Total Time</h2>
-                    <p>
-                      {recipe.TimeToCook}
-                      {recipe.TimeToCook > 1 ? "minutes" : "minute"}
-                    </p>
-                  </div>
+      <div className="Recipes-data">
+        {recipes.map((recipe: any) => {
+          return (
+            <div className="Recipes-container" key={recipe._id}>
+              <article className="recipe">
+                <div className="pizza-box">
+                  <img src={recipe.Picture} alt={recipe.Name} />
                 </div>
-                <button className="btn">
-                  view recipe <i className="fa fa-arrow-right"></i>
-                </button>
-              </div>
+                <div className="recipe-content">
+                  <p className="recipe-tags">
+                    <span className="recipe-tag">
+                      {recipe.isMilk ? "Milk" : "meat"}
+                    </span>
+                    <span className="recipe-tag">
+                      {recipe.Vegan ? "vegan" : "not vegan"}
+                    </span>
+                  </p>
+
+                  <h1 className="recipe-title">{recipe.Name}</h1>
+
+                  <p className="recipe-desc">{recipe.Summary}</p>
+                  <button className="recipe-save" type="button">
+                    see all recipe
+                  </button>
+                </div>
+              </article>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };

@@ -69,69 +69,99 @@
     width: 45px;
     height: auto;
   }
-  * .Recipes .Recipes-container {
-    font-family: Arial, Helvetica, sans-serif;
-    place-items: center;
-    width: 100%;
-    padding-bottom: 4%;
-  }
-  * .Recipes .Recipes-container .container {
-    background-color: #fff;
-    position: relative;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 25ch auto;
-        grid-template-columns: 25ch auto;
-    border-radius: 5px;
-    width: 100%;
-  }
-  * .Recipes .Recipes-container .container img {
-    width: 76%;
-    height: auto;
-    border-radius: 5px 0 0 5px;
-  }
-  * .Recipes .Recipes-container .container .container__text h1 {
-    color: #351897;
-    font-weight: 400;
-  }
-  * .Recipes .Recipes-container .container .container__text .container__text__timing {
+  * .Recipes .Recipes-data {
+    --primary: #E05D26;
+    --grey: #454545;
+    --lightgrey: #666;
+    color: var(--grey);
+    line-height: 1.55;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
   }
-  * .Recipes .Recipes-container .container .container__text .container__text__timing .container__text__timing_time h2 {
-    margin-bottom: 5px;
-    font-size: 1rem;
-    font-weight: 400px;
-    color: #818189;
+  * .Recipes .Recipes-data .Recipes-container {
+    width: clamp(320px, 65%, 65%);
+    padding: 24px;
   }
-  * .Recipes .Recipes-container .container .container__text .container__text__timing .container__text__timing_time p {
-    color: #351897;
-    font-weight: bold;
-    font-size: 1rem;
+  * .Recipes .Recipes-data .Recipes-container .recipe {
+    border: 2px solid #F2F2F2;
+    border-radius: 8px;
+    overflow: hidden;
   }
-  * .Recipes .Recipes-container .container .container__text .btn {
-    bottom: -20px;
-    right: -20px;
-    border: none;
-    outline: none;
+  * .Recipes .Recipes-data .Recipes-container .recipe .pizza-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 3;
+        -ms-flex: 3 1 30ch;
+            flex: 3 1 30ch;
+    height: calc(282px + 5vw);
+    overflow: hidden;
+  }
+  * .Recipes .Recipes-data .Recipes-container .recipe .pizza-box img {
+    width: 1500px;
+    height: 1368px;
+    max-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 50% 50%;
+       object-position: 50% 50%;
+  }
+  * .Recipes .Recipes-data .Recipes-container .recipe-content {
+    padding: 16px 32px;
+    -webkit-box-flex: 4;
+        -ms-flex: 4 1 40ch;
+            flex: 4 1 40ch;
+  }
+  * .Recipes .Recipes-data .Recipes-container .recipe-tags {
+    margin: 0 -8px;
+  }
+  * .Recipes .Recipes-data .Recipes-container .recipe-tag {
+    display: inline-block;
+    margin: 8px;
+    font-size: .875em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .02em;
+    color: var(--primary);
+  }
+  * .Recipes .Recipes-data .Recipes-container .recipe-title {
+    margin: 0;
+    font-size: clamp(1.4em, 2.1vw, 2.1em);
+    font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+  }
+  * .Recipes .Recipes-data .Recipes-container .recipe-title a {
+    text-decoration: none;
+    color: inherit;
+  }
+  * .Recipes .Recipes-data .Recipes-container .recipe-save {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background-color: #fc9400;
-    color: #fff;
-    padding: 22px 38.8px;
-    font-size: 1rem;
-    text-transform: uppercase;
-    border-radius: 5px;
+    padding: 6px 14px 6px 12px;
+    border-radius: 4px;
+    border: 2px solid currentColor;
+    color: var(--primary);
+    background: none;
     cursor: pointer;
-  }
-  * .Recipes .Recipes-container .container .container__text .btn i {
-    margin-left: 20px;
-    font-size: 1.5rem;
+    font-weight: bold;
   }
 }
 

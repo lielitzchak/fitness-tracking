@@ -11,12 +11,13 @@ const Recipe = new mongoose.Schema(
       required: [true, "need to write the recipe's name."],
     },
     TimeToCook: String,
-    vegan: Boolean,
+    Vegan: Boolean,
     NutritionalValues: NutritionalValuesSchema,
     Candy: Boolean,
     Picture: String,
-    isMilk: Boolean,
+    IsMilk: Boolean,
     HowToMake: String,
+    Summary: String,
   },
   { timestamps: true }
 );
