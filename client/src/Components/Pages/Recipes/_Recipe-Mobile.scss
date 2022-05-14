@@ -1,7 +1,91 @@
-.recipes {
-    display: flex;
-    img{
-        width: 50%;
+$primary-color: #fff;
+$border-radius: 5px;
+$black-color: #351897;
+
+
+.Recipes {
+    .add-recipe {
+        width: 45px;
         height: auto;
+    }
+
+    .Recipes-container {
+        font-family: Arial,
+            Helvetica,
+            sans-serif;
+        place-items: center;
+        width: 100%;
+        padding-bottom: 4%;
+
+        .container {
+            background-color: $primary-color;
+            position: relative;
+            display: grid;
+            grid-template-columns: 25ch auto;
+            border-radius: $border-radius;
+            width: 100%;
+
+            img {
+                width: 76%;
+                height: auto;
+                border-radius: $border-radius 0 0 $border-radius;
+            }
+
+            .container__text {
+
+                h1 {
+                    color: $black-color;
+                    font-weight: 400;
+                }
+
+                .container__text__timing {
+                    display: flex;
+                    // margin: 20px 0 10px;
+
+                    .container__text__timing_time {
+                        // margin-right: 40px;
+
+
+                        h2 {
+                            margin-bottom: 5px;
+                            font-size: 1rem;
+                            font-weight: 400px;
+                            color: #818189;
+                        }
+
+                        p {
+
+                            color: $black-color;
+                            font-weight: bold;
+                            font-size: 1rem;
+                        }
+
+                    }
+                }
+
+                .btn {
+                    // position: absolute;
+                    bottom: -20px;
+                    right: -20px;
+                    border: none;
+                    outline: none;
+                    display: flex;
+                    align-items: center;
+                    background-color: #fc9400;
+                    color: $primary-color;
+                    padding: 22px 38.8px;
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    border-radius: $border-radius;
+                    cursor: pointer;
+                    // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+
+                    i {
+                        margin-left: 20px;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
     }
 }

@@ -34,10 +34,7 @@ const AddRecipe = (): JSX.Element => {
     console.log(recipe);
   };
 
-  //   NutritionalValues: NutritionalValuesSchema,
-  //   Picture: String,
-  //   isMilk: Boolean,
-  //   HowToMake: String,
+
   return (
     <>
       <form>
