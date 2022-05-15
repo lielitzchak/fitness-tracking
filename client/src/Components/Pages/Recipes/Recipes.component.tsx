@@ -3,15 +3,18 @@ import { getRecipes } from "../../../service/Recipe-service";
 import { Link } from "react-router-dom";
 // import Recipe from "../Recipe/Recipe.component";
 
-// ! need to fix the minus button because it is not working like i want to. it writes minute wen no number is written.
 const Recipes = (): JSX.Element => {
   const [recipes, setRecipes]: any = useState([]);
+
   useEffect((): void => {
     try {
-      getRecipes().then((res) => {
-        setRecipes(res);
-        console.log(res);
-      });
+      // ! add loading state when fetching data from the server
+      getRecipes()
+        .then((res) => {
+          setRecipes(res);
+          console.log(res);
+        })
+        .catch((err) => err);
     } catch (error) {
       console.log(error);
     }
@@ -43,9 +46,7 @@ const Recipes = (): JSX.Element => {
                       {recipe.Vegan ? "vegan" : "not vegan"}
                     </span>
                   </p>
-
                   <h1 className="recipe-title">{recipe.Name}</h1>
-
                   <p className="recipe-desc">{recipe.Summary}</p>
                   <button className="recipe-save" type="button">
                     see all recipe
