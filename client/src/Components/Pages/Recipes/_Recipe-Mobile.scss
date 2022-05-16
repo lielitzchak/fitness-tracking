@@ -1,89 +1,90 @@
-$primary-color: #fff;
-$border-radius: 5px;
-$black-color: #351897;
-
-
 .Recipes {
     .add-recipe {
         width: 45px;
         height: auto;
     }
 
-    .Recipes-container {
-        font-family: Arial,
-            Helvetica,
-            sans-serif;
-        place-items: center;
-        width: 100%;
-        padding-bottom: 4%;
+    .Recipes-data {
+        --primary: #E05D26;
+        --grey: #454545;
+        --lightgrey: #666;
+        color: var(--grey);
+        line-height: 1.55;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-family: "Roboto", Helvetica, Arial, sans-serif;
 
-        .container {
-            background-color: $primary-color;
-            position: relative;
-            display: grid;
-            grid-template-columns: 25ch auto;
-            border-radius: $border-radius;
-            width: 100%;
+        .Recipes-container {
+            width: clamp(320px, 65%, 65%);
+            padding: 24px;
 
-            img {
-                width: 76%;
-                height: auto;
-                border-radius: $border-radius 0 0 $border-radius;
-            }
-
-            .container__text {
-
-                h1 {
-                    color: $black-color;
-                    font-weight: 400;
-                }
-
-                .container__text__timing {
+            .recipe {
+                .pizza-box {
                     display: flex;
-                    // margin: 20px 0 10px;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    flex: 3 1 30ch;
+                    height: calc(282px + 5vw);
+                    overflow: hidden;
 
-                    .container__text__timing_time {
-                        // margin-right: 40px;
-
-
-                        h2 {
-                            margin-bottom: 5px;
-                            font-size: 1rem;
-                            font-weight: 400px;
-                            color: #818189;
-                        }
-
-                        p {
-
-                            color: $black-color;
-                            font-weight: bold;
-                            font-size: 1rem;
-                        }
-
+                    img {
+                        width: 1500px;
+                        height: 1368px;
+                        max-width: 100%;
+                        min-height: 100%;
+                        width: auto;
+                        height: auto;
+                        object-fit: cover;
+                        object-position: 50% 50%;
                     }
                 }
 
-                .btn {
-                    // position: absolute;
-                    bottom: -20px;
-                    right: -20px;
-                    border: none;
-                    outline: none;
+                border: 2px solid #F2F2F2;
+                border-radius: 8px;
+                overflow: hidden;
+
+                &-content {
+                    padding: 16px 32px;
+                    flex: 4 1 40ch;
+                }
+
+                &-tags {
+                    margin: 0 -8px;
+                }
+
+                &-tag {
+                    display: inline-block;
+                    margin: 8px;
+                    font-size: .875em;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    letter-spacing: .02em;
+                    color: var(--primary);
+                }
+
+                &-title {
+                    margin: 0;
+                    font-size: clamp(1.4em, 2.1vw, 2.1em);
+                    font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+
+                    a {
+                        text-decoration: none;
+                        color: inherit;
+                    }
+                }
+
+                &-save {
                     display: flex;
                     align-items: center;
-                    background-color: #fc9400;
-                    color: $primary-color;
-                    padding: 22px 38.8px;
-                    font-size: 1rem;
-                    text-transform: uppercase;
-                    border-radius: $border-radius;
+                    padding: 6px 14px 6px 12px;
+                    border-radius: 4px;
+                    border: 2px solid currentColor;
+                    color: var(--primary);
+                    background: none;
                     cursor: pointer;
-                    // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+                    font-weight: bold;
 
-                    i {
-                        margin-left: 20px;
-                        font-size: 1.5rem;
-                    }
                 }
             }
         }
