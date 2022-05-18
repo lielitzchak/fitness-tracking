@@ -34,41 +34,74 @@ const AddRecipe = (): JSX.Element => {
     console.log(recipe);
   };
 
-
   return (
     <>
+      <div className="wrapper">
+        <div className="container">
+          <form action="">
+            <h1>add new recipe</h1>
+            <div className="name">
+              <div>
+                <input
+                  type="text"
+                  name="Name"
+                  placeholder="recipe name"
+                  required
+                  onChange={(event) => saveValue(event)}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="Summary"
+                  placeholder="Summary"
+                  required
+                  onChange={(event) => saveValue(event)}
+                />
+              </div>
+            </div>
+            <div className="street">
+              <input
+                type="number"
+                name="TimeToCook"
+                placeholder="time to cook"
+                onChange={(event) => changMinByValue(event)}
+              />
+            </div>
+            <div className="address-info">
+              <div>
+                <input
+                  type="checkbox"
+                  name="vegan"
+                  placeholder="vegan"
+                  onChange={(event) => changMinByValue(event)}
+                />
+              </div>
+              <div>
+                <label htmlFor="state">State</label>
+                <input type="text" name="state" />
+              </div>
+              <div>
+                <label htmlFor="zip">Zip</label>
+                <input type="text" name="zip" />
+              </div>
+            </div>
+
+            <div className="btns">
+              <button>Purchase</button>
+            </div>
+          </form>
+        </div>
+      </div>
       <form>
-        <input
-          type="text"
-          name="Name"
-          placeholder="recipe name"
-          required
-          onChange={(event) => saveValue(event)}
-        />
         <br />
-        <input
-          type="text"
-          name="Summary"
-          placeholder="Summary"
-          required
-          onChange={(event) => saveValue(event)}
-        />
+
         <br />
-        <input
-          type="number"
-          name="TimeToCook"
-          placeholder="time to cook"
-          onChange={(event) => changMinByValue(event)}
-        />
+
         <label>{min}</label>
         <br />
         <label htmlFor="vegan">Is vegan?</label>
-        <input
-          type="checkbox"
-          name="vegan"
-          placeholder="vegan"
-          onChange={(event) => changMinByValue(event)}
-        />
+
         <br />
         <label htmlFor="Candy">Is Candy?</label>
         <input
@@ -102,17 +135,6 @@ const AddRecipe = (): JSX.Element => {
 };
 
 export default AddRecipe;
-
-
-
-
-
-
-
-
-
-
-
 
 // שם המתכון
 // תיאור המתכון
@@ -168,5 +190,3 @@ export default AddRecipe;
 //  תבשילי קדרה
 //  תזונה קטוגנית
 //  תינוקות
-
-

@@ -20,7 +20,7 @@ export const getRecipeById = async (id: string): Promise<any> => {
   try {
     return await fetch(`${basic_url}/recipe/${id}`)
       .then((res: Response) => res.json())
-      .catch((err: Response) => console.log(err));
+      .catch((err: Response) => err);
   } catch (error) {
     console.log(error);
   }
