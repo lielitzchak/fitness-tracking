@@ -1,24 +1,22 @@
 import { useEffect, useState } from "react";
-import { getRecipeById } from "../../../service/Recipe-service";
 
 const GenericRecipe = (): JSX.Element => {
   const [singleRecipe, setSingleRecipe]: any = useState({});
   let id: string = window.location.href.slice(
     window.location.href.indexOf("recipe/") + 7
   );
-  // console.log(id);
-  useEffect(() => {
-    getRecipeById(id)
-      .then((res: any) => {
-        console.log(res);
-        setSingleRecipe(res);
-        console.log(singleRecipe);
-      })
-      .catch((err: any) => {
-        console.log(err);
-      });
+  useEffect((): void => {
+    try {
+      let obj: any = localStorage.getItem(id);
+      setSingleRecipe(JSON.parse(obj));
+      if (obj) {
+        localStorage.clear();
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
-
+  // console.log(singleRecipe);
   return (
     <article className="genericRecipe">
       <div className="ft-recipe">
@@ -56,9 +54,8 @@ const GenericRecipe = (): JSX.Element => {
             Theres no better way to celebrate May being National Strawberry
             Month than by sharing a sweet treat with your pup!!! Strawberries...
           </p>
-          <div className="content__footer">
-            {/* <a href="#">write here the recipe</a> */}
-          </div>
+          {/* <div className="content__footer">
+            </div> */}
         </div>
       </div>
     </article>
