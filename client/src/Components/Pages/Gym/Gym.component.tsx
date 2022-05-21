@@ -12,21 +12,25 @@ const Gym = (): JSX.Element => {
       console.log(error);
     }
   }, []);
+  //   createdAt
+  // :
+  // 2022-05-02T14:33:26.936+00:00
+  // updatedAt
+
   return (
-    <div> 
+    <div>
       {gym.map((gym: any) => {
         return (
           <div key={gym._id}>
-            <div className="errortext">Exeresie: {gym.Exeresie}</div>
-
-            <div className="error">
-              Reps
-              {gym.Reps > 1 ? gym.Reps + " minutes" : gym.Reps + " minute"}
-            </div>
-
-            <div>Set: {gym.Set > 1 ? gym.Set + " sets" : gym.Set + " set"}</div>
-
-            <div>Weight: {gym.Weight}</div>
+            <h3>Exeresie:</h3> <p>{gym.Exeresie}</p>
+            <h3>Reps:</h3>
+            <p>{gym.Reps > 1 ? gym.Reps + " minutes" : gym.Reps + " minute"}</p>
+            <h3>Sets:</h3>
+            <p>{gym.Set > 1 ? gym.Set + " sets" : gym.Set + " set"}</p>
+            <h3>Weight:</h3> <p>{gym.Weight} kg</p>
+            <h3>created At:</h3> <p> {gym.Date}</p>
+            <br />
+            <br />
           </div>
         );
       })}
