@@ -4,7 +4,6 @@ const AddReport = (): JSX.Element => {
   const ff = (event: any) => {
     event.preventDefault();
     console.log(event);
-    
   };
   return (
     <div>

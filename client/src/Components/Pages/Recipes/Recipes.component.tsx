@@ -12,11 +12,11 @@ const Recipes = (): JSX.Element => {
       getRecipes()
         .then((res) => {
           setRecipes(res);
-          console.log(res);
+          // console.log(res);
         })
         .catch((err) => err);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }, []);
 
@@ -32,28 +32,31 @@ const Recipes = (): JSX.Element => {
       <div className="Recipes-data">
         {recipes.map((recipe: any) => {
           return (
-            <div className="Recipes-container" key={recipe._id}>
-              <article className="recipe">
-                <div className="pizza-box">
-                  <img src={recipe.Picture} alt={recipe.Name} />
-                </div>
-                <div className="recipe-content">
-                  <p className="recipe-tags">
-                    <span className="recipe-tag">
-                      {recipe.isMilk ? "Milk" : "meat"}
-                    </span>
-                    <span className="recipe-tag">
-                      {recipe.Vegan ? "vegan" : "not vegan"}
-                    </span>
-                  </p>
-                  <h1 className="recipe-title">{recipe.Name}</h1>
-                  <p className="recipe-desc">{recipe.Summary}</p>
-                  <button className="recipe-save" type="button">
-                    see all recipe
-                  </button>
-                </div>
-              </article>
-            </div>
+            <Link to={`/recipe/${recipe._id}`} key={recipe._id}>
+              {localStorage.setItem(`${recipe._id}`, JSON.stringify(recipe))}
+              <div className="Recipes-container" key={recipe._id}>
+                <article className="recipe">
+                  <div className="pizza-box">
+                    <img src={recipe.Picture} alt={recipe.Name} />
+                  </div>
+                  <div className="recipe-content">
+                    <p className="recipe-tags">
+                      <span className="recipe-tag">
+                        {recipe.isMilk ? "Milk" : "meat"}
+                      </span>
+                      <span className="recipe-tag">
+                        {recipe.Vegan ? "vegan" : "not vegan"}
+                      </span>
+                    </p>
+                    <h1 className="recipe-title">{recipe.Name}</h1>
+                    <p className="recipe-desc">{recipe.Summary}</p>
+                    <button className="recipe-save" type="button">
+                      see all recipe
+                    </button>
+                  </div>
+                </article>
+              </div>
+            </Link>
           );
         })}
       </div>
