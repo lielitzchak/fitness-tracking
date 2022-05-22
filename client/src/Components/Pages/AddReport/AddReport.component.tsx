@@ -1,6 +1,5 @@
 import { useState } from "react";
 const AddReport = (): JSX.Element => {
-  const [object, setoObject]: any = useState();
   const ff = (event: any) => {
     event.preventDefault();
     console.log(event);
