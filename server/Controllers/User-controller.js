@@ -1,5 +1,5 @@
 const UserModel = require("../Models/User-model");
-
+const bcrypt = require("bcrypt");
 module.exports = {
   getAllUsers: (request, response) => {
     UserModel.find()
@@ -31,16 +31,19 @@ module.exports = {
       });
   },
   createUser: (request, response) => {
-    UserModel.create(request.body)
-      .then((data) => {
-        response.status(200).json(data);
-      })
-      .catch((err) => {
-        response.status(500).json({
-          message: "Error",
-          error: err,
-        });
-      });
+    console.log(request.body.Password);
+    bcrypt.hash(request.body.Password, 10, async (err, hashPassword) => {
+      if (err) return response.status(500).json({ message: err.message });
+      request.body.Password = hashPassword;
+      await UserModel
+        .create(request.body.user)
+        .then((result) =>
+          response
+            .status(200)
+            .json({ massage: "user added successfully", result })
+        )
+        .catch((err) => response.status(500).json(err));
+    });
   },
   updateUser: (request, response) => {
     UserModel.findByIdAndUpdate(request.params.id, request.body, { new: true })

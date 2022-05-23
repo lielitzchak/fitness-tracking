@@ -9,14 +9,17 @@ const User = new mongoose.Schema(
     Password: {
       type: String,
       trim: true,
+      required: true,
     },
-    Admin: Boolean,
+    Admin: { type: Boolean, default: false },
     Email: {
       type: String,
       required: true,
       lowercase: true,
       unique: true,
+      index: true,
     },
+    Image: { type: String, default: "https://did.li/yWjaa" },
   },
   { timestamps: true }
 );
