@@ -17,6 +17,7 @@ require("./DB/db");
 const TRAINING = require("./Routes/Training-route.js");
 const USER = require("./Routes/User-route.js");
 const RECIPE = require("./Routes/Recipe-route.js");
+const AUTH = require("./Routes/Auth-route.js");
 //! const passport = require("passport");
 //! require("./Config/passport")(passport);
 
@@ -30,9 +31,11 @@ app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
 
+app.use("/auth", AUTH);
 app.use("/training", TRAINING);
 app.use("/user", USER);
 app.use("/recipe", RECIPE);
+
 app.use("/", () => console.log("try again"));
 
 // add heroku.
