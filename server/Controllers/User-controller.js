@@ -39,7 +39,7 @@ module.exports = {
         .create(request.body.user)
         .then((result) =>
           response
-            .status(200)
+            .status(201)
             .json({ massage: "user added successfully", result })
         )
         .catch((err) => response.status(500).json(err));
@@ -50,7 +50,7 @@ module.exports = {
       .then((data) => {
         data == null || data == undefined
           ? response.status(404).json({ message: "No user found" })
-          : response.status(200).json(data);
+          : response.status(201).json(data);
       })
       .catch((err) => {
         response.status(500).json({
