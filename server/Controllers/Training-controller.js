@@ -36,7 +36,7 @@ module.exports = {
     trainingModel
       .create(request.body)
       .then((data) => {
-        response.status(200).json(data);
+        response.status(201).json(data);
       })
       .catch((err) => {
         response.status(500).json({
@@ -51,7 +51,7 @@ module.exports = {
       .then((data) => {
         data == null || data == undefined
           ? response.status(404).json({ message: "No training found" })
-          : response.status(200).json(data);
+          : response.status(201).json(data);
       })
       .catch((err) => {
         response.status(500).json({

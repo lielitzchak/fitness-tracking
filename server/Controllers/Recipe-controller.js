@@ -34,7 +34,7 @@ module.exports = {
   createRecipe: (request, response) => {
     recipeModel
       .create(request.body)
-      .then((data) => response.status(200).json(data))
+      .then((data) => response.status(201).json(data))
       .catch((err) => response.status(500).json({ message: err }));
   },
   updateRecipe: (request, response) => {
@@ -45,7 +45,7 @@ module.exports = {
       .then((data) => {
         data == null || data == undefined
           ? response.status(404).json({ message: "No Recipe found" })
-          : response.status(200).json(data);
+          : response.status(201).json(data);
       })
       .catch((err) => {
         response.status(500).json({

@@ -2,9 +2,10 @@ const mongoose = require("mongoose");
 
 const User = new mongoose.Schema(
   {
-    Username: {
+    UserName: {
       type: String,
       trim: true,
+      unique: true,
     },
     Password: {
       type: String,
@@ -17,8 +18,7 @@ const User = new mongoose.Schema(
       required: true,
       lowercase: true,
       unique: true,
-      index: true,
-    },
+     },
     Image: { type: String, default: "https://did.li/yWjaa" },
   },
   { timestamps: true }
