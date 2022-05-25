@@ -5,18 +5,18 @@ const UserModel = require("../Models/User-model");
 module.exports = {
   register: async (request, response) => {
     const { Email, Username, Admin, Password } = request.body;
-    console.log({ Email: Email });
+
     (await usersModel.exists({ Email: Email }))
       ? response
           .status(300)
           .send({ message: `this Email (${Email}) Already Exists` })
       : bcrypt.hash(Password, 10, async (err, hashPassword) => {
           if (err) {
-            response.status(500).send({ message: err });
+            response.status(402).send({ message: err });
           }
           request.body.Password = hashPassword;
           await UserModel.create(request.body)
-            .then((user) =>
+            .then((user) => {
               jwt.sign(
                 { Email: user.Email, id: user._id },
                 process.env.SECRET_KEY,
@@ -25,15 +25,18 @@ module.exports = {
                   if (err)
                     return response.status(400).send({ Error: `${err}` });
                   response.status(201).send({
-                    message: "User has been Added and Signed Up Successfully",
+                    message: `User has been Added and Signed Up Successfully  `,
                     user,
                     accessToken,
                   });
                   usersModel.save();
                 }
-              )
-            )
-            .catch((err) => response.status(500).send(err));
+              );
+            })
+            .catch((err) => {
+              console.log(err);
+              response.status(500).send(err);
+            });
         });
   },
   login: (request, response) => {
@@ -42,8 +45,7 @@ module.exports = {
       .findOne({
         Email: Email,
       })
-      // .populate("roles", "-__v")
-      .exec((err, user) => {
+       .exec((err, user) => {
         if (err) {
           response.status(500).send({ message: err });
           return;
@@ -54,7 +56,7 @@ module.exports = {
         console.log(
           `request.body.Password :${Password}, user.Password:${user.Password}`
         );
-         bcrypt
+        bcrypt
           .compare(Password, user.Password)
           .then((result) => {
             console.log(result);

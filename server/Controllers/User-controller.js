@@ -31,12 +31,12 @@ module.exports = {
       });
   },
   createUser: (request, response) => {
+    console.log(request.file);
     console.log(request.body.Password);
     bcrypt.hash(request.body.Password, 10, async (err, hashPassword) => {
       if (err) return response.status(500).json({ message: err.message });
       request.body.Password = hashPassword;
-      await UserModel
-        .create(request.body.user)
+      await UserModel.create(request.body.user)
         .then((result) =>
           response
             .status(201)
