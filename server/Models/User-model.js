@@ -15,10 +15,9 @@ const User = new mongoose.Schema(
     Admin: { type: Boolean, default: false },
     Email: {
       type: String,
-      required: true,
       lowercase: true,
       unique: true,
-     },
+    },
     Image: { type: String, default: "https://did.li/yWjaa" },
   },
   { timestamps: true }
