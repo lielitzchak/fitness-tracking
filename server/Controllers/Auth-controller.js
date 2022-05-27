@@ -80,38 +80,38 @@ module.exports = {
         // });
       });
   },
-  login: async (request, response) => {
-    console.log(request.body);
-    if (usersModel.exists({ email: request.body.email }) === false) {
-      return response.status(401).json({ message: "Email already exists" });
-    }
-    usersModel.findOne({ email: request.body.email }).then((user) => {
-      bcrypt
-        .compare(request.body.password, user.password)
-        .then((isMatch) => {
-          if (!isMatch)
-            return response
-              .status(403)
-              .json({ message: "Invalid credentials" });
-          user.isLogin = true;
-          jwt.sign(
-            { user },
-            process.env.JWT_SECRET,
-            { expiresIn: "30m" },
-            (err, token) => {
-              if (err)
-                return response
-                  .status(500)
-                  .json({ message: "Error logging in user" });
-              return response
-                .status(200)
-                .json({ message: "User logged in successfully", token });
-            }
-          );
-        })
-        .catch((error) =>
-          response.status(500).json({ message: "Error logging in user", error })
-        );
-    });
-  },
+  // login: async (request, response) => {
+  //   console.log(request.body);
+  //   if (usersModel.exists({ email: request.body.email }) === false) {
+  //     return response.status(401).json({ message: "Email already exists" });
+  //   }
+  //   usersModel.findOne({ email: request.body.email }).then((user) => {
+  //     bcrypt
+  //       .compare(request.body.password, user.password)
+  //       .then((isMatch) => {
+  //         if (!isMatch)
+  //           return response
+  //             .status(403)
+  //             .json({ message: "Invalid credentials" });
+  //         user.isLogin = true;
+  //         jwt.sign(
+  //           { user },
+  //           process.env.JWT_SECRET,
+  //           { expiresIn: "30m" },
+  //           (err, token) => {
+  //             if (err)
+  //               return response
+  //                 .status(500)
+  //                 .json({ message: "Error logging in user" });
+  //             return response
+  //               .status(200)
+  //               .json({ message: "User logged in successfully", token });
+  //           }
+  //         );
+  //       })
+  //       .catch((error) =>
+  //         response.status(500).json({ message: "Error logging in user", error })
+  //       );
+  //   });
+  // },
 };
