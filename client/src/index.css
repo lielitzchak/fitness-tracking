@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kite+One&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Arimo");
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 * {
   border: 0;
   margin: 0;
@@ -92,7 +93,9 @@
     padding: 24px;
   }
   * .Recipes .Recipes-data .Recipes-container .recipe {
-    border: 2px solid #F2F2F2;
+    -webkit-animation: shadow-Recipes 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            animation: shadow-Recipes 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    border: 1px solid #F2F2F2;
     border-radius: 8px;
     overflow: hidden;
   }
@@ -165,6 +168,26 @@
     cursor: pointer;
     font-weight: bold;
   }
+  @-webkit-keyframes shadow-Recipes {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+              box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+  }
+  @keyframes shadow-Recipes {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+              box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+  }
   * .wrapper {
     margin-top: 5%;
     width: 60%;
@@ -181,44 +204,22 @@
     -webkit-animation: slideUp 2000ms ease;
             animation: slideUp 2000ms ease;
   }
-  @-webkit-keyframes slideUp {
-    0% {
-      -webkit-transform: translateY(100%);
-      transform: translateY(100%);
-      visibility: visible;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-  }
-  @keyframes slideUp {
-    0% {
-      -webkit-transform: translateY(100%);
-      transform: translateY(100%);
-      visibility: visible;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-  }
-  * .container {
+  * .wrapper .container {
     width: 65%;
     padding: 5% 10%;
   }
-  * h1 {
+  * .wrapper .container h1 {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
   }
-  * form {
+  * .wrapper .container form {
     width: 100%;
   }
-  * form > * {
+  * .wrapper .container form > * {
     margin-top: 20px;
   }
-  * form input {
+  * .wrapper .container form input {
     width: 100%;
     min-height: 25px;
     border: 0;
@@ -229,20 +230,11 @@
     color: #8e2807;
     border-radius: 4px;
   }
-  * form label {
+  * .wrapper .container form label {
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 2px;
     color: #8e2807;
-  }
-  * form h1 {
-    font-size: 24px;
-    line-height: 10px;
-    color: #493b76;
-    letter-spacing: 1px;
-  }
-  * form h1:nth-of-type(2) {
-    margin-top: 10%;
   }
   * .name {
     -webkit-box-pack: justify;
@@ -329,9 +321,6 @@
   * button:focus {
     outline: none;
   }
-}
-
-@media only screen and (min-width: 10px) and (max-width: 451px) and (max-width: 736px) {
   * .wrapper {
     width: 100%;
   }
@@ -384,9 +373,28 @@
     margin: 5px 0;
     min-height: 30px;
   }
-}
-
-@media only screen and (min-width: 10px) and (max-width: 451px) {
+  @-webkit-keyframes slideUp {
+    0% {
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideUp {
+    0% {
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
   * :root {
     --headlinesFont: 'Jost', sans-serif;
     --bodyFont: 'Work Sans', sans-serif;
@@ -568,6 +576,8 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  * {
+  }
   * .footer {
     position: fixed;
     bottom: 0;
@@ -587,7 +597,42 @@
     width: 28.5%;
     height: auto;
   }
-  * .footer {
+  * .Home .Home-section {
+    padding-left: 4%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 45% 45%;
+        grid-template-columns: 45% 45%;
+    gap: 4%;
+  }
+  * .Home .Home-section section {
+    position: relative;
+  }
+  * .Home .Home-section h2 {
+    position: absolute;
+    z-index: -2;
+    font-family: "Permanent Marker";
+  }
+  * .Home .Home-section img {
+    width: 100%;
+    padding-top: 4%;
+    height: 100%;
+  }
+  * .Home .Home-section div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  * .Home .Home-section div .btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  * .Home .Home-section .text-on-app {
+    font-size: 2rem;
+    font-family: "Permanent Marker";
+  }
+  * .Home .footer {
     position: fixed;
     bottom: 0;
     width: 100vw;
@@ -602,7 +647,7 @@
             justify-content: center;
     margin-left: 3%;
   }
-  * .footer img {
+  * .Home .footer img {
     width: 28.5%;
     height: auto;
   }
