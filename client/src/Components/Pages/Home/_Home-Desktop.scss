@@ -1,3 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+.Home {
+
+    .Home-section {
+        padding-left: 4%;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        gap: 4%;
+
+        section {
+            position: relative;
+        }
+
+        h2 {
+            position: absolute;
+            z-index: -2;
+            font-family: "Permanent Marker";
+        }
+
+        img {
+            width: 100%;
+            padding-top: 4%;
+            height: 100%;
+        }
+
+        div {
+            display: flex;
+
+            .btn {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        .text-on-app {
+
+            font-size: 2rem;
+            font-family: "Permanent Marker";
+        }
+
+    }
+
     .footer {
         position: fixed;
         bottom: 0;
@@ -12,3 +56,4 @@
             height: auto;
         }
     }
+}
