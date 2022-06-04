@@ -15,6 +15,7 @@
 
 * body {
   background-color: #d4d3d3;
+  overflow-x: hidden;
 }
 
 @media only screen and (min-width: 10px) and (max-width: 451px) {
@@ -605,32 +606,136 @@
         grid-template-columns: 45% 45%;
     gap: 4%;
   }
-  * .Home .Home-section section {
+  * .Home .Home-section .aboutMe {
     position: relative;
   }
-  * .Home .Home-section h2 {
+  * .Home .Home-section .aboutMe h2 {
     position: absolute;
     z-index: -2;
     font-family: "Permanent Marker";
+    font-size: 4rem;
+    padding-left: 4%;
   }
-  * .Home .Home-section img {
+  * .Home .Home-section .aboutMe .imgDiv img {
     width: 100%;
-    padding-top: 4%;
-    height: 100%;
+    padding-top: 12%;
+    height: auto;
+    position: static;
   }
-  * .Home .Home-section div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  * .Home .Home-section div .btn {
+  * .Home .Home-section .aboutMe .buttons button {
+    background: rgba(8, 17, 88, 0.2);
+    padding: 20px 20px 20px 40px;
+    border-radius: 50%;
+    z-index: 4;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    top: 85%;
+    font-size: 16px;
+    padding: 12px 24px;
+    width: 100px;
+    height: 100px;
+  }
+  * .Home .Home-section .aboutMe .buttons :first-child {
+    left: 7%;
+  }
+  * .Home .Home-section .aboutMe .buttons :nth-child(2) {
+    left: 67%;
   }
   * .Home .Home-section .text-on-app {
-    font-size: 2rem;
-    font-family: "Permanent Marker";
+    padding-top: 19%;
+  }
+  * .Home .Home-section .text-on-app p {
+    margin-top: 4cm;
+    font-size: 20px;
+  }
+  * .Home .Home-section .text-on-app h1 {
+    font-size: 72px;
+  }
+  * .Home .Home-section .text-on-app button {
+    margin-top: 46%;
+    padding: 20px 20px 20px 40px;
+    min-width: 200px;
+    font-size: 14px;
+    text-transform: uppercase;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: white;
+    background: #081158;
+  }
+  * .Home .onApp {
+    background: #081158;
+    font-size: 14px;
+    color: white;
+    padding: 9%;
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+    margin: 6% -2% 0 -2%;
+  }
+  * .Home .onApp .putOnApp {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    gap: 30%;
+  }
+  * .Home .onApp .putOnApp div {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+  * .Home .onApp .putOnApp div h3 {
+    font-size: 30px;
+    height: 1.1em;
+  }
+  * .Home .onApp .putOnApp div p {
+    font-size: 14px;
+    height: 1.6em;
+  }
+  * .Home .text {
+    padding-top: 6%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 4%;
+    color: #081158;
+    font-size: 14px;
+    text-align: center;
+  }
+  * .Home .text h1 {
+    font-size: 72px;
+  }
+  * .Home .text button {
+    margin-top: 4%;
+    padding: 20px 20px 20px 40px;
+    min-width: 200px;
+    font-size: 14px;
+    text-transform: uppercase;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: white;
+    background: #081158;
+  }
+  * .Home .categories {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 4%;
+    padding-left: 7%;
+    text-decoration: none;
+  }
+  * .Home .categories h4 {
+    font-family: 'sato';
+    max-width: 350px;
+  }
+  * .Home .categories a {
+    text-decoration: none;
+  }
+  * .Home .categories img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 410px;
+    height: 410px;
+    border-radius: 5%;
   }
   * .Home .footer {
     position: fixed;

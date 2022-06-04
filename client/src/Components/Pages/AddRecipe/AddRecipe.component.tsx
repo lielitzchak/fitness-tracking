@@ -38,8 +38,8 @@ const AddRecipe = (): JSX.Element => {
     <>
       <div className="wrapper">
         <div className="container">
-          <form action="">
             <h1>add new recipe</h1>
+          <form>
             <div className="name">
               <div>
                 <input
@@ -88,47 +88,11 @@ const AddRecipe = (): JSX.Element => {
             </div>
 
             <div className="btns">
-              <button>Purchase</button>
+              <button onClick={(event) => clickOnSave(event)}>save!</button>
             </div>
           </form>
         </div>
       </div>
-      <form>
-        <br />
-
-        <br />
-
-        <label>{min}</label>
-        <br />
-        <label htmlFor="vegan">Is vegan?</label>
-
-        <br />
-        <label htmlFor="Candy">Is Candy?</label>
-        <input
-          type="checkbox"
-          name="Candy"
-          placeholder="time to cook"
-          onChange={(event) => changMinByValue(event)}
-        />
-        <br />
-        <label htmlFor="isMilk">Is Milk?</label>
-        <input
-          type="checkbox"
-          name="isMilk"
-          placeholder="isMilk"
-          onChange={(event) => changMinByValue(event)}
-        />
-        <br />
-        <input
-          type="url"
-          name="Picture"
-          placeholder="url for Picture"
-          onChange={(event) => changMinByValue(event)}
-        />
-        <br />
-        <br />
-        <button onClick={(event) => clickOnSave(event)}>save!</button>
-      </form>
       {messageFromServer}
     </>
   );
