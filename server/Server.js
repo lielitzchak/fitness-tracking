@@ -1,11 +1,3 @@
-// let valueOfMyCode = {
-//   DATE: "02.05.2022",
-//   TypeScript: 37.9,
-//   javascript: 28.8,
-//   HTML: 16.0,
-//   CSS: 9.0,
-//   SCSS: 8.3,
-// };
 let result = require("dotenv").config();
 if (result.error) {
   console.log(result.error);
@@ -18,6 +10,7 @@ const TRAINING = require("./Routes/Training-route.js");
 const USER = require("./Routes/User-route.js");
 const RECIPE = require("./Routes/Recipe-route.js");
 const AUTH = require("./Routes/Auth-route.js");
+const REPORT = require("./Routes/Report-route.js");
 //! const passport = require("passport");
 //! require("./Config/passport")(passport);
 
@@ -35,6 +28,7 @@ app.use("/auth", AUTH);
 app.use("/training", TRAINING);
 app.use("/user", USER);
 app.use("/recipe", RECIPE);
+app.use("/report", REPORT);
 
 app.use("/", () => console.log("try again"));
 

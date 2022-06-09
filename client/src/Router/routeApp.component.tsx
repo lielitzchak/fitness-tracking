@@ -9,6 +9,7 @@ import Food from "../Components/Pages/Food/Food.component";
 import GenericRecipe from "../Components/Pages/GenericRecipe/GenericRecipe.component";
 import Gym from "../Components/Pages/Gym/Gym.component";
 import Home from "../Components/Pages/Home/Home.component";
+import LoginAndRegister from "../Components/Pages/LoginAndRegister/LoginAndRegister.component";
 import Page404 from "../Components/Pages/page404/Page404.component";
 import Recipes from "../Components/Pages/Recipes/Recipes.component";
 import Report from "../Components/Pages/Report/Report.component";
@@ -25,6 +26,7 @@ const RouteApp = (): JSX.Element => {
         <Route path="/add-new-recipe" element={<AddRecipe />} />
         <Route path="report/add-report" element={<AddReport />} />
         <Route path="/recipe/:id" element={<GenericRecipe />} />
+        <Route path="/profile" element={<LoginAndRegister />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Page404 />} />
@@ -35,4 +37,4 @@ const RouteApp = (): JSX.Element => {
 };
 export default RouteApp;
 
-// ! exact in new react
+ 
