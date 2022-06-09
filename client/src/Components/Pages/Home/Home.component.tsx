@@ -22,7 +22,9 @@ const Home = (): JSX.Element => {
             started working with people all around and changing their lives
             forever.
           </p>
-          <button>online coaching</button>
+          <Link to={"/profile"}>
+             <button>go to your profile</button>
+          </Link>
         </article>
       </section>
       <section className="onApp">
