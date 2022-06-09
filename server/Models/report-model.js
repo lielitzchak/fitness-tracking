@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 const report = new mongoose.Schema({
-  Date: Date,
+  Date: {
+    type: Date,
+    default: Date.now(),
+  },
   weight: Number,
   RightHand: Number,
   LeftHand: Number,
@@ -10,4 +13,4 @@ const report = new mongoose.Schema({
   chest: Number,
   buttock: Number,
 });
-exports.report = mongoose.model("report", report);
+module.exports = mongoose.model("report", report);
