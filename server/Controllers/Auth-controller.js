@@ -34,7 +34,6 @@ module.exports = {
               );
             })
             .catch((err) => {
-              console.log(err);
               response.status(500).send(err);
             });
         });
@@ -47,42 +46,20 @@ module.exports = {
       })
       .exec((err, user) => {
         if (err) {
-          response.status(500).send({ message: err });
-          return;
+          return response.status(500).send({ message: err });
         }
         if (!user) {
           return response.status(404).send({ message: "User Not found." });
         }
-        console.log(
-          `request.body.Password :${Password}, user.Password:${user.Password}`
-        );
         bcrypt
           .compare(Password, user.Password)
-          .then((result) => {
-            console.log(result);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-        // let token = jwt.sign({ id: user.id }, config.secret, {
-        //   expiresIn: 86400, // 24 hours
-        // });
-        // let authorities = [];
-        // for (let i = 0; i < user.roles.length; i++) {
-        //   authorities.push("ROLE_" + user.roles[i].name.toUpperCase());
-        // }
-        // request.session.token = token;
-        // response.status(200).send({
-        //   id: user._id,
-        //   username: user.UserName,
-        //   email: user.Email,
-        //   roles: authorities,
-        // });
+          .then((result) => result)
+          .catch((err) => err);
       });
   },
   // login: async (request, response) => {
   //   console.log(request.body);
-  //   if (usersModel.exists({ email: request.body.email }) === false) {
+  // if (usersModel.exists({ email: request.body.email }) === false) {
   //     return response.status(401).json({ message: "Email already exists" });
   //   }
   //   usersModel.findOne({ email: request.body.email }).then((user) => {
