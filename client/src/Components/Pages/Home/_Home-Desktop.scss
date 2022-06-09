@@ -22,10 +22,10 @@
             }
 
             .imgDiv {
+                border-radius: 10px 10px 10px 10px;
 
-                // width: 50%;
-                // height: 50%;
                 img {
+                    border-radius: 10px 10px 10px 10px;
                     width: 100%;
                     padding-top: 12%;
                     height: auto;
@@ -46,6 +46,8 @@
                     padding: 12px 24px;
                     width: 100px;
                     height: 100px;
+                    cursor: pointer;
+
                 }
 
                 :first-child {
@@ -72,6 +74,12 @@
 
             h1 {
                 font-size: 72px;
+            }
+
+            a {
+                cursor: pointer;
+                color: white;
+                text-decoration: none;
             }
 
             button {

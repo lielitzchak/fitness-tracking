@@ -616,7 +616,11 @@
     font-size: 4rem;
     padding-left: 4%;
   }
+  * .Home .Home-section .aboutMe .imgDiv {
+    border-radius: 10px 10px 10px 10px;
+  }
   * .Home .Home-section .aboutMe .imgDiv img {
+    border-radius: 10px 10px 10px 10px;
     width: 100%;
     padding-top: 12%;
     height: auto;
@@ -633,6 +637,7 @@
     padding: 12px 24px;
     width: 100px;
     height: 100px;
+    cursor: pointer;
   }
   * .Home .Home-section .aboutMe .buttons :first-child {
     left: 7%;
@@ -649,6 +654,11 @@
   }
   * .Home .Home-section .text-on-app h1 {
     font-size: 72px;
+  }
+  * .Home .Home-section .text-on-app a {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
   }
   * .Home .Home-section .text-on-app button {
     margin-top: 46%;
@@ -755,6 +765,107 @@
   * .Home .footer img {
     width: 28.5%;
     height: auto;
+  }
+  * .change-icon {
+    width: 14%;
+  }
+  * .AddReport {
+    letter-spacing: -0.2px;
+    font-size: 16px;
+    position: relative;
+  }
+  * .AddReport .note {
+    position: absolute;
+  }
+  * .AddReport .note img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: auto;
+    width: 410px;
+    height: 410px;
+    padding: 2% 0 0 2%;
+  }
+  * .AddReport form {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    padding: 16px;
+    width: 320px;
+    margin: 0 auto;
+  }
+  * .AddReport button,
+  * .AddReport input {
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    border-radius: 320px;
+    padding: 16px;
+    background-color: #EBECF0;
+    text-shadow: 1px 1px 0 #FFF;
+  }
+  * .AddReport label {
+    display: block;
+    margin: 8px 0 0.25px 17px;
+    width: 100%;
+  }
+  * .AddReport input {
+    margin-right: 8px;
+    -webkit-box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+            box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -moz-appearance: none;
+         appearance: none;
+    -webkit-appearance: none;
+  }
+  * .AddReport input:focus {
+    -webkit-box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+            box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+  }
+  * .AddReport button {
+    color: #61677C;
+    font-weight: bold;
+    -webkit-box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+            box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 21%;
+  }
+  * .AddReport button:hover {
+    -webkit-box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+            box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+  }
+  * .AddReport button:active {
+    -webkit-box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+            box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+  }
+  * .AddReport .input-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  * .AddReport .input-group label {
+    margin: 0;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  * .LoginAndRegister {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
