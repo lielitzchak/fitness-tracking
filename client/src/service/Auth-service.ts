@@ -9,6 +9,7 @@ export const GetRegister = async (): Promise<any> => {
     console.log(error);
   }
 };
+// ! this type need to be user
 export const PostRegister = async (newRegister: any): Promise<any> => {
   try {
     return await fetch(`${basic_url}/auth/register`, {
@@ -26,7 +27,13 @@ export const PostRegister = async (newRegister: any): Promise<any> => {
 };
 export const GetLogin = async (userDate: any): Promise<any> => {
   try {
-    return await fetch(`${basic_url}/auth/login`)
+    return await fetch(`${basic_url}/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userDate),
+    })
       .then((res: Response) => res.json())
       .catch((err: Response) => err);
   } catch (error) {
@@ -36,21 +43,6 @@ export const GetLogin = async (userDate: any): Promise<any> => {
 export const GetUserById = async (id: string): Promise<any> => {
   try {
     return await fetch(`${basic_url}/user/${id}`)
-      .then((res: Response) => res.json())
-      .catch((err: Response) => err);
-  } catch (error) {
-    console.log(error);
-  }
-};
-export const CreateUser = async (user: any): Promise<any> => {
-  try {
-    return await fetch(`${basic_url}/user`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
       .then((res: Response) => res.json())
       .catch((err: Response) => err);
   } catch (error) {

@@ -10,6 +10,7 @@ export const GetReportById = async (id: string): Promise<any> => {
     .then((response: Response) => response.json())
     .catch((error: Response) => error);
 };
+// ! this type need to be report
 export const PostReport = async (newReport: any): Promise<any> => {
   return await fetch(`${basic_url}/report`, {
     method: "POST",
@@ -22,6 +23,7 @@ export const PostReport = async (newReport: any): Promise<any> => {
     .then((response: Response) => response.json())
     .catch((error: Response) => error);
 };
+// ! this type need to be report
 export const PutReport = async (id: string, newReport: any): Promise<any> => {
   return await fetch(`${basic_url}/report/${id}`, {
     method: "PUT",

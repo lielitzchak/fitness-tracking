@@ -1,17 +1,41 @@
 import basic_url from "./DataForAll";
 
+// ! create user is the same as register = method: "POST"
+
+// ! login is the same as login = method: "POST"
+
+// ! get user by id is the same as get user by id = method: "GET"
+
+// ! update user is the same as update user = method: "PUT"
+
+// ! delete user is the same as delete user = method: "DELETE"
+
+// ! register is the same as create user = method: "POST"
+
+// !this function is available only for admin
 export const GetAllUsers = async (): Promise<any> => {
-  return await fetch(`${basic_url}/auth/login`)
+  return await fetch(`${basic_url}/user`)
     .then((response: Response) => response.json())
     .catch((error: Response) => error);
 };
+export const GetUserByEmail = async (
+  Email: string,
+  Password: string
+): Promise<any> => {
+  return await fetch(`${basic_url}/user/${Email}/${Password}`)
+    .then((response: Response) => response.json())
+    .catch((error: Response) => error);
+};
+// ! give me the user by id , same as login.
 export const GetUserById = async (id: string): Promise<any> => {
   return await fetch(`${basic_url}/user/${id}`)
     .then((response: Response) => response.json())
     .catch((error: Response) => error);
 };
+
+// ! create user same as register.
 export const CreateUser = async (user: any): Promise<any> => {
-  return await fetch(`${basic_url}/auth/register`, {
+  return await fetch(`${basic_url}/user`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -21,6 +45,7 @@ export const CreateUser = async (user: any): Promise<any> => {
     .then((response: Response) => response.json())
     .catch((error: Response) => error);
 };
+// ! update user same as update user.
 export const UpdateUser = async (user: any): Promise<any> => {
   return await fetch(`${basic_url}/user/${user.id}`, {
     method: "PUT",
@@ -32,7 +57,9 @@ export const UpdateUser = async (user: any): Promise<any> => {
     .then((response: Response) => response.json())
     .catch((error: Response) => error);
 };
-export const DeleteUser = async (id: number): Promise<any> => {
+
+// ! delete user same as delete user.
+export const DeleteUser = async (id: string): Promise<any> => {
   return await fetch(`${basic_url}/user/${id}`, {
     method: "DELETE",
     headers: {
@@ -42,29 +69,3 @@ export const DeleteUser = async (id: number): Promise<any> => {
     .then((response: Response) => response.json())
     .catch((error: Response) => error);
 };
-
-// GetUserById = async (id: string): Promise<any> => {
-//   try {
-//     return await fetch(`${basic_url}/user/${id}`)
-//       .then((res: any) => res.json())
-//       .catch((err: any) => err);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-// export const CreatUser = async (newUser: any) => {
-//   try {
-//     return await fetch(`${basic_url}/user`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         // Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
-//       },
-//       body: JSON.stringify(newUser),
-//     })
-//       .then((res: any) => console.log(res))
-//       .catch((error: any) => console.log(error));
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
