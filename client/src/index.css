@@ -579,6 +579,11 @@
 @media only screen and (min-width: 1024px) {
   * {
   }
+  * .Header {
+    width: 100%;
+    position: fixed;
+    z-index: 4000000;
+  }
   * .footer {
     position: fixed;
     bottom: 0;
@@ -597,6 +602,9 @@
   * .footer img {
     width: 28.5%;
     height: auto;
+  }
+  * .Home {
+    padding-top: 3%;
   }
   * .Home .Home-section {
     padding-left: 4%;
