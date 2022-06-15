@@ -41,10 +41,56 @@
     width: 57%;
     height: auto;
   }
-  * .Home .HomeLink {
+  * .Home .Home-section .aboutMe h2 {
+    font-family: "Permanent Marker";
+    color: grey;
+    font-size: 2.5rem;
+    position: absolute;
+    z-index: -2;
+    padding-left: 22%;
+  }
+  * .Home .Home-section .aboutMe .imgDiv {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  * .Home .Home-section .aboutMe .imgDiv img {
+    padding: 9%;
+    width: 100%;
+    border-radius: 63px;
+  }
+  * .Home .Home-section .aboutMe .buttons .btn1 {
+    background: rgba(8, 17, 88, 0.2);
+    border-radius: 50%;
+    z-index: 4;
+    position: absolute;
+    top: 79%;
+    font-size: 14px;
+    padding: 12px 12px;
+    width: 70px;
+    height: 70px;
+    margin-left: 15%;
+  }
+  * .Home .Home-section .aboutMe .buttons .btn2 {
+    background: rgba(8, 17, 88, 0.2);
+    border-radius: 50%;
+    z-index: 4;
+    position: absolute;
+    top: 79%;
+    font-size: 14px;
+    padding: 12px 12px;
+    width: 70px;
+    height: 70px;
+    margin-left: 70%;
+  }
+  * .Home .text-on-app h4 {
+    font-family: "Kite One";
+    font-size: 1.5rem;
+  }
+  * .categories {
     text-decoration: none;
   }
-  * .Home .HomeLink .categories {
+  * .categories .HomeLink {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -57,14 +103,14 @@
     background-color: #e5e5e5;
     border-radius: 7px 0px 0px 7px;
   }
-  * .Home .HomeLink .categories h1 {
+  * .categories .HomeLink h1 {
     font-family: 'Kite One', sans-serif;
     margin: 51px 72px 0 0;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  * .Home .HomeLink .categories img {
+  * .categories .HomeLink img {
     border-radius: 7px 0px 0px 7px;
     width: 50%;
     height: auto;
