@@ -2,35 +2,32 @@ let dotenv = require("dotenv").config();
 if (dotenv.error) {
   console.log(dotenv.error);
 }
-const express = require("express");
-const app = express();
+const APP = require("express")();
+//const app = app();
 const cors = require("cors");
 require("./DB/db");
-const TRAINING = require("./Routes/Training-route.js");
-const USER = require("./Routes/User-route.js");
-const RECIPE = require("./Routes/Recipe-route.js");
-const AUTH = require("./Routes/Auth-route.js");
-const REPORT = require("./Routes/Report-route.js");
+const TRAINING_ROUTE = require("./Routes/Training-route.js");
+const USER_ROUTE = require("./Routes/User-route.js");
+const RECIPE_ROUTE = require("./Routes/Recipe-route.js");
+const AUTH_ROUTE = require("./Routes/Auth-route.js");
+const REPORT_ROUTE = require("./Routes/Report-route.js");
 //! const passport = require("passport");
 //! require("./Config/passport")(passport);
+APP.use(APP.json());
+APP.use(cors());
+APP.use(APP.urlencoded({ extended: false }));
+const PORT = process.env.PORT || 1010;
 
-app.use(express.json());
-app.use(cors());
-app.use(express.urlencoded({ extended: false }));
-
-const port = process.env.PORT || 1010;
-
-app.listen(port, () => {
-  console.log(`listening on port ${port}`);
+APP.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
 });
 
-app.use("/auth", AUTH);
-app.use("/training", TRAINING);
-app.use("/user", USER);
-app.use("/recipe", RECIPE);
-app.use("/report", REPORT);
-
-app.use("/", () => console.log("try again"));
+APP.use("/auth", AUTH_ROUTE);
+APP.use("/training", TRAINING_ROUTE);
+APP.use("/user", USER_ROUTE);
+APP.use("/recipe", RECIPE_ROUTE);
+APP.use("/report", REPORT_ROUTE);
+APP.use("/", () => console.log("try again"));
 
 // add heroku.
 // if (process.env.NODE_ENV === "production") {

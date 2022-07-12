@@ -1,79 +1,88 @@
-const trainingModel = require("../Models/Training-model");
-
+const TRAINING_MODEL = require("../Models/Training-model");
 module.exports = {
-  getAllTraining: (request, response) => {
-    trainingModel
-      .find()
-      .then((data) => {
-        data.length == 0
-          ? response.status(404).json({ message: "No training found" })
-          : response.status(200).json(data);
+  GetAllTraining: (requestFromUser, responseFromServer) => {
+    TRAINING_MODEL.find()
+      .then((dataFromServer) => {
+        if (CheckIfUserExists(dataFromServer) && dataFromServer.length == 0)
+          return responseFromServer
+            .status(404)
+            .json({ Message: "No training found" });
+        return responseFromServer.status(200).json(dataFromServer);
       })
-      .catch((err) => {
-        response.status(500).json({
-          message: "Error",
-          error: err,
+      .catch((error) => {
+        responseFromServer.status(500).json({
+          Message: "Error",
+          error: error,
         });
       });
   },
-  getTrainingById: (request, response) => {
-    trainingModel
-      .findById(request.params.id)
-      .then((data) => {
-        if (data == null || data == undefined || data == "") {
-          return response.status(404).json({ message: "No training found" });
-        }
-        return response.status(200).json(data);
+  GetTrainingById: (requestFromUser, responseFromServer) => {
+    TRAINING_MODEL.findById(requestFromUser.params.id)
+      .then((dataFromUser) => {
+        if (CheckIfUserExists(dataFromUser))
+          return responseFromServer
+            .status(404)
+            .json({ Message: "No training found" });
+        return responseFromServer.status(200).json(dataFromUser);
       })
-      .catch((err) => {
-        response.status(500).json({
-          message: "Error",
-          error: err,
+      .catch((error) => {
+        responseFromServer.status(500).json({
+          Message: "Error",
+          error: error,
         });
       });
   },
-  createTraining: (request, response) => {
-    trainingModel
-      .create(request.body)
-      .then((data) => {
-        response.status(201).json(data);
+  CreateTraining: (requestFromUser, responseFromServer) => {
+    TRAINING_MODEL.create(requestFromUser.body)
+      .then((dataFromUser) => {
+        responseFromServer.status(201).json(dataFromUser);
       })
-      .catch((err) => {
-        response.status(500).json({
-          message: "Error",
-          error: err,
+      .catch((error) => {
+        responseFromServer.status(500).json({
+          Message: "Error",
+          error: error,
         });
       });
   },
-  updateTraining: (request, response) => {
-    trainingModel
-      .findByIdAndUpdate(request.params.id, request.body, { new: true })
-      .then((data) => {
-        data == null || data == undefined
-          ? response.status(404).json({ message: "No training found" })
-          : response.status(201).json(data);
+  UpdateTraining: (requestFromUser, responseFromServer) => {
+    TRAINING_MODEL.findByIdAndUpdate(
+      requestFromUser.params.id,
+      requestFromUser.body,
+      { new: true }
+    )
+      .then((dataFromUser) => {
+        dataFromUser == null || dataFromUser == undefined
+          ? responseFromServer
+              .status(404)
+              .json({ Message: "No training found" })
+          : responseFromServer.status(201).json(dataFromUser);
       })
-      .catch((err) => {
-        response.status(500).json({
-          message: "Error",
-          error: err,
+      .catch((error) => {
+        responseFromServer.status(500).json({
+          Message: "Error",
+          error: error,
         });
       });
   },
-  deleteTraining: (request, response) => {
-    trainingModel
-      .findByIdAndDelete(request.params.id)
-      .then((data) => {
-        data == null || data == undefined
-          ? response.status(404).json({ message: "No training found" })
-          : response.status(200).json(data);
-        response.status(200).json(data);
+  DeleteTraining: (requestFromUser, responseFromServer) => {
+    TRAINING_MODEL.findByIdAndDelete(requestFromUser.params.id)
+      .then((dataFromServer) => {
+        dataFromServer == null || dataFromServer == undefined
+          ? responseFromServer
+              .status(404)
+              .json({ Message: "No training found" })
+          : responseFromServer.status(200).json(dataFromServer);
+        responseFromServer.status(200).json(dataFromServer);
       })
-      .catch((err) => {
-        response.status(500).json({
-          message: "Error",
-          error: err,
+      .catch((error) => {
+        responseFromServer.status(500).json({
+          Message: "Error",
+          error: error,
         });
       });
   },
 };
+
+function CheckIfUserExists(dataUser) {
+  return dataUser == null || dataUser == undefined || dataUser == "";
+}

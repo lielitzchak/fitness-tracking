@@ -1,9 +1,9 @@
-const recipeRouter = require("express").Router();
-const recipeController = require("../Controllers/Recipe-controller");
+const RECIPE_ROUTE = require("express").Router();
+const RECIPE_CONTROLLER = require("../Controllers/Recipe-controller");
 
-recipeRouter.get("/", recipeController.getAllRecipes);
-recipeRouter.get("/:id",recipeController.getRecipeById);
-recipeRouter.post("/", recipeController.createRecipe);
-recipeRouter.put("/:id", recipeController.updateRecipe);
-recipeRouter.delete("/:id", recipeController.deleteRecipe);
-module.exports = recipeRouter;
+RECIPE_ROUTE.get("/", RECIPE_CONTROLLER.GetAllRecipes);
+RECIPE_ROUTE.get("/:id",RECIPE_CONTROLLER.GetRecipeById);
+RECIPE_ROUTE.post("/", RECIPE_CONTROLLER.CreateRecipe);
+RECIPE_ROUTE.put("/:id", RECIPE_CONTROLLER.UpdateRecipe);
+RECIPE_ROUTE.delete("/:id", RECIPE_CONTROLLER.DeleteRecipe);
+module.exports = RECIPE_ROUTE;

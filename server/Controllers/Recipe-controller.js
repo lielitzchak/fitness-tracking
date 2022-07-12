@@ -1,72 +1,89 @@
 const recipeModel = require("../Models/Recipe-model");
 module.exports = {
-  getAllRecipes: (request, response) => {
+  GetAllRecipes: (requestFromUser, responseFromServer) => {
     recipeModel
       .find()
-      .then((data) => {
-        data.length == 0
-          ? response.status(404).json({ message: "No Recipes found" })
-          : response.status(200).json(data);
+      .then((dataFromServer) => {
+        if (CheckIfUserExists(dataFromServer) && dataFromServer.length == 0)
+          return responseFromServer
+            .status(404)
+            .json({ Message: "No Recipes found" });
+        return responseFromServer.status(200).json(dataFromServer);
       })
       .catch((err) => {
-        response.status(500).json({
-          message: "Error",
+        responseFromServer.status(500).json({
+          Message: "Error",
           error: err,
         });
       });
   },
-  getRecipeById: (request, response) => {
+  GetRecipeById: (requestFromUser, responseFromServer) => {
     recipeModel
-      .findById(request.params.id)
-      .then((data) => {
-        if (data == null || data == undefined || data == "") {
-          return response.status(404).json({ message: "No Recipe found" });
-        }
-        return response.status(200).json(data);
+      .findById(requestFromUser.params.id)
+      .then((dataFromServer) => {
+        if (CheckIfUserExists(dataFromServer))
+          return responseFromServer
+            .status(404)
+            .json({ Message: "No Recipe found" });
+        return responseFromServer.status(200).json(dataFromServer);
       })
-      .catch((err) => {
-        response.status(500).json({
-          message: "Error",
-          error: err,
+      .catch((error) => {
+        responseFromServer.status(500).json({
+          Message: "Error",
+          error: error,
         });
       });
   },
-  createRecipe: (request, response) => {
+  CreateRecipe: (requestFromUser, responseFromServer) => {
     recipeModel
-      .create(request.body)
-      .then((data) => response.status(201).json(data))
-      .catch((err) => response.status(500).json({ message: err }));
+      .create(requestFromUser.body)
+      .then((dataFromServer) =>
+        responseFromServer.status(201).json(dataFromServer)
+      )
+      .catch((error) =>
+        responseFromServer.status(500).json({ Message: error })
+      );
   },
-  updateRecipe: (request, response) => {
+  UpdateRecipe: (requestFromUser, responseFromServer) => {
     recipeModel
-      .findByIdAndUpdate(request.params.id, request.body, {
+      .findByIdAndUpdate(requestFromUser.params.id, requestFromUser.body, {
         new: true,
       })
-      .then((data) => {
-        data == null || data == undefined
-          ? response.status(404).json({ message: "No Recipe found" })
-          : response.status(201).json(data);
+      .then((dataFromUser) => {
+        if (CheckIfNullOrUndefined(dataFromUser))
+          return responseFromServer
+            .status(404)
+            .json({ Message: "No Recipe found" });
+        return responseFromServer.status(201).json(dataFromUser);
       })
-      .catch((err) => {
-        response.status(500).json({
-          message: "Error",
-          error: err,
+      .catch((error) => {
+        responseFromServer.status(500).json({
+          Message: "Error",
+          error: error,
         });
       });
   },
-  deleteRecipe: (request, response) => {
+  DeleteRecipe: (requestFromUser, responseFromServer) => {
     recipeModel
-      .findByIdAndDelete(request.params.id)
-      .then((data) => {
-        data == null || data == undefined
-          ? response.status(404).json({ message: "No Recipe found" })
-          : response.status(200).json(data);
+      .findByIdAndDelete(requestFromUser.params.id)
+      .then((dataFromServer) => {
+        if (CheckIfNullOrUndefined(dataFromServer))
+          return responseFromServer
+            .status(404)
+            .json({ Message: "No Recipe found" });
+        return responseFromServer.status(200).json(dataFromServer);
       })
-      .catch((err) => {
-        response.status(500).json({
-          message: "Error",
-          error: err,
+      .catch((error) => {
+        responseFromServer.status(500).json({
+          Message: "Error",
+          error: error,
         });
       });
   },
 };
+function CheckIfUserExists(dataUser) {
+  return dataUser == null || dataUser == undefined || dataUser == "";
+}
+function CheckIfNullOrUndefined(dataToCheck) {
+  return dataFromServer == null || dataFromServer == undefined;
+}

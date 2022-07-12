@@ -4,13 +4,13 @@ const report = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
-  weight: Number,
+  Weight: Number,
   RightHand: Number,
   LeftHand: Number,
   RightLeg: Number,
   LeftLeg: Number,
-  belly: Number,
-  chest: Number,
-  buttock: Number,
+  Belly: Number,
+  Chest: Number,
+  Buttock: Number,
 });
 module.exports = mongoose.model("report", report);

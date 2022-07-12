@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const NutritionalValuesSchema = new mongoose.Schema({
-  protein: Number,
-  carbs: Number,
-  fat: Number,
+  Protein: Number,
+  Carbs: Number,
+  Fat: Number,
 });
 const Recipe = new mongoose.Schema(
   {
