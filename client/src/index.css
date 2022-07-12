@@ -236,7 +236,6 @@
     }
   }
   * .wrapper {
-    margin-top: 5%;
     width: 60%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -328,6 +327,7 @@
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
+    padding-bottom: 15%;
   }
   * .btns button {
     margin: 3px 0;

@@ -1,6 +1,5 @@
-import { response } from "express";
 import { useEffect, useState } from "react";
-import getAllGym from "../../../service/Gym-service";
+import { getAllGym } from "../../../service/Gym-service";
 const Gym = (): JSX.Element => {
   const [gym, setGym]: any = useState([]);
   useEffect((): void => {

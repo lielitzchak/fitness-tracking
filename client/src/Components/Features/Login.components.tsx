@@ -1,4 +1,3 @@
-import { FormEvent, useContext } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,7 +11,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-  import { GetLogin } from "../../service/Auth-service";
+import { GetUserByEmail } from "../../service/User-service";
 
 function Copyright(props: any) {
   return (
@@ -35,21 +34,16 @@ function Copyright(props: any) {
 const theme = createTheme();
 
 export default function Login() {
-  // const userInformation = useContext(AppContext);
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    GetLogin  ({
-      Email: data.get("Email"),
-      Password: data.get("Password"),
-    })
-      .then((res: any) => {
-        console.log(res);
-        console.log("success");
-      })
-      .catch((err: any) => {
-        console.log(err);
-      });
+
+    let Email: string = String(new FormData(event.currentTarget).get("Email"));
+    let Password: string = String(new FormData(event.currentTarget).get("Password")
+    );
+
+     GetUserByEmail(Email, Password)
+      .then((res: any) => console.log(res))
+      .catch((err: any) => console.log(err));
   };
 
   return (
@@ -81,7 +75,7 @@ export default function Login() {
               required
               fullWidth
               id="Email"
-              label="Email Address"
+              label="Email"
               name="Email"
               autoComplete="Email"
               autoFocus

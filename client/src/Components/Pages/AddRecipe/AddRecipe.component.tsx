@@ -2,46 +2,38 @@ import { useState } from "react";
 import { PostRecipe } from "../../../service/Recipe-service";
 
 const AddRecipe = (): JSX.Element => {
-  const [recipe, setRecipe] = useState({});
-  const [min, setMin] = useState("");
+  const [recipe, setRecipe] = useState({ Candy: false, vegan: false });
   const [messageFromServer, setMessageFromServer] = useState("");
-
-  const changMinByValue = (event: any) => {
-    event.preventDefault();
-    event.target.value > 1 ? setMin("minutes") : setMin("minute");
-    if (event.target.value === "") {
-      setMin("");
-    }
-    console.log({ ...recipe, [event.target.name]: event.target.value });
-    setRecipe({ ...recipe, [event.target.name]: event.target.value });
-  };
+  let [isChecked, setIsChecked]: any = useState(false);
 
   const saveValue = (event: any) => {
     event.preventDefault();
-    event.target.value === "on"
-      ? setRecipe({ ...recipe, [event.target.name]: true })
-      : setRecipe({ ...recipe, [event.target.name]: false });
     setRecipe({ ...recipe, [event.target.name]: event.target.value });
-    console.log({ ...recipe, [event.target.name]: event.target.value });
+    console.log(recipe);
   };
 
+  const handleOnChange = (event: any) => {
+    // setIsChecked(!event.target.checked);
+    console.log(event);
+    // setRecipe({ ...recipe, [event.target.name]: isChecked });
+    console.log(
+      `isChecked: ${isChecked}`
+      );
+      // event.target.name: ${event.target.name}, recipe: ${recipe}`
+  };
   const clickOnSave = (event: any) => {
     event.preventDefault();
-    // setRecipe(recipe);
-    PostRecipe(recipe)
-      .then((response: any) => setMessageFromServer(response.message))
-      .catch((err: any) => setMessageFromServer(err));
-    console.log(recipe);
   };
 
   return (
     <>
       <div className="wrapper">
         <div className="container">
-            <h1>add new recipe</h1>
+          <h1>add new recipe</h1>
           <form>
             <div className="name">
               <div>
+                <label htmlFor="">recipe name</label>
                 <input
                   type="text"
                   name="Name"
@@ -51,6 +43,7 @@ const AddRecipe = (): JSX.Element => {
                 />
               </div>
               <div>
+                <label htmlFor="">Summary</label>
                 <input
                   type="text"
                   name="Summary"
@@ -61,32 +54,58 @@ const AddRecipe = (): JSX.Element => {
               </div>
             </div>
             <div className="street">
+              <label htmlFor="">Time To Cook</label>
               <input
                 type="number"
                 name="TimeToCook"
                 placeholder="time to cook"
-                onChange={(event) => changMinByValue(event)}
               />
             </div>
             <div className="address-info">
               <div>
+                <label htmlFor="">Is vegan?</label>
                 <input
                   type="checkbox"
                   name="vegan"
-                  placeholder="vegan"
-                  onChange={(event) => changMinByValue(event)}
+                  checked={recipe.vegan}
+                  onChange={(event) => handleOnChange(event)}
                 />
               </div>
               <div>
-                <label htmlFor="state">State</label>
-                <input type="text" name="state" />
+                <label htmlFor="">Is Candy?</label>
+                <input
+                  type="checkbox"
+                  name="Candy"
+                  checked={recipe.Candy}
+                  onChange={(event) => handleOnChange(event)}
+                />
+              </div>
+              {/* <div>
+                <label htmlFor="">Is Milk?</label>
+                <input
+                  type="checkbox"
+                  name="IsMilk"
+                  checked={isChecked}
+                  onChange={(event) => handleOnChange(event)}
+                />
+              </div> */}
+              <div>
+                <label htmlFor="">Picture</label>
+                <input
+                  type="url"
+                  name="Picture"
+                  onChange={(event) => saveValue(event)}
+                />
               </div>
               <div>
-                <label htmlFor="zip">Zip</label>
-                <input type="text" name="zip" />
+                <label htmlFor="zip"> HowToMake</label>
+                <input
+                  type="text"
+                  name="HowToMake"
+                  onChange={(event) => saveValue(event)}
+                />
               </div>
             </div>
-
             <div className="btns">
               <button onClick={(event) => clickOnSave(event)}>save!</button>
             </div>

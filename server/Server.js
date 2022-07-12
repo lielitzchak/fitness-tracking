@@ -1,6 +1,6 @@
-let result = require("dotenv").config();
-if (result.error) {
-  console.log(result.error);
+let dotenv = require("dotenv").config();
+if (dotenv.error) {
+  console.log(dotenv.error);
 }
 const express = require("express");
 const app = express();

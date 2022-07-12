@@ -6,7 +6,7 @@ $title: #493b76;
 
 
 .wrapper {
-    margin-top: 5%;
+    // margin-top: 5%;
     width: 60%;
     display: flex;
     justify-content: center;
@@ -87,6 +87,7 @@ $title: #493b76;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    padding-bottom: 15%;
 
     button {
         margin: 3px 0;
@@ -121,49 +122,49 @@ button:focus {
 }
 
 // @media (max-width: 736px) {
-    .wrapper {
-        width: 100%;
-    }
+.wrapper {
+    width: 100%;
+}
 
-    .container {
-        width: 100%;
-    }
+.container {
+    width: 100%;
+}
 
-    .btns {
+.btns {
+    align-items: center;
+
+    button {
+        width: 50%;
+    }
+}
+
+form h1 {
+    text-align: center;
+}
+
+.name,
+.address-info,
+.cc-info {
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+
+    div {
         align-items: center;
-
-        button {
-            width: 50%;
-        }
-    }
-
-    form h1 {
-        text-align: center;
-    }
-
-    .name,
-    .address-info,
-    .cc-info {
         flex-direction: column;
         width: 100%;
-        justify-content: space-between;
-
-        div {
-            align-items: center;
-            flex-direction: column;
-            width: 100%;
-            display: flex;
-        }
+        display: flex;
     }
+}
 
-    .street,
-    .cc-num {
-        text-align: center;
-    }
+.street,
+.cc-num {
+    text-align: center;
+}
 
-    input {
-        margin: 5px 0;
-        min-height: 30px;
+input {
+    margin: 5px 0;
+    min-height: 30px;
     // }
 }
 
