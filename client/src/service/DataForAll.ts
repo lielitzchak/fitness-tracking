@@ -3,5 +3,5 @@
 //     ? "https://buy-sub.herokuapp.com/Api"
 //     : "http://localhost:11000/Api";
 
-const basic_url: String = "http://localhost:1010";
-export default basic_url;
+const BASIC_URL: String = "http://localhost:1010";
+export default BASIC_URL;
