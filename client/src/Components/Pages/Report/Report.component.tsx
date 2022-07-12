@@ -9,7 +9,7 @@ import Paper from "@mui/material/Paper";
 import { DeleteReport, GetAllReports } from "../../../service/Report-service";
 import { Link } from "react-router-dom";
 
-const Report = (): JSX.Element => {
+const ReportComponent = (): JSX.Element => {
   const [rows, setRows]: any = useState([]);
   useEffect(() => {
     GetAllReports()
@@ -91,4 +91,4 @@ const Report = (): JSX.Element => {
     </TableContainer>
   );
 };
-export default Report;
+export default ReportComponent;

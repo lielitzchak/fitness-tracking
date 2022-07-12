@@ -30,13 +30,29 @@ module.exports = {
         });
       });
   },
+  getUserByEmail: (request, response) => {
+    console.log(request.params);
+     UserModel.findOne({ Email: request.params.Email })
+      .then((data) => {
+        if (data == null || data == undefined || data == "") {
+          return response.status(404).json({ message: "No user found" });
+        }
+        return response.status(200).json(data);
+      })
+      .catch((err) => {
+        response.status(500).json({
+          message: "Error",
+          error: err,
+        });
+      });
+  },
+
   createUser: (request, response) => {
-    console.log(request.file);
-    console.log(request.body.Password);
+    console.log(request.body);
     bcrypt.hash(request.body.Password, 10, async (err, hashPassword) => {
       if (err) return response.status(500).json({ message: err.message });
       request.body.Password = hashPassword;
-      await UserModel.create(request.body.user)
+      await UserModel.create(request.body)
         .then((result) =>
           response
             .status(201)

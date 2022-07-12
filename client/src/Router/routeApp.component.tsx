@@ -1,6 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "../Components/Features/Login.components";
-import Register from "../Components/Features/Register.component";
 import Footer from "../Components/Layout/Footer/Footer.component";
 import Header from "../Components/Layout/Header/Header.component";
 import AddRecipe from "../Components/Pages/AddRecipe/AddRecipe.component";
@@ -12,23 +10,33 @@ import Home from "../Components/Pages/Home/Home.component";
 import LoginAndRegister from "../Components/Pages/LoginAndRegister/LoginAndRegister.component";
 import Page404 from "../Components/Pages/page404/Page404.component";
 import Recipes from "../Components/Pages/Recipes/Recipes.component";
-import Report from "../Components/Pages/Report/Report.component";
+import ReportComponent from "../Components/Pages/Report/Report.component";
+// import RequiredAuth from "../Components/Pages/RequiredAuth/RequiredAuth";
+import Profile from "../Components/Pages/Profile/Profile.component";
+
 const RouteApp = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
+        {/** //! Public Routes **/}
         <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<LoginAndRegister />} />
         <Route path="/gym" element={<Gym />} />
         <Route path="/Food" element={<Food />} />
-        <Route path="/report" element={<Report />} />
-        <Route path="/recipes" element={<Recipes />} />
-        <Route path="/add-new-recipe" element={<AddRecipe />} />
-        <Route path="report/add-report" element={<AddReport />} />
+        <Route path="/report" element={<ReportComponent />} />
         <Route path="/recipe/:id" element={<GenericRecipe />} />
-        <Route path="/profile" element={<LoginAndRegister />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/recipes" element={<Recipes />} />
+        {/* <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/Unauthorized" element={<Unauthorized />} /> */}
+
+        {/* //! Private Routes */}
+        {/* <Route element={<RequiredAuth />}> */}
+        <Route path="/profile/:name" element={<Profile />} />
+        <Route path="report/add-report" element={<AddReport />} />
+        <Route path="/add-new-recipe" element={<AddRecipe />} />
+        {/* </Route> */}
+
         <Route path="*" element={<Page404 />} />
       </Routes>
       <Footer />
@@ -36,5 +44,3 @@ const RouteApp = (): JSX.Element => {
   );
 };
 export default RouteApp;
-
- 

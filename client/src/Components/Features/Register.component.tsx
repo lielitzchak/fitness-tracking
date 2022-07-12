@@ -9,8 +9,10 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { CreateUser } from "../../service/User-service";
 
 function Copyright(props: any) {
+
   return (
     <Typography
       variant="body2"
@@ -34,13 +36,12 @@ export default function Register() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.table({
+    CreateUser({
       Email: data.get("Email"),
       Password: data.get("Password"),
       UserName: data.get("UserName"),
       Image: data.get("Image"),
-    });
-    
+    }).then((res: any) => console.log(res));
   };
 
   return (

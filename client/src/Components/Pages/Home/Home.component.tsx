@@ -13,7 +13,6 @@ const Home = (): JSX.Element => {
             <button className="btn2">back</button>
           </div>
         </article>
-
         <article className="text-on-app">
           <h4>Hi i'm Liel Itzchak</h4>
           <h1>Your go to online fitness trainer and nutritionist.</h1>
@@ -23,7 +22,7 @@ const Home = (): JSX.Element => {
             forever.
           </p>
           <Link to={"/profile"}>
-             <button>go to your profile</button>
+            <button>go to your profile</button>
           </Link>
         </article>
       </section>

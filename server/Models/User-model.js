@@ -10,13 +10,13 @@ const User = new mongoose.Schema(
     Password: {
       type: String,
       trim: true,
-      required: true,
+      // required: true,
     },
     Admin: { type: Boolean, default: false },
     Email: {
       type: String,
       lowercase: true,
-      unique: true,
+      // unique: true,
     },
     Image: { type: String, default: "https://did.li/yWjaa" },
   },
