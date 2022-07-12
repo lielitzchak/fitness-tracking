@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const UserModel = require("../Models/User-model");
 module.exports = {
-  register: async (request, response) => {
+  Register: async (request, response) => {
     const { Email, Username, Admin, Password } = request.body;
 
     (await usersModel.exists({ Email: Email }))
@@ -38,7 +38,7 @@ module.exports = {
             });
         });
   },
-  login: (request, response) => {
+  Login: (request, response) => {
     const { Email, Password } = request.body;
     usersModel
       .findOne({
@@ -57,38 +57,4 @@ module.exports = {
           .catch((err) => err);
       });
   },
-  // login: async (request, response) => {
-  //   console.log(request.body);
-  // if (usersModel.exists({ email: request.body.email }) === false) {
-  //     return response.status(401).json({ message: "Email already exists" });
-  //   }
-  //   usersModel.findOne({ email: request.body.email }).then((user) => {
-  //     bcrypt
-  //       .compare(request.body.password, user.password)
-  //       .then((isMatch) => {
-  //         if (!isMatch)
-  //           return response
-  //             .status(403)
-  //             .json({ message: "Invalid credentials" });
-  //         user.isLogin = true;
-  //         jwt.sign(
-  //           { user },
-  //           process.env.JWT_SECRET,
-  //           { expiresIn: "30m" },
-  //           (err, token) => {
-  //             if (err)
-  //               return response
-  //                 .status(500)
-  //                 .json({ message: "Error logging in user" });
-  //             return response
-  //               .status(200)
-  //               .json({ message: "User logged in successfully", token });
-  //           }
-  //         );
-  //       })
-  //       .catch((error) =>
-  //         response.status(500).json({ message: "Error logging in user", error })
-  //       );
-  //   });
-  // },
 };

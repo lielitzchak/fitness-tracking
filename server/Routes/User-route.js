@@ -1,9 +1,9 @@
-const UserRouter = require("express").Router();
-const UserController = require("../Controllers/User-controller");
-UserRouter.get("/", UserController.getAllUsers); //! this request is available only for admin.
-UserRouter.get("/:id", UserController.getUserById); //! when the user try to get his own profile , and logged in.
-UserRouter.get("/:Email/:Password", UserController.getUserByEmail); //! when the user try to get his own profile , and logged in.
-UserRouter.post("/", UserController.createUser); //!same as the register
-UserRouter.put("/:id", UserController.updateUser); //! to your profile update.
-UserRouter.delete("/:id", UserController.deleteUser); //! to delete your profile.
-module.exports = UserRouter;
+const USER_ROUTE = require("express").Router();
+const USER_CONTROLLER = require("../Controllers/User-controller");
+USER_ROUTE.get("/", USER_CONTROLLER.getAllUsers);
+USER_ROUTE.get("/:id", USER_CONTROLLER.getUserById);
+USER_ROUTE.get("/:Email/:Password", USER_CONTROLLER.getUserByEmail);
+USER_ROUTE.post("/", USER_CONTROLLER.createUser);
+USER_ROUTE.put("/:id", USER_CONTROLLER.updateUser);
+USER_ROUTE.delete("/:id", USER_CONTROLLER.deleteUser);
+module.exports = USER_ROUTE;

@@ -1,9 +1,9 @@
-const ReportRoute = require("express").Router();
-const ReportController = require("../Controllers/Report-controller");
+const REPORT_ROUTE = require("express").Router();
+const REPORT_CONTROLLER = require("../Controllers/Report-controller");
 
-ReportRoute.get("/", ReportController.getAllReports);
-ReportRoute.get("/:id", ReportController.getReportById);
-ReportRoute.post("/", ReportController.createReport);
-ReportRoute.put("/:id", ReportController.updateReport);
-ReportRoute.delete("/:id", ReportController.deleteReport);
-module.exports = ReportRoute;
+REPORT_ROUTE.get("/", REPORT_CONTROLLER.GetAllReports);
+REPORT_ROUTE.get("/:id", REPORT_CONTROLLER.GetReportById);
+REPORT_ROUTE.post("/", REPORT_CONTROLLER.CreateReport);
+REPORT_ROUTE.put("/:id", REPORT_CONTROLLER.UpdateReport);
+REPORT_ROUTE.delete("/:id", REPORT_CONTROLLER.DeleteReport);
+module.exports = REPORT_ROUTE;
