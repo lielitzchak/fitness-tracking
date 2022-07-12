@@ -1,27 +1,18 @@
-import basic_url from "./DataForAll";
+import BASIC_URL from "./DataForAll";
 
-export const getAllGym = async (): Promise<any> => {
-  try {
-    return await fetch(`${basic_url}/gym`)
-      .then((response: Response) => response.json())
+export const GymService = {
+  getAllGym: async (): Promise<any> => {
+    return await fetch(`${BASIC_URL}/gym`)
+      .then((responseFromUser: Response) => responseFromUser.json())
       .catch((error: Response) => error);
-  } catch (error) {
-    console.log(error);
-  }
-};
-export const getGymById = async (id: string): Promise<any> => {
-  try {
-    return await fetch(`${basic_url}/gym/${id}`)
-      .then((response: Response) => response.json())
+  },
+  getGymById: async (gymId: string): Promise<any> => {
+    return await fetch(`${BASIC_URL}/gym/${gymId}`)
+      .then((responseFromUser: Response) => responseFromUser.json())
       .catch((error: Response) => error);
-  } catch (error) {
-    console.log(error);
-  }
-};
-// ! this type need to be gym
-export const PostGym = async (newGym: any): Promise<any> => {
-  try {
-    return await fetch(`${basic_url}/gym`, {
+  },
+  PostGym: async (newGym: any): Promise<any> => {
+    return await fetch(`${BASIC_URL}/gym`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,16 +20,11 @@ export const PostGym = async (newGym: any): Promise<any> => {
       },
       body: JSON.stringify(newGym),
     })
-      .then((response: Response) => response.json())
+      .then((FromUser: Response) => FromUser.json())
       .catch((error: Response) => error.json());
-  } catch (error) {
-    console.log(error);
-  }
-};
-// ! this type need to be gym
-export const PutGym = async (id: string, newGym: any): Promise<any> => {
-  try {
-    return await fetch(`${basic_url}/gym/${id}`, {
+  },
+  PutGym: async (gymId: string, newGym: any): Promise<any> => {
+    return await fetch(`${BASIC_URL}/gym/${gymId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -46,24 +32,18 @@ export const PutGym = async (id: string, newGym: any): Promise<any> => {
       },
       body: JSON.stringify(newGym),
     })
-      .then((response: Response) => response.json())
+      .then((responseFromUser: Response) => responseFromUser.json())
       .catch((error: Response) => error.json());
-  } catch (error) {
-    console.log(error);
-  }
-};
-export const DeleteGym = async (id: string): Promise<any> => {
-  try {
-    return await fetch(`${basic_url}/gym/${id}`, {
+  },
+  DeleteGym: async (gymId: string): Promise<any> => {
+    return await fetch(`${BASIC_URL}/gym/${gymId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
       },
     })
-      .then((response: Response) => response.json())
+      .then((responseFromUser: Response) => responseFromUser.json())
       .catch((error: Response) => error.json());
-  } catch (error) {
-    console.log(error);
-  }
+  },
 };

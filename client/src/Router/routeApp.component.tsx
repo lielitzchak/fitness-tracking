@@ -11,7 +11,6 @@ import LoginAndRegister from "../Components/Pages/LoginAndRegister/LoginAndRegis
 import Page404 from "../Components/Pages/page404/Page404.component";
 import Recipes from "../Components/Pages/Recipes/Recipes.component";
 import ReportComponent from "../Components/Pages/Report/Report.component";
-// import RequiredAuth from "../Components/Pages/RequiredAuth/RequiredAuth";
 import Profile from "../Components/Pages/Profile/Profile.component";
 
 const RouteApp = (): JSX.Element => {
@@ -27,15 +26,10 @@ const RouteApp = (): JSX.Element => {
         <Route path="/report" element={<ReportComponent />} />
         <Route path="/recipe/:id" element={<GenericRecipe />} />
         <Route path="/recipes" element={<Recipes />} />
-        {/* <Route path="/ContactUs" element={<ContactUs />} />
-        <Route path="/Unauthorized" element={<Unauthorized />} /> */}
-
         {/* //! Private Routes */}
-        {/* <Route element={<RequiredAuth />}> */}
         <Route path="/profile/:name" element={<Profile />} />
         <Route path="report/add-report" element={<AddReport />} />
         <Route path="/add-new-recipe" element={<AddRecipe />} />
-        {/* </Route> */}
 
         <Route path="*" element={<Page404 />} />
       </Routes>
