@@ -87,10 +87,40 @@
     font-family: "Kite One";
     font-size: 1.5rem;
   }
-  * .categories {
+  * .Home .onApp {
+    background: #081158;
+    font-size: 14px;
+    color: white;
+    padding: 30%;
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+    margin: 13% -2% 39px -2%;
+  }
+  * .Home .onApp .putOnApp {
+    display: -ms-grid;
+    display: grid;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -ms-flex-line-pack: space-evenly;
+        align-content: space-evenly;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    justify-items: start;
+    gap: 30%;
+    transform: rotate(0deg);
+  }
+  * .Home .onApp .putOnApp div h3 {
+    font-size: 20px;
+    height: 1.1em;
+  }
+  * .Home .onApp .putOnApp div p {
+    font-size: 14px;
+    height: 1.6em;
+  }
+  * .Home .categories {
     text-decoration: none;
   }
-  * .categories .HomeLink {
+  * .Home .categories .HomeLink {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -103,14 +133,14 @@
     background-color: #e5e5e5;
     border-radius: 7px 0px 0px 7px;
   }
-  * .categories .HomeLink h1 {
+  * .Home .categories .HomeLink h1 {
     font-family: 'Kite One', sans-serif;
     margin: 51px 72px 0 0;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  * .categories .HomeLink img {
+  * .Home .categories .HomeLink img {
     border-radius: 7px 0px 0px 7px;
     width: 50%;
     height: auto;
@@ -820,7 +850,10 @@
     width: 28.5%;
     height: auto;
   }
-  * .change-icon {
+  * .report {
+    padding-top: 5.7%;
+  }
+  * .report .change-icon {
     width: 14%;
   }
   * .AddReport {

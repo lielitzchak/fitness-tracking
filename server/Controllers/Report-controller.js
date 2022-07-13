@@ -2,10 +2,10 @@ const ReportModel = require("../Models/Report-model");
 module.exports = {
   GetAllReports: (requestFromUser, responseFromServer) => {
     ReportModel.find()
-      .then((dataFromServer) => {
-        dataFromServer.length == 0
+      .then((dataFromClient) => {
+        dataFromClient.length == 0
           ? responseFromServer.status(404).json({ Message: "No Reports found" })
-          : responseFromServer.status(200).json(dataFromServer);
+          : responseFromServer.status(200).json(dataFromClient);
       })
       .catch((error) => {
         responseFromServer.status(500).json({
@@ -16,12 +16,12 @@ module.exports = {
   },
   GetReportById: (requestFromUser, responseFromServer) => {
     ReportModel.findById(requestFromUser.params.id)
-      .then((dataFromServer) => {
-        if (CheckIfUserExists(dataFromServer))
+      .then((dataFromClient) => {
+        if (CheckIfUserExists(dataFromClient))
           return responseFromServer
             .status(404)
             .json({ Message: "No Report found" });
-        return responseFromServer.status(200).json(dataFromServer);
+        return responseFromServer.status(200).json(dataFromClient);
       })
       .catch((error) => {
         responseFromServer.status(500).json({
@@ -32,8 +32,8 @@ module.exports = {
   },
   CreateReport: (requestFromUser, responseFromServer) => {
     ReportModel.create(requestFromUser.body)
-      .then((dataFromServer) =>
-        responseFromServer.status(201).json(dataFromServer)
+      .then((dataFromClient) =>
+        responseFromServer.status(201).json(dataFromClient)
       )
       .catch((error) =>
         responseFromServer.status(500).json({ Message: error })
@@ -45,12 +45,12 @@ module.exports = {
       requestFromUser.body,
       { new: true }
     )
-      .then((dataFromServer) => {
-        if (dataFromServer == null || dataFromServer == undefined)
+      .then((dataFromClient) => {
+        if (dataFromClient == null || dataFromClient == undefined)
           return responseFromServer
             .status(404)
             .json({ Message: "No Report found" });
-        return responseFromServer.status(201).json(dataFromServer);
+        return responseFromServer.status(201).json(dataFromClient);
       })
       .catch((error) => {
         responseFromServer.status(500).json({
@@ -61,12 +61,12 @@ module.exports = {
   },
   DeleteReport: (requestFromUser, responseFromServer) => {
     ReportModel.findByIdAndDelete(requestFromUser.params.id)
-      .then((dataFromServer) => {
-        if (CheckIfNullOrUndefined(dataFromServer))
+      .then((dataFromClient) => {
+        if (CheckIfNullOrUndefined(dataFromClient))
           return responseFromServer
             .status(404)
             .json({ Message: "No Report found" });
-        return responseFromServer.status(201).json(dataFromServer);
+        return responseFromServer.status(201).json(dataFromClient);
       })
       .catch((error) => {
         responseFromServer.status(500).json({
@@ -80,5 +80,5 @@ function CheckIfUserExists(dataUser) {
   return dataUser == null || dataUser == undefined || dataUser == "";
 }
 function CheckIfNullOrUndefined(dataToCheck) {
-  return dataFromServer == null || dataFromServer == undefined;
+  return dataToCheck != null || dataToCheck != undefined;
 }

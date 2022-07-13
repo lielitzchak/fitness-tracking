@@ -1,11 +1,11 @@
 import BASIC_URL from "./DataForAll";
 export const recipeService = {
-  getRecipes: async (): Promise<any> => {
+  GetRecipes: async (): Promise<any> => {
     return await fetch(`${BASIC_URL}/recipe`)
       .then((responseFromServer: Response) => responseFromServer.json())
       .catch((error: Response) => console.log(error));
   },
-  getRecipeById: async (recipeId: string): Promise<any> => {
+  GetRecipeById: async (recipeId: string): Promise<any> => {
     return await fetch(`${BASIC_URL}/recipe/${recipeId}`)
       .then((responseFromServer: Response) => responseFromServer.json())
       .catch((error: Response) => error);

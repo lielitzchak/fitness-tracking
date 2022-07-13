@@ -1,9 +1,11 @@
+//! const passport = require("passport");
+//! require("./Config/passport")(passport);
 let dotenv = require("dotenv").config();
 if (dotenv.error) {
   console.log(dotenv.error);
 }
-const APP = require("express")();
-//const app = app();
+const express = require("express");
+const APP = express();
 const cors = require("cors");
 require("./DB/db");
 const TRAINING_ROUTE = require("./Routes/Training-route.js");
@@ -11,11 +13,10 @@ const USER_ROUTE = require("./Routes/User-route.js");
 const RECIPE_ROUTE = require("./Routes/Recipe-route.js");
 const AUTH_ROUTE = require("./Routes/Auth-route.js");
 const REPORT_ROUTE = require("./Routes/Report-route.js");
-//! const passport = require("passport");
-//! require("./Config/passport")(passport);
-APP.use(APP.json());
+
+APP.use(express.json());
 APP.use(cors());
-APP.use(APP.urlencoded({ extended: false }));
+APP.use(express.urlencoded({ extended: false }));
 const PORT = process.env.PORT || 1010;
 
 APP.listen(PORT, () => {

@@ -57,63 +57,75 @@
                     margin-left: 70%;
                 }
             }
-
         }
-
     }
 
     .text-on-app {
         h4 {
             font-family: "Kite One";
             font-size: 1.5rem;
-
         }
-
-        h1 {}
-
-        p {}
     }
 
-}
+    .onApp {
+        background: $blueColor;
+        font-size: 14px;
+        color: white;
+        padding: 30%;
+        transform: rotate(-3deg);
+        margin: 13% -2% 39px -2%;
 
-// .onApp {
-//     .putOnApp {
-//         div {
-//             h3 {}
+        .putOnApp {
+            display: grid;
+            transform: rotate(0deg);
+            align-content: space-evenly;
+            justify-content: space-around;
+            justify-items: start;
+            // grid-template-columns: 2fr 2fr 2fr;
+            gap: 30%;
+            transform: rotate(0deg);
 
-//             p {}
-//         }
-//     }
-// }
+            div {
 
-// .text {
-//     h1 {}
+                h3 {
+                    font-size: 20px;
+                    height: 1.1em;
+                }
 
-//     button {}
-// }
-
-.categories {
-    text-decoration: none;
-
-    .HomeLink {
-        display: flex;
-        justify-content: space-between;
-        align-self: start;
-        margin: 3%;
-        background-color: rgba(229, 229, 229, 255);
-        border-radius: 7px 0px 0px 7px;
-
-        h1 {
-            font-family: 'Kite One', sans-serif;
-            margin: 51px 72px 0 0;
-            align-items: center;
+                p {
+                    font-size: 14px;
+                    height: 1.6em;
+                }
+            }
         }
+    }
 
-        img {
+    .text {
+        h1 {}
+    }
+
+    .categories {
+        text-decoration: none;
+
+        .HomeLink {
+            display: flex;
+            justify-content: space-between;
+            align-self: start;
+            margin: 3%;
+            background-color: rgba(229, 229, 229, 255);
             border-radius: 7px 0px 0px 7px;
-            width: 50%;
-            height: auto;
-        }
 
+            h1 {
+                font-family: 'Kite One', sans-serif;
+                margin: 51px 72px 0 0;
+                align-items: center;
+            }
+
+            img {
+                border-radius: 7px 0px 0px 7px;
+                width: 50%;
+                height: auto;
+            }
+        }
     }
 }

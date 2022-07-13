@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-
-
 .Home {
     padding-top: 3%;
 
@@ -34,7 +32,6 @@
                 }
             }
 
-
             .buttons {
                 button {
                     background: rgba(8, 17, 88, 0.2);
@@ -48,21 +45,16 @@
                     width: 100px;
                     height: 100px;
                     cursor: pointer;
-
                 }
 
                 :first-child {
                     left: 7%;
-
-
                 }
 
                 :nth-child(2) {
                     left: 67%;
-
                 }
             }
-
         }
 
         .text-on-app {
@@ -94,7 +86,6 @@
                 background: $blueColor;
             }
         }
-
     }
 
     .onApp {
@@ -123,8 +114,6 @@
                     height: 1.6em;
                 }
             }
-
-
         }
     }
 
@@ -151,8 +140,6 @@
             color: white;
             background: $blueColor;
         }
-
-
     }
 
     .categories {

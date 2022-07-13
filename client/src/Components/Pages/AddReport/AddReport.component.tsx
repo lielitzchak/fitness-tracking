@@ -1,46 +1,41 @@
 import { useState } from "react";
-import { PostReport } from "../../../service/Report-service";
+import { reportService } from "../../../service/Report-service";
 const AddReport = (): JSX.Element => {
-  const [report, setReport]: any = useState();
-  const addValue = (event: any) => {
+  const [reportsData, setReportsData]: any = useState();
+  const [answerFromServer, SetAnswerFromServer]: any = useState("");
+  const AddValueToReportsState = (event: any) => {
     event.preventDefault();
-    setReport({ ...report, [event.target.name]: event.target.value });
-    console.log(report);
+    setReportsData({ ...reportsData, [event.target.name]: event.target.value });
+    console.log(reportsData);
   };
-  const saveData = async (event: any) => {
+  const SaveDataOnClick = async (event: any) => {
     event.preventDefault();
-    return await PostReport(report)
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
+    // if (event == undefined) SetAnswerFromServer("undef");
+    return await reportService
+      .PostReport(reportsData)
+      .then((responseFromServer: Response) => {
+        SetAnswerFromServer(responseFromServer);
+        console.log("the dave successfully");
+      })
+
+      .catch((error: Response) => SetAnswerFromServer(error));
   };
   return (
     <div className="AddReport">
-      <div className="note">
-        <img
-          src="https://images.unsplash.com/photo-1553044020-8c90843adf96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-          alt=""
-        />
-        <p>
-          you dont have to add a date, it will be added automatically (when you
-          add a report).  
-          some note about the report. there is more information
-          about the report.
-        </p>
-      </div>
       <form>
         <label htmlFor="weight">weight</label>
         <input
           name="weight"
           type="number"
           placeholder="weight"
-          onChange={(event) => addValue(event)}
+          onChange={(event) => AddValueToReportsState(event)}
         />
         <label htmlFor="RightHand">RightHand</label>
         <input
           name="RightHand"
           type="number"
           placeholder="RightHand"
-          onChange={(event) => addValue(event)}
+          onChange={(event) => AddValueToReportsState(event)}
         />
         <label htmlFor="LeftHand">LeftHand</label>
 
@@ -48,7 +43,7 @@ const AddReport = (): JSX.Element => {
           name="LeftHand"
           type="number"
           placeholder="LeftHand"
-          onChange={(event) => addValue(event)}
+          onChange={(event) => AddValueToReportsState(event)}
         />
         <label htmlFor="RightLeg">RightLeg</label>
 
@@ -56,7 +51,7 @@ const AddReport = (): JSX.Element => {
           name="RightLeg"
           type="number"
           placeholder="RightLeg"
-          onChange={(event) => addValue(event)}
+          onChange={(event) => AddValueToReportsState(event)}
         />
         <label htmlFor="buttock">buttock</label>
 
@@ -64,7 +59,7 @@ const AddReport = (): JSX.Element => {
           name="buttock"
           type="number"
           placeholder="buttock"
-          onChange={(event) => addValue(event)}
+          onChange={(event) => AddValueToReportsState(event)}
         />
         <label htmlFor="chest">chest</label>
 
@@ -72,7 +67,7 @@ const AddReport = (): JSX.Element => {
           name="chest"
           type="number"
           placeholder="chest"
-          onChange={(event) => addValue(event)}
+          onChange={(event) => AddValueToReportsState(event)}
         />
         <label htmlFor="belly">belly</label>
 
@@ -80,7 +75,7 @@ const AddReport = (): JSX.Element => {
           name="belly"
           type="number"
           placeholder="belly"
-          onChange={(event) => addValue(event)}
+          onChange={(event) => AddValueToReportsState(event)}
         />
         <label htmlFor="LeftLeg">LeftLeg</label>
 
@@ -88,7 +83,7 @@ const AddReport = (): JSX.Element => {
           name="LeftLeg"
           type="number"
           placeholder="LeftLeg"
-          onChange={(event) => addValue(event)}
+          onChange={(event) => AddValueToReportsState(event)}
         />
         <label htmlFor="Date">Date</label>
 
@@ -96,45 +91,12 @@ const AddReport = (): JSX.Element => {
           name="Date"
           type="date"
           placeholder="date"
-          onChange={(event) => addValue(event)}
+          onChange={(event) => AddValueToReportsState(event)}
         />
-        <button onClick={(event) => saveData(event)}>save information!</button>
-      </form>
-
-      {/* <form>
-        <div className="segment">
-          <h1>Sign up</h1>
-        </div>
-
-        <label>
-          <input type="text" placeholder="Email Address" />
-        </label>
-        <label>
-          <input type="password" placeholder="Password" />
-        </label>
-        <button className="red" type="button">
-          <i className="icon ion-md-lock"></i> Log in
+        <button onClick={(event) => SaveDataOnClick(event)}>
+          save information!
         </button>
-
-        <div className="segment">
-          <button className="unit" type="button">
-            <i className="icon ion-md-arrow-back"></i>
-          </button>
-          <button className="unit" type="button">
-            <i className="icon ion-md-bookmark"></i>
-          </button>
-          <button className="unit" type="button">
-            <i className="icon ion-md-settings"></i>
-          </button>
-        </div>
-
-        <div className="input-group">
-          <label>
-            <input type="text" placeholder="Email Address" />
-          </label>
-         
-        </div>
-      </form> */}
+      </form>
     </div>
   );
 };

@@ -1,21 +1,13 @@
 import { useEffect, useState } from "react";
-import { getAllGym } from "../../../service/Gym-service";
+import { GymService } from "../../../service/Gym-service";
 const Gym = (): JSX.Element => {
   const [gym, setGym]: any = useState([]);
-  useEffect((): void => {
-    try {
-      getAllGym()
-        .then((Response: Response) => setGym(Response))
-        .catch((err: Response) => console.log(err));
-    } catch (error: any) {
-      console.log(error);
-    }
-  }, []);
-  //   createdAt
-  // :
-  // 2022-05-02T14:33:26.936+00:00
-  // updatedAt
 
+  useEffect((): void => {
+    GymService.getAllGym()
+      .then((ResponseFromServer: Response) => setGym(ResponseFromServer))
+      .catch((error: Response) => console.log(error));
+  }, []);
   return (
     <div>
       {gym.map((gym: any) => {
