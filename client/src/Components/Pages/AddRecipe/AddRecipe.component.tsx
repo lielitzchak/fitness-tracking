@@ -1,27 +1,21 @@
 import { useState } from "react";
-import { PostRecipe } from "../../../service/Recipe-service";
+import { recipeService } from "../../../service/Recipe-service";
 
 const AddRecipe = (): JSX.Element => {
   const [recipe, setRecipe] = useState({ Candy: false, vegan: false });
   const [messageFromServer, setMessageFromServer] = useState("");
   let [isChecked, setIsChecked]: any = useState(false);
 
-  const saveValue = (event: any) => {
+  const SaveValueInRecipeState = (event: any) => {
     event.preventDefault();
     setRecipe({ ...recipe, [event.target.name]: event.target.value });
     console.log(recipe);
   };
-
-  const handleOnChange = (event: any) => {
-    // setIsChecked(!event.target.checked);
+  const HandleOnChange = (event: any) => {
     console.log(event);
-    // setRecipe({ ...recipe, [event.target.name]: isChecked });
-    console.log(
-      `isChecked: ${isChecked}`
-      );
-      // event.target.name: ${event.target.name}, recipe: ${recipe}`
+    console.log(`isChecked: ${isChecked}`);
   };
-  const clickOnSave = (event: any) => {
+  const ClickOnSave = (event: any) => {
     event.preventDefault();
   };
 
@@ -39,7 +33,7 @@ const AddRecipe = (): JSX.Element => {
                   name="Name"
                   placeholder="recipe name"
                   required
-                  onChange={(event) => saveValue(event)}
+                  onChange={(event) => SaveValueInRecipeState(event)}
                 />
               </div>
               <div>
@@ -49,7 +43,7 @@ const AddRecipe = (): JSX.Element => {
                   name="Summary"
                   placeholder="Summary"
                   required
-                  onChange={(event) => saveValue(event)}
+                  onChange={(event) => SaveValueInRecipeState(event)}
                 />
               </div>
             </div>
@@ -68,7 +62,7 @@ const AddRecipe = (): JSX.Element => {
                   type="checkbox"
                   name="vegan"
                   checked={recipe.vegan}
-                  onChange={(event) => handleOnChange(event)}
+                  onChange={(event) => HandleOnChange(event)}
                 />
               </div>
               <div>
@@ -77,24 +71,15 @@ const AddRecipe = (): JSX.Element => {
                   type="checkbox"
                   name="Candy"
                   checked={recipe.Candy}
-                  onChange={(event) => handleOnChange(event)}
+                  onChange={(event) => HandleOnChange(event)}
                 />
               </div>
-              {/* <div>
-                <label htmlFor="">Is Milk?</label>
-                <input
-                  type="checkbox"
-                  name="IsMilk"
-                  checked={isChecked}
-                  onChange={(event) => handleOnChange(event)}
-                />
-              </div> */}
               <div>
                 <label htmlFor="">Picture</label>
                 <input
                   type="url"
                   name="Picture"
-                  onChange={(event) => saveValue(event)}
+                  onChange={(event) => SaveValueInRecipeState(event)}
                 />
               </div>
               <div>
@@ -102,12 +87,12 @@ const AddRecipe = (): JSX.Element => {
                 <input
                   type="text"
                   name="HowToMake"
-                  onChange={(event) => saveValue(event)}
+                  onChange={(event) => SaveValueInRecipeState(event)}
                 />
               </div>
             </div>
             <div className="btns">
-              <button onClick={(event) => clickOnSave(event)}>save!</button>
+              <button onClick={(event) => ClickOnSave(event)}>save!</button>
             </div>
           </form>
         </div>
@@ -116,60 +101,4 @@ const AddRecipe = (): JSX.Element => {
     </>
   );
 };
-
 export default AddRecipe;
-
-// שם המתכון
-// תיאור המתכון
-
-// אופן ההכנה
-
-// רעיונות לשידרוג/טיפים
-
-// ציוד נדרש
-
-// סוג המנה
-
-// קטגוריות (ניתן לבחור עד 3 סוגים)
-//  אורז
-//  אחר
-//  בשביל הערך התזונתי
-//  בשר
-//  גבינות
-//  גלידות ושרבטים
-//  דגים
-//  ירקות
-//  כבושים
-//  כריכים וסנדוויצ`ים
-//  לחמים
-//  מאפים
-//  מוסים וקרמים
-//  ממולאים
-//  ממרחים ומטבלים
-//  מרקים
-//  משקאות
-//  משקאות חמים
-//  מתוקים
-//  מתכוני ילדים
-//  מתכונים לטבעוניים
-//  ללא גלוטן
-//  מתכונים לסוכרתיים
-//  מתכונים לצמחוניים
-//  סושי
-//  סלטים
-//  עוגות
-//  עוגיות
-//  עוף
-//  פיצות
-//  פירות
-//  פירות ים
-//  פסטה
-//  פשטידות
-//  קוקטיילים
-//  רטבים
-//  ריבות
-//  שוקולד
-//  שייקים
-//  תבשילי קדרה
-//  תזונה קטוגנית
-//  תינוקות

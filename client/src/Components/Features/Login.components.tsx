@@ -11,8 +11,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { GetUserByEmail } from "../../service/User-service";
-
+import { UserService } from "../../service/User-service";
 function Copyright(props: any) {
   return (
     <Typography
@@ -38,10 +37,11 @@ export default function Login() {
     event.preventDefault();
 
     let Email: string = String(new FormData(event.currentTarget).get("Email"));
-    let Password: string = String(new FormData(event.currentTarget).get("Password")
+    let Password: string = String(
+      new FormData(event.currentTarget).get("Password")
     );
 
-     GetUserByEmail(Email, Password)
+    UserService.GetUserByEmail(Email, Password)
       .then((res: any) => console.log(res))
       .catch((err: any) => console.log(err));
   };

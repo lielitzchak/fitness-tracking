@@ -1,23 +1,16 @@
 import { useState, useEffect } from "react";
-import { getRecipes } from "../../../service/Recipe-service";
+import { recipeService } from "../../../service/Recipe-service";
 import { Link } from "react-router-dom";
-// import Recipe from "../Recipe/Recipe.component";
 
 const Recipes = (): JSX.Element => {
   const [recipes, setRecipes]: any = useState([]);
-
   useEffect((): void => {
-    try {
-      // ! add loading state when fetching data from the server
-      getRecipes()
-        .then((res) => {
-          setRecipes(res);
-          // console.log(res);
-        })
-        .catch((err) => err);
-    } catch (error) {
-      // console.log(error);
-    }
+    recipeService
+      .GetRecipes()
+      .then((responseFromServer: any) => {
+        setRecipes(responseFromServer);
+       })
+      .catch((error) => error);
   }, []);
 
   return (
