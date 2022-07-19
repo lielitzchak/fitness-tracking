@@ -11,7 +11,7 @@ import { reportService } from "../../../service/Report-service";
 const ReportComponent = (): JSX.Element => {
   const [REPORTS, SET_REPORTS]: any = useState([]);
 
-  useEffect(() => {
+  useEffect((): void => {
     reportService
       .GetAllReports()
       .then((responseFromServer: any) => {
@@ -20,20 +20,19 @@ const ReportComponent = (): JSX.Element => {
           return SET_REPORTS(responseFromServer);
         return SET_REPORTS("there is no data");
       })
-      .catch((error) => console.log(error));
+      .catch((error): void => console.log(error));
   }, []);
   const CheckIfDataIsEmpty: any = (DataToCheck: any) => {
     return DataToCheck != [] || DataToCheck != undefined;
   };
   const SortBy = (key: string) => {
     REPORTS.sort((a: any, b: any) => (a[key] > b[key] ? 1 : -1));
-    console.log(REPORTS);
   };
   const DeleteReportOnClick = (reportId: any) => {
     reportService
       .DeleteReport(reportId)
-      .then((responseFromServer: any) => console.log(responseFromServer))
-      .catch((error: any) => console.log(error));
+      .then((responseFromServer: any): void => console.log(responseFromServer))
+      .catch((error: any): void => console.log(error));
   };
   const EditReportOnClick = (reportId: string, newReport: any) => {
     reportService

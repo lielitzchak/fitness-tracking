@@ -4,12 +4,12 @@ export const GymService = {
   getAllGym: async (): Promise<any> => {
     return await fetch(`${BASIC_URL}/gym`)
       .then((responseFromUser: Response) => responseFromUser.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
   getGymById: async (gymId: string): Promise<any> => {
     return await fetch(`${BASIC_URL}/gym/${gymId}`)
       .then((responseFromUser: Response) => responseFromUser.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
   PostGym: async (newGym: any): Promise<any> => {
     return await fetch(`${BASIC_URL}/gym`, {
