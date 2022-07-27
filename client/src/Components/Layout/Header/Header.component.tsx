@@ -55,7 +55,6 @@ const StyledInputBase: any = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-
 const Header = (): JSX.Element => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
@@ -100,9 +99,7 @@ const Header = (): JSX.Element => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem  onClick={handleMenuClose}>
-        Profile
-      </MenuItem>
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );

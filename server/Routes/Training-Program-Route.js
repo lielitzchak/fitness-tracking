@@ -1,0 +1,9 @@
+const TRAINING_PROGRAM_ROUTER = require("express").Router();
+const TRAINING_PROGRAM_CONTROLLER = require("../Controllers/Training-Program-controller");
+
+TRAINING_PROGRAM_ROUTER.get("/", TRAINING_PROGRAM_CONTROLLER.GetAllTrainingProgram);
+TRAINING_PROGRAM_ROUTER.get("/:id", TRAINING_PROGRAM_CONTROLLER.GetTrainingProgramById);
+TRAINING_PROGRAM_ROUTER.post("/", TRAINING_PROGRAM_CONTROLLER.CreateTrainingProgram);
+TRAINING_PROGRAM_ROUTER.put("/:id", TRAINING_PROGRAM_CONTROLLER.UpdateTrainingProgram);
+TRAINING_PROGRAM_ROUTER.delete("/:id", TRAINING_PROGRAM_CONTROLLER.DeleteTrainingProgram);
+module.exports = TRAINING_PROGRAM_ROUTER;
