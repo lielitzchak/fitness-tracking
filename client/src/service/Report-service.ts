@@ -3,12 +3,12 @@ export const reportService = {
   GetAllReports: async (): Promise<any> => {
     return await fetch(`${BASIC_URL}/report`)
       .then((responseFromServer: Response) => responseFromServer.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
   GetReportById: async (reportId: string): Promise<any> => {
     return await fetch(`${BASIC_URL}/report/${reportId}`)
       .then((responseFromServer: Response) => responseFromServer.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
   PostReport: async (newReport: any): Promise<any> => {
     return await fetch(`${BASIC_URL}/report`, {
@@ -20,7 +20,7 @@ export const reportService = {
       body: JSON.stringify(newReport),
     })
       .then((responseFromServer: Response) => responseFromServer.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
   PutReport: async (reportId: string, newReport: any): Promise<any> => {
     return await fetch(`${BASIC_URL}/report/${reportId}`, {
@@ -32,7 +32,7 @@ export const reportService = {
       body: JSON.stringify(newReport),
     })
       .then((response: Response) => response.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
   DeleteReport: async (reportId: string): Promise<any> => {
     return await fetch(`${BASIC_URL}/report/${reportId}`, {
@@ -43,6 +43,6 @@ export const reportService = {
       },
     })
       .then((responseFromServer: Response) => responseFromServer.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
 };

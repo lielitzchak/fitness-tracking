@@ -8,7 +8,7 @@ const express = require("express");
 const APP = express();
 const cors = require("cors");
 require("./DB/db");
-const TRAINING_ROUTE = require("./Routes/Training-route.js");
+const TRAINING_PROGRAM_ROUTE = require("./Routes/Training-Program-Route.js");
 const USER_ROUTE = require("./Routes/User-route.js");
 const RECIPE_ROUTE = require("./Routes/Recipe-route.js");
 const AUTH_ROUTE = require("./Routes/Auth-route.js");
@@ -24,7 +24,7 @@ APP.listen(PORT, () => {
 });
 
 APP.use("/auth", AUTH_ROUTE);
-APP.use("/training", TRAINING_ROUTE);
+APP.use("/Training-Program", TRAINING_PROGRAM_ROUTE);
 APP.use("/user", USER_ROUTE);
 APP.use("/recipe", RECIPE_ROUTE);
 APP.use("/report", REPORT_ROUTE);

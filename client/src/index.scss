@@ -18,6 +18,7 @@ $blueColor:#081158;
         @import "./Components/Pages/Recipes/Recipe-Mobile";
         @import "./Components/Pages/AddRecipe/AddRecipe-Mobile";
         @import "./Components/Pages/GenericRecipe/GenercRecipe-Mobile";
+        @import "./Components/Pages/TrainingProgram/TrainingProgram-Mobile";
     }
 
     @media only screen and (min-width:451px) and (max-width:1024px) {

@@ -3,12 +3,12 @@ export const recipeService = {
   GetRecipes: async (): Promise<any> => {
     return await fetch(`${BASIC_URL}/recipe`)
       .then((responseFromServer: Response) => responseFromServer.json())
-      .catch((error: Response) => console.log(error));
+      .catch((error: Response) => error.json());
   },
   GetRecipeById: async (recipeId: string): Promise<any> => {
     return await fetch(`${BASIC_URL}/recipe/${recipeId}`)
       .then((responseFromServer: Response) => responseFromServer.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
   PostRecipe: async (newRecipe: any): Promise<any> => {
     return await fetch(`${BASIC_URL}/recipe`, {

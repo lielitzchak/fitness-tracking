@@ -3,7 +3,7 @@ export const UserService = {
   GetAllUsers: async (): Promise<any> => {
     return await fetch(`${BASIC_URL}/user`)
       .then((responseFromServer: Response) => responseFromServer.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
   GetUserByEmail: async (
     userEmail: string,
@@ -11,12 +11,12 @@ export const UserService = {
   ): Promise<any> => {
     return await fetch(`${BASIC_URL}/user/${userEmail}/${userPassword}`)
       .then((responseFromUser: Response) => responseFromUser.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
   GetUserById: async (userId: string): Promise<any> => {
     return await fetch(`${BASIC_URL}/user/${userId}`)
       .then((responseFromServer: Response) => responseFromServer.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
   CreateUser: async (user: any): Promise<any> => {
     return await fetch(`${BASIC_URL}/user`, {
@@ -27,7 +27,7 @@ export const UserService = {
       body: JSON.stringify(user),
     })
       .then((responseFromServer: Response) => responseFromServer.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
   UpdateUser: async (user: any): Promise<any> => {
     return await fetch(`${BASIC_URL}/user/${user.id}`, {
@@ -38,7 +38,7 @@ export const UserService = {
       body: JSON.stringify(user),
     })
       .then((responseFromServer: Response) => responseFromServer.json())
-      .catch((error: Response) => error);
+      .catch((errorFromServer: Response) => errorFromServer.json());
   },
   DeleteUser: async (userId: string): Promise<any> => {
     return await fetch(`${BASIC_URL}/user/${userId}`, {
@@ -48,6 +48,6 @@ export const UserService = {
       },
     })
       .then((responseFromServer: Response) => responseFromServer.json())
-      .catch((error: Response) => error);
+      .catch((error: Response) => error.json());
   },
 };

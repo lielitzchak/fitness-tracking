@@ -45,9 +45,9 @@ const Home = (): JSX.Element => {
       </article>
       <section className="categories">
         <section className="">
-          <Link to={"/gym"} className="HomeLink">
-            <img src="https://did.li/BHAlC" alt="Gym" />
-            <h4>Gym</h4>
+          <Link to={"/training-program"} className="HomeLink">
+            <img src="https://did.li/BHAlC" alt="Gym Report" />
+            <h4>Gym Report</h4>
             <p>
               Changing your lifestyle with a fast paced life may seem hard or
               impossible, but with small steps each week you can achieve your
