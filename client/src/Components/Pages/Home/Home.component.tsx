@@ -44,10 +44,10 @@ const Home = (): JSX.Element => {
         <button>online program</button>
       </article>
       <section className="categories">
-        <section className="">
-          <Link to={"/gym"} className="HomeLink">
-            <img src="https://did.li/BHAlC" alt="Gym" />
-            <h4>Gym</h4>
+        <section>
+          <Link to={"/training-program"} className="HomeLink">
+            <img src="https://did.li/BHAlC" alt="Gym Report" />
+            <h4>Gym Report</h4>
             <p>
               Changing your lifestyle with a fast paced life may seem hard or
               impossible, but with small steps each week you can achieve your
@@ -56,8 +56,7 @@ const Home = (): JSX.Element => {
             </p>
           </Link>
         </section>
-
-        <section className="">
+        <section>
           <Link to={"/food"} className="HomeLink">
             <img src="https://did.li/GqpTY" alt="Food" />
             <h4>Food</h4>
@@ -69,8 +68,7 @@ const Home = (): JSX.Element => {
             </p>
           </Link>
         </section>
-
-        <section className="">
+        <section>
           <Link to={"/report"} className="HomeLink">
             <img src="https://did.li/XBRw5" alt="report" />
             <h4>Report</h4>
@@ -82,8 +80,7 @@ const Home = (): JSX.Element => {
             </p>
           </Link>
         </section>
-
-        <section className="">
+        <section>
           <Link to={"/recipes"} className="HomeLink">
             <img src="https://did.li/4kG5q" alt="recipes" />
             <h4>Recipes</h4>

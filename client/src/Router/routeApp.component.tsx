@@ -5,14 +5,14 @@ import AddRecipe from "../Components/Pages/AddRecipe/AddRecipe.component";
 import AddReport from "../Components/Pages/AddReport/AddReport.component";
 import Food from "../Components/Pages/Food/Food.component";
 import GenericRecipe from "../Components/Pages/GenericRecipe/GenericRecipe.component";
-import Gym from "../Components/Pages/Gym/Gym.component";
+import TrainingProgram from "../Components/Pages/TrainingProgram/TrainingProgram.component";
 import Home from "../Components/Pages/Home/Home.component";
 import LoginAndRegister from "../Components/Pages/LoginAndRegister/LoginAndRegister.component";
 import Page404 from "../Components/Pages/page404/Page404.component";
 import Recipes from "../Components/Pages/Recipes/Recipes.component";
 import ReportComponent from "../Components/Pages/Report/Report.component";
-// import RequiredAuth from "../Components/Pages/RequiredAuth/RequiredAuth";
 import Profile from "../Components/Pages/Profile/Profile.component";
+import AddTrainingProgram from "../Components/Pages/AddTrainingProgram/AddTrainingProgram.component";
 
 const RouteApp = (): JSX.Element => {
   return (
@@ -22,20 +22,19 @@ const RouteApp = (): JSX.Element => {
         {/** //! Public Routes **/}
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<LoginAndRegister />} />
-        <Route path="/gym" element={<Gym />} />
+        <Route path="/training-program" element={<TrainingProgram />} />
         <Route path="/Food" element={<Food />} />
         <Route path="/report" element={<ReportComponent />} />
         <Route path="/recipe/:id" element={<GenericRecipe />} />
         <Route path="/recipes" element={<Recipes />} />
-        {/* <Route path="/ContactUs" element={<ContactUs />} />
-        <Route path="/Unauthorized" element={<Unauthorized />} /> */}
-
         {/* //! Private Routes */}
-        {/* <Route element={<RequiredAuth />}> */}
         <Route path="/profile/:name" element={<Profile />} />
         <Route path="report/add-report" element={<AddReport />} />
         <Route path="/add-new-recipe" element={<AddRecipe />} />
-        {/* </Route> */}
+        <Route
+          path="/add-new-Training-Program"
+          element={<AddTrainingProgram />}
+        />
 
         <Route path="*" element={<Page404 />} />
       </Routes>

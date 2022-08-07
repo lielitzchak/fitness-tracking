@@ -1,82 +1,57 @@
-import basic_url from "./DataForAll";
+import BASIC_URL from "./DataForAll";
 
-export const GetRegister = async (): Promise<any> => {
-  try {
-    return await fetch(`${basic_url}/register`)
-      .then((res: Response) => res.json())
-      .catch((err: Response) => err);
-  } catch (error) {
-    console.log(error);
-  }
-};
-// ! this type need to be user
-export const PostRegister = async (newRegister: any): Promise<any> => {
-  try {
-    return await fetch(`${basic_url}/auth/register`, {
+export const AuthService = {
+  GetRegister: async (): Promise<any> => {
+    return await fetch(`${BASIC_URL}/register`)
+      .then((responseFromServer: Response) => responseFromServer.json())
+      .catch((error: Response) => error.json());
+  },
+  PostRegister: async (newRegister: any): Promise<any> => {
+    return await fetch(`${BASIC_URL}/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newRegister),
     })
-      .then((res: Response) => res.json())
-      .catch((err: Response) => err.json());
-  } catch (error) {
-    console.log(error);
-  }
-};
-export const GetLogin = async (userDate: any): Promise<any> => {
-  try {
-    return await fetch(`${basic_url}/auth/login`, {
+      .then((responseFromServer: Response) => responseFromServer.json())
+      .catch((error: Response) => error.json());
+  },
+  GetLogin: async (userDate: any): Promise<any> => {
+    return await fetch(`${BASIC_URL}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(userDate),
     })
-      .then((res: Response) => res.json())
-      .catch((err: Response) => err);
-  } catch (error) {
-    console.log(error);
-  }
-};
-export const GetUserById = async (id: string): Promise<any> => {
-  try {
-    return await fetch(`${basic_url}/user/${id}`)
-      .then((res: Response) => res.json())
-      .catch((err: Response) => err);
-  } catch (error) {
-    console.log(error);
-  }
-};
-export const UpdateUser = async (user: any): Promise<any> => {
-  try {
-    return await fetch(`${basic_url}/user/${user.id}`, {
+      .then((responseFromServer: Response) => responseFromServer.json())
+      .catch((error: Response) => error.json());
+  },
+  GetUserById: async (id: string): Promise<any> => {
+    return await fetch(`${BASIC_URL}/user/${id}`)
+      .then((responseFromServer: Response) => responseFromServer.json())
+      .catch((error: Response) => error.json());
+  },
+  UpdateUser: async (user: any): Promise<any> => {
+    return await fetch(`${BASIC_URL}/user/${user.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
     })
-      .then((res: Response) => res.json())
-      .catch((err: Response) => err);
-  } catch (error) {
-    console.log(error);
-  }
-};
-export const DeleteUser = async (id: number): Promise<any> => {
-  try {
-    return await fetch(`${basic_url}/user/${id}`, {
+      .then((responseFromServer: Response) => responseFromServer.json())
+      .catch((error: Response) => error.json());
+  },
+  DeleteUser: async (userId: number): Promise<any> => {
+    return await fetch(`${BASIC_URL}/user/${userId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
     })
-      .then((res: Response) => res.json())
-      .catch((err: Response) => err);
-  } catch (error) {
-    console.log(error);
-  }
+      .then((responseFromServer: Response) => responseFromServer.json())
+      .catch((error: Response) => error.json());
+  },
 };
-
-//! fix this code snippet beacuse it is cant return a value that he's should be a promise

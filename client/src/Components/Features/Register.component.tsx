@@ -9,7 +9,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { CreateUser } from "../../service/User-service";
+import { UserService } from "../../service/User-service";
 
 function Copyright(props: any) {
 
@@ -36,7 +36,7 @@ export default function Register() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    CreateUser({
+  UserService.CreateUser({
       Email: data.get("Email"),
       Password: data.get("Password"),
       UserName: data.get("UserName"),
