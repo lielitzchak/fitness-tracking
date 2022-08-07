@@ -42,10 +42,10 @@ const TrainingProgram = (): JSX.Element => {
                     <li>{gym.Weight}</li>
                     <li>{gym.Date}</li>
                   </ul>
-                  <ul className="more-content">
-                    <li>{gym.Notes}</li>
-                  </ul>
-                </article>
+                     <ul className="more-content">
+                      <li>{gym.Notes}</li>
+                    </ul>
+                 </article>
               </section>
             </div>
           );

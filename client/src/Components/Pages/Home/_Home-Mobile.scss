@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Kite+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Red+Hat+Display:ital,wght@1,500&display=swap');
 
 .Home {
+    overflow: hidden;
+
     .Home-section {
         .aboutMe {
 
@@ -12,7 +14,6 @@
                 position: absolute;
                 z-index: -2;
                 padding-left: 22%;
-
             }
 
             .imgDiv {
@@ -28,8 +29,6 @@
             }
 
             .buttons {
-
-
                 .btn1 {
                     background: rgba(8, 17, 88, 0.2);
                     border-radius: 50%;
@@ -49,7 +48,6 @@
                     z-index: 4;
                     position: absolute;
                     top: 79%;
-
                     font-size: 14px;
                     padding: 12px 12px;
                     width: 70px;
@@ -61,19 +59,68 @@
     }
 
     .text-on-app {
+        h1 {
+            font-family: 'Sato';
+            font-size: 35px;
+            margin: auto auto 30px auto;
+            font-size: 72px;
+            line-height: 1.1em;
+            font-weight: 500;
+        }
+
         h4 {
+            margin-bottom: 0px;
+            color: hsla(233.25, 83.33%, 18.82%, 1);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             font-family: "Kite One";
             font-size: 1.5rem;
+            margin-bottom: 30px;
         }
+
+        p {
+            font-size: 18px;
+            max-width: 500px;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.8em;
+        }
+
+        button {
+            display: block;
+            min-width: 200px;
+            margin-top: 0px;
+            padding: 20px 20px 20px 40px;
+            border-style: solid;
+            border-width: 0px;
+            border-color: black;
+            border-radius: 6px;
+            background-color: var(--swatch_f6df8603);
+            background-image: url(https://uploads-ssl.webflow.com/6293620…/6293620…_Vector%204.svg);
+            background-position: 20px 50%;
+            background-size: auto 15px;
+            background-repeat: no-repeat;
+            transition-property: padding, background-position, transform, color, opacity;
+            transition-duration: 500ms, 500ms, 500ms, 200ms, 200ms;
+            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), ease, ease;
+            font-family: Sato;
+            line-height: 1.6em;
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
     }
 
     .onApp {
         background: $blueColor;
         font-size: 14px;
         color: white;
-        padding: 30%;
+        padding: 39%;
         transform: rotate(-3deg);
-        margin: 13% -2% 39px -2%;
+        margin: 13% -18% 39px -18%;
 
         .putOnApp {
             display: grid;
@@ -81,19 +128,17 @@
             align-content: space-evenly;
             justify-content: space-around;
             justify-items: start;
-            // grid-template-columns: 2fr 2fr 2fr;
-            gap: 30%;
-            transform: rotate(0deg);
+            gap: 40%;
+            transform: rotate(3deg);
 
             div {
-
                 h3 {
-                    font-size: 20px;
+                    font-size: 37px;
                     height: 1.1em;
                 }
 
                 p {
-                    font-size: 14px;
+                    font-size: 20px;
                     height: 1.6em;
                 }
             }
@@ -101,31 +146,91 @@
     }
 
     .text {
-        h1 {}
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            padding-bottom: 5%;
+        }
+
+        button {
+            display: block;
+            min-width: 200px;
+            margin-top: 0px;
+            padding: 20px 20px 20px 40px;
+            border-style: solid;
+            border-width: 0px;
+            border-color: black;
+            border-radius: 6px;
+            background-color: var(--swatch_f6df8603);
+            background: $blueColor;
+            background-position: 20px 50%;
+            background-size: auto 15px;
+            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), ease, ease;
+            font-family: Sato;
+            line-height: 1.6em;
+            font-weight: 500;
+            text-align: center;
+            color: white;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: auto;
+        }
     }
+}
 
-    .categories {
-        text-decoration: none;
-
+.categories {
+    text-decoration: none;
+    padding-top: 5%;
+    
+    section {
         .HomeLink {
-            display: flex;
-            justify-content: space-between;
-            align-self: start;
-            margin: 3%;
-            background-color: rgba(229, 229, 229, 255);
-            border-radius: 7px 0px 0px 7px;
-
-            h1 {
-                font-family: 'Kite One', sans-serif;
-                margin: 51px 72px 0 0;
-                align-items: center;
-            }
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
 
             img {
-                border-radius: 7px 0px 0px 7px;
+                width: 55%;
+                margin: auto;
+                margin: auto;
+                width: 50%;
+                animation: shadow-for-image .4s cubic-bezier(.25, .46, .45, .94) both;
                 width: 50%;
                 height: auto;
+                object-fit: cover;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 40%;
+                border-radius: 15px;
+            }
+
+            h4 {
+                padding: 5% 0 5% 0;
+                font-family: 'Sato';
+
+            }
+
+            p {
+                font-family: 'Permanent Marker', cursive;
+                font-family: 'Red Hat Display', sans-serif;
+                padding-bottom: 12%;
+                margin: 5%;
             }
         }
+
+    }
+
+
+}
+
+@keyframes shadow-for-image {
+    0% {
+        transform: translateZ(0);
+        box-shadow: 0 0 0 0 transparent
+    }
+
+    100% {
+        transform: translateZ(50px);
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, .35)
     }
 }
