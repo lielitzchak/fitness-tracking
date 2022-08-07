@@ -19,6 +19,12 @@ APP.use(cors());
 APP.use(express.urlencoded({ extended: false }));
 const PORT = process.env.PORT || 1010;
 
+if (process.env.NODE_ENV === "production") {
+  APP.use(express.static(path.join(__dirname, "../client/build")));
+  APP.get("*", (request, response) => {
+    response.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  });
+}
 APP.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
@@ -31,9 +37,4 @@ APP.use("/report", REPORT_ROUTE);
 APP.use("/", () => console.log("try again"));
 
 // add heroku.
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, "../client/build")));
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-//   });
-// }
+
