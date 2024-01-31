@@ -6,7 +6,7 @@ import { authContext } from "../../../Context/AuthProvider.component";
 // } from "../../../Services/UserService.service";
 
 export default function Profile() {
-  const { auth } = useContext(authContext);
+  const { auth }: any = useContext(authContext);
   const [userInfo, setUserInfo]: any = useState({});
   const [userPasswordInfo, setUserPasswordInfo]: any = useState({});
 

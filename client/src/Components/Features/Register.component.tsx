@@ -1,4 +1,4 @@
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -11,37 +11,22 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { UserService } from "../../service/User-service";
 
-function Copyright(props: any) {
-
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://www.linkedin.com/in/lielitzchak/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
 const theme = createTheme();
 
 export default function Register() {
+  const [Action, SetActin] = useState("sign up!");
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-  UserService.CreateUser({
+    UserService.CreateUser({
       Email: data.get("Email"),
       Password: data.get("Password"),
       UserName: data.get("UserName"),
       Image: data.get("Image"),
-    }).then((res: any) => console.log(res));
+    }).then((responseFromServer: any) => {
+      console.log(responseFromServer);
+      console.log("just a test");
+    });
   };
 
   return (
@@ -60,7 +45,7 @@ export default function Register() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Register
+            {Action}
           </Typography>
           <Box
             component="form"
@@ -112,12 +97,12 @@ export default function Register() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              // className={Action === "Login" ? "Submit gray" : "Submit"}
             >
               Sign In
             </Button>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );

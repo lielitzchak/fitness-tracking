@@ -2,21 +2,32 @@ import { useState } from "react";
 import { recipeService } from "../../../service/Recipe-service";
 
 const AddRecipe = (): JSX.Element => {
-  const [recipe, setRecipe] = useState({ Candy: false, vegan: false });
+  const [Recipe, setRecipe] = useState({ Candy: false, vegan: false });
   const [messageFromServer, setMessageFromServer] = useState("");
-  let [isChecked, setIsChecked]: any = useState(false);
 
   const SaveValueInRecipeState = (event: any) => {
     event.preventDefault();
-    setRecipe({ ...recipe, [event.target.name]: event.target.value });
-    console.log(recipe);
+    setRecipe({ ...Recipe, [event.target.name]: event.target.value });
+    console.log(Recipe);
   };
   const HandleOnChange = (event: any) => {
-    console.log(event);
-    console.log(`isChecked: ${isChecked}`);
+    console.log(event.target.name);
+    if (event.target.value == "on")
+      setRecipe({ ...Recipe, [event.target.name]: true });
+    setRecipe({ ...Recipe, [event.target.name]: false });
+    console.log(Recipe);
   };
   const ClickOnSave = (event: any) => {
     event.preventDefault();
+    recipeService
+      .PostRecipe(Recipe)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        setMessageFromServer(err.Message);
+        console.log(err);
+      });
   };
 
   return (
@@ -61,7 +72,7 @@ const AddRecipe = (): JSX.Element => {
                 <input
                   type="checkbox"
                   name="vegan"
-                  checked={recipe.vegan}
+                  // checked={Recipe.vegan}
                   onChange={(event) => HandleOnChange(event)}
                 />
               </div>
@@ -70,7 +81,7 @@ const AddRecipe = (): JSX.Element => {
                 <input
                   type="checkbox"
                   name="Candy"
-                  checked={recipe.Candy}
+                  //  checked={Recipe.Candy}
                   onChange={(event) => HandleOnChange(event)}
                 />
               </div>

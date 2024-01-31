@@ -6,6 +6,7 @@ export const authContext: any = React.createContext<any>({});
 const AuthProvider = ({ children }: any) => {
   let [auth, setAuth]: any = useState({});
   let [loading, setLoading]: any = useState(false);
+  let [userInfo, setUserInfo]: any = useState({});
 
   useEffect(() => {
     if (localStorage.jwtToken) {
@@ -16,7 +17,9 @@ const AuthProvider = ({ children }: any) => {
   }, []);
 
   return (
-    <authContext.Provider value={{ auth, setAuth, loading, setLoading }}>
+    <authContext.Provider
+      value={{ userInfo, setUserInfo, loading, setLoading }}
+    >
       {children}
     </authContext.Provider>
   );

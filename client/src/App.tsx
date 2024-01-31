@@ -1,12 +1,7 @@
 import "./index.css";
-import AppProvider from "./Context/Appcontext";
 import RouteApp from "./Router/routeApp.component";
 const App = (): JSX.Element => {
-  return (
-    <AppProvider>
-      <RouteApp />
-    </AppProvider>
-  );
+  return <RouteApp />;
 };
 
 export default App;

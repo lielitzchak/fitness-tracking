@@ -1,38 +1,28 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Kite+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Red+Hat+Display:ital,wght@1,500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Arimo");
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:wght@300;400;500;600;700&display=swap");
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 * {
   border: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 * body {
-  background-color: #d4d3d3;
+  background-color: rgb(212, 211, 211);
   overflow-x: hidden;
 }
-
 @media only screen and (min-width: 10px) and (max-width: 451px) {
   * {
+    @import url("https://fonts.googleapis.com/css2?family=Kite+One&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Red+Hat+Display:ital,wght@1,500&display=swap");
+    @import url("https://fonts.googleapis.com/css?family=Arimo");
+    @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
   }
   * .footer {
     position: fixed;
     bottom: 0;
     width: 100vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     margin-left: 9%;
     padding-right: 9%;
   }
@@ -86,7 +76,7 @@
     margin-left: 70%;
   }
   * .Home .text-on-app h1 {
-    font-family: 'Sato';
+    font-family: "Sato";
     font-size: 35px;
     margin: auto auto 30px auto;
     font-size: 72px;
@@ -95,7 +85,7 @@
   }
   * .Home .text-on-app h4 {
     margin-bottom: 0px;
-    color: #081158;
+    color: hsl(233.25, 83.33%, 18.82%);
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -124,14 +114,9 @@
     background-position: 20px 50%;
     background-size: auto 15px;
     background-repeat: no-repeat;
-    -webkit-transition-property: padding, background-position, color, opacity, -webkit-transform;
-    transition-property: padding, background-position, color, opacity, -webkit-transform;
     transition-property: padding, background-position, transform, color, opacity;
-    transition-property: padding, background-position, transform, color, opacity, -webkit-transform;
-    -webkit-transition-duration: 500ms, 500ms, 500ms, 200ms, 200ms;
-            transition-duration: 500ms, 500ms, 500ms, 200ms, 200ms;
-    -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), ease, ease;
-            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), ease, ease;
+    transition-duration: 500ms, 500ms, 500ms, 200ms, 200ms;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), ease, ease;
     font-family: Sato;
     line-height: 1.6em;
     font-weight: 500;
@@ -144,23 +129,17 @@
     font-size: 14px;
     color: white;
     padding: 39%;
-    -webkit-transform: rotate(-3deg);
-            transform: rotate(-3deg);
+    transform: rotate(-3deg);
     margin: 13% -18% 39px -18%;
   }
   * .Home .onApp .putOnApp {
-    display: -ms-grid;
     display: grid;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-    -ms-flex-line-pack: space-evenly;
-        align-content: space-evenly;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    transform: rotate(0deg);
+    align-content: space-evenly;
+    justify-content: space-around;
     justify-items: start;
     gap: 40%;
-    -webkit-transform: rotate(3deg);
-            transform: rotate(3deg);
+    transform: rotate(3deg);
   }
   * .Home .onApp .putOnApp div h3 {
     font-size: 37px;
@@ -188,8 +167,7 @@
     background: #081158;
     background-position: 20px 50%;
     background-size: auto 15px;
-    -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), ease, ease;
-            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), ease, ease;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1), ease, ease;
     font-family: Sato;
     line-height: 1.6em;
     font-weight: 500;
@@ -204,9 +182,7 @@
     padding-top: 5%;
   }
   * .categories section .HomeLink {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     text-align: center;
     text-decoration: none;
   }
@@ -215,8 +191,7 @@
     margin: auto;
     margin: auto;
     width: 50%;
-    -webkit-animation: shadow-for-image 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-            animation: shadow-for-image 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: shadow-for-image 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     width: 50%;
     height: auto;
     -o-object-fit: cover;
@@ -229,40 +204,22 @@
   }
   * .categories section .HomeLink h4 {
     padding: 5% 0 5% 0;
-    font-family: 'Sato';
+    font-family: "Sato";
   }
   * .categories section .HomeLink p {
-    font-family: 'Permanent Marker', cursive;
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: "Permanent Marker", cursive;
+    font-family: "Red Hat Display", sans-serif;
     padding-bottom: 12%;
     margin: 5%;
   }
-  @-webkit-keyframes shadow-for-image {
-    0% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      -webkit-box-shadow: 0 0 0 0 transparent;
-              box-shadow: 0 0 0 0 transparent;
-    }
-    100% {
-      -webkit-transform: translateZ(50px);
-              transform: translateZ(50px);
-      -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
-              box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
-    }
-  }
   @keyframes shadow-for-image {
     0% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      -webkit-box-shadow: 0 0 0 0 transparent;
-              box-shadow: 0 0 0 0 transparent;
+      transform: translateZ(0);
+      box-shadow: 0 0 0 0 transparent;
     }
     100% {
-      -webkit-transform: translateZ(50px);
-              transform: translateZ(50px);
-      -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
-              box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+      transform: translateZ(50px);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
     }
   }
   * .Recipes .add-recipe {
@@ -275,14 +232,9 @@
     --lightgrey: #666;
     color: var(--grey);
     line-height: 1.55;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
   }
   * .Recipes .Recipes-data .Recipes-container {
@@ -290,24 +242,16 @@
     padding: 24px;
   }
   * .Recipes .Recipes-data .Recipes-container .recipe {
-    -webkit-animation: shadow-Recipes 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-            animation: shadow-Recipes 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: shadow-Recipes 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     border: 1px solid #F2F2F2;
     border-radius: 8px;
     overflow: hidden;
   }
   * .Recipes .Recipes-data .Recipes-container .recipe .pizza-box {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-flex: 3;
-        -ms-flex: 3 1 30ch;
-            flex: 3 1 30ch;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 3 1 30ch;
     height: calc(282px + 5vw);
     overflow: hidden;
   }
@@ -325,9 +269,7 @@
   }
   * .Recipes .Recipes-data .Recipes-container .recipe-content {
     padding: 16px 32px;
-    -webkit-box-flex: 4;
-        -ms-flex: 4 1 40ch;
-            flex: 4 1 40ch;
+    flex: 4 1 40ch;
   }
   * .Recipes .Recipes-data .Recipes-container .recipe-tags {
     margin: 0 -8px;
@@ -335,10 +277,10 @@
   * .Recipes .Recipes-data .Recipes-container .recipe-tag {
     display: inline-block;
     margin: 8px;
-    font-size: .875em;
+    font-size: 0.875em;
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: .02em;
+    letter-spacing: 0.02em;
     color: var(--primary);
   }
   * .Recipes .Recipes-data .Recipes-container .recipe-title {
@@ -351,12 +293,8 @@
     color: inherit;
   }
   * .Recipes .Recipes-data .Recipes-container .recipe-save {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     padding: 6px 14px 6px 12px;
     border-radius: 4px;
     border: 2px solid currentColor;
@@ -365,49 +303,29 @@
     cursor: pointer;
     font-weight: bold;
   }
-  @-webkit-keyframes shadow-Recipes {
-    0% {
-      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-    100% {
-      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-              box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-    }
-  }
   @keyframes shadow-Recipes {
     0% {
-      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
     100% {
-      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-              box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
     }
   }
   * .wrapper {
     width: 60%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     font-family: "Arimo";
     background-color: #eb9478;
-    -webkit-box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
     box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
-    -webkit-animation: slideUp 2000ms ease;
-            animation: slideUp 2000ms ease;
+    animation: slideUp 2000ms ease;
   }
   * .wrapper .container {
     width: 65%;
     padding: 5% 10%;
   }
   * .wrapper .container h1 {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    align-self: center;
   }
   * .wrapper .container form {
     width: 100%;
@@ -420,7 +338,7 @@
     min-height: 25px;
     border: 0;
     font-size: 1rem;
-    letter-spacing: .15rem;
+    letter-spacing: 0.15rem;
     font-family: "Arimo";
     margin-top: 5px;
     color: #8e2807;
@@ -433,11 +351,7 @@
     color: #8e2807;
   }
   * .name {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    justify-content: space-between;
     display: flex;
     width: 100%;
   }
@@ -445,38 +359,23 @@
     width: 45%;
   }
   * .address-info {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
   * .address-info div {
     width: 30%;
   }
   * .cc-info {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
   * .cc-info div {
     width: 45%;
   }
   * .btns {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
     padding-bottom: 15%;
   }
   * .btns button {
@@ -487,31 +386,19 @@
     background-color: #4a3b76;
     text-transform: uppercase;
     border: 0;
-    border-radius: .3rem;
+    border-radius: 0.3rem;
     letter-spacing: 2px;
   }
   * .btns button:hover {
-    -webkit-animation-name: btn-hov;
-            animation-name: btn-hov;
-    -webkit-animation-duration: 550ms;
-            animation-duration: 550ms;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-  }
-  @-webkit-keyframes btn-hov {
-    100% {
-      background-color: #cfc9e1;
-      color: #4a3b76;
-      -webkit-transform: scale(1.05);
-              transform: scale(1.05);
-    }
+    animation-name: btn-hov;
+    animation-duration: 550ms;
+    animation-fill-mode: forwards;
   }
   @keyframes btn-hov {
     100% {
       background-color: #cfc9e1;
       color: #4a3b76;
-      -webkit-transform: scale(1.05);
-              transform: scale(1.05);
+      transform: scale(1.05);
     }
   }
   * input:focus,
@@ -525,9 +412,7 @@
     width: 100%;
   }
   * .btns {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
   * .btns button {
     width: 50%;
@@ -538,28 +423,16 @@
   * .name,
   * .address-info,
   * .cc-info {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     width: 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
   * .name div,
   * .address-info div,
   * .cc-info div {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   * .street,
@@ -570,31 +443,18 @@
     margin: 5px 0;
     min-height: 30px;
   }
-  @-webkit-keyframes slideUp {
-    0% {
-      -webkit-transform: translateY(100%);
-      transform: translateY(100%);
-      visibility: visible;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-  }
   @keyframes slideUp {
     0% {
-      -webkit-transform: translateY(100%);
       transform: translateY(100%);
       visibility: visible;
     }
     100% {
-      -webkit-transform: translateY(0);
       transform: translateY(0);
     }
   }
   * :root {
-    --headlinesFont: 'Jost', sans-serif;
-    --bodyFont: 'Work Sans', sans-serif;
+    --headlinesFont: "Jost", sans-serif;
+    --bodyFont: "Work Sans", sans-serif;
     --wildWatermelon: #ff4f87;
     --fuelYellow: #f0a035;
     --textColor: #323232;
@@ -610,22 +470,15 @@
   }
   * .genericRecipe .ft-recipe {
     background: var(--white);
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-shadow: 0 0 88px 0 rgba(0, 0, 0, 0.160784);
-            box-shadow: 0 0 88px 0 rgba(0, 0, 0, 0.160784);
+    flex-direction: column;
+    box-shadow: 0 0 88px 0 rgba(0, 0, 0, 0.1607843137);
     overflow: hidden;
   }
   * .genericRecipe .ft-recipe .ft-recipe__thumb {
     position: relative;
     height: 281px;
-    -webkit-box-shadow: 0px 0px 130px 0 rgba(0, 0, 0, 0.38);
-            box-shadow: 0px 0px 130px 0 rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 130px 0 rgba(0, 0, 0, 0.38);
   }
   * .genericRecipe .ft-recipe .ft-recipe__thumb .close-modal {
     position: absolute;
@@ -640,7 +493,6 @@
     font-size: 22px;
     cursor: pointer;
     z-index: 1;
-    -webkit-transition: all 200ms ease;
     transition: all 200ms ease;
   }
   * .genericRecipe .ft-recipe .ft-recipe__thumb .close-modal:hover {
@@ -656,7 +508,6 @@
     font-family: var(--headlinesFont);
     font-size: 25px;
     height: 100%;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.25)), to(transparent));
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), transparent);
     padding: 2.4rem 0 0;
   }
@@ -669,16 +520,12 @@
        object-position: 50% 50%;
   }
   * .genericRecipe .ft-recipe .ft-recipe__content {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex: 1;
     padding: 0 2em 1em;
   }
   * .genericRecipe .ft-recipe .ft-recipe__content .content__header .row-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    padding: .55em 0 .3em;
+    padding: 0.55em 0 0.3em;
     border-bottom: 1px solid #d8d8d8;
   }
   * .genericRecipe .ft-recipe .ft-recipe__content .content__header .row-wrapper .recipe-title {
@@ -686,27 +533,21 @@
     font-weight: 600;
   }
   * .genericRecipe .ft-recipe .ft-recipe__content .content__header .recipe-details {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     list-style: none;
     padding: 1.4em 0 1em;
     margin: 0;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
   * .genericRecipe .ft-recipe .ft-recipe__content .content__header .recipe-details .recipe-details-item {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex: 1;
   }
   * .genericRecipe .ft-recipe .ft-recipe__content .content__header .recipe-details .recipe-details-item i {
     font-size: 30px;
   }
   * .genericRecipe .ft-recipe .ft-recipe__content .content__header .recipe-details .recipe-details-item .value {
     color: #ff4f87;
-    margin-left: .35em;
+    margin-left: 0.35em;
     vertical-align: bottom;
     font-size: 24px;
     font-weight: 600;
@@ -719,7 +560,7 @@
     font-weight: 300;
   }
   * .genericRecipe .ft-recipe .ft-recipe__content .description {
-    margin: .3em 0 1.8em;
+    margin: 0.3em 0 1.8em;
   }
   * .genericRecipe .ft-recipe .ft-recipe__content .content__footer {
     text-align: center;
@@ -729,24 +570,19 @@
     font-family: var(--headlinesFont);
     display: inline-block;
     background: var(--wildWatermelon);
-    padding: .45em 1em;
+    padding: 0.45em 1em;
     width: 100%;
     text-align: center;
     border-radius: 5px;
     color: #fff;
     font-weight: 500;
-    letter-spacing: .2px;
+    letter-spacing: 0.2px;
     font-size: 17px;
-    -webkit-transition: -webkit-transform 250ms ease, -webkit-box-shadow 250ms ease;
-    transition: -webkit-transform 250ms ease, -webkit-box-shadow 250ms ease;
-    transition: transform 250ms ease, box-shadow 250ms ease;
-    transition: transform 250ms ease, box-shadow 250ms ease, -webkit-transform 250ms ease, -webkit-box-shadow 250ms ease;
+    transition: transform 250ms ease, box-shadow 250ms ease;
   }
   * .genericRecipe .ft-recipe .ft-recipe__content .content__footer a:hover {
-    -webkit-transform: translateY(-3px);
-            transform: translateY(-3px);
-    -webkit-box-shadow: 0 10px 34px 0 rgba(255, 79, 135, 0.32);
-            box-shadow: 0 10px 34px 0 rgba(255, 79, 135, 0.32);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 34px 0 rgba(255, 79, 135, 0.32);
   }
   * .TrainingTable {
     width: 100%;
@@ -768,7 +604,6 @@
   * .TrainingTable .row {
     padding: 20px 0;
     overflow: hidden;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
@@ -783,8 +618,7 @@
     list-style: none;
     display: inline-block;
     width: 20%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
   }
   * .TrainingTable .row-fadeIn-TrainingTable {
     opacity: 0;
@@ -792,18 +626,14 @@
     height: 0;
     overflow: hidden;
     position: relative;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
-    -webkit-animation: fadeIn 0.4s ease-out 2s 1 alternate;
-            animation: fadeIn 0.4s ease-out 2s 1 alternate;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
+    animation: fadeIn 0.4s ease-out 2s 1 alternate;
+    animation-fill-mode: forwards;
   }
   * .TrainingTable .row-fadeIn-TrainingTable .fadeIn {
     padding: 20px 0;
     font-size: 0;
     position: absolute;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     width: 100%;
   }
@@ -814,19 +644,16 @@
     display: none;
   }
 }
-
 @media only screen and (min-width: 10px) and (max-width: 451px) and (max-width: 767px) and (min-width: 480px) {
   * .row ul {
     font-size: 13px;
   }
 }
-
 @media only screen and (min-width: 10px) and (max-width: 451px) and (max-width: 479px) {
   * .row ul {
     font-size: 13px;
   }
 }
-
 @media only screen and (min-width: 10px) and (max-width: 451px) {
   * .title ul li {
     padding: 15px 13px;
@@ -840,19 +667,16 @@
     color: pink;
   }
 }
-
 @media only screen and (min-width: 10px) and (max-width: 451px) and (max-width: 767px) {
   * .row:hover {
     height: 85px;
   }
 }
-
 @media only screen and (min-width: 10px) and (max-width: 451px) and (max-width: 359px) {
   * .row:hover {
     height: 105px;
   }
 }
-
 @media only screen and (min-width: 10px) and (max-width: 451px) {
   * .title:hover {
     height: 45px;
@@ -860,40 +684,25 @@
     border-left: 3px solid rgba(255, 255, 255, 0.1);
   }
   * .lineInData:hover {
-    border-left: 3px solid #4fc0d2;
+    border-left: 3px solid rgb(79, 192, 210);
   }
   * .row-fadeIn-TrainingTable:hover {
     height: 35px;
   }
 }
-
 @media only screen and (min-width: 10px) and (max-width: 451px) and (max-width: 767px) {
   * .row-fadeIn-TrainingTable:hover {
     height: 55px;
   }
 }
-
 @media only screen and (min-width: 10px) and (max-width: 451px) and (max-width: 359px) {
   * .row-fadeIn-TrainingTable:hover {
     height: 75px;
   }
 }
-
 @media only screen and (min-width: 10px) and (max-width: 451px) {
   * .fadeIn:hover {
     background-color: rgba(26, 26, 26, 0.9);
-  }
-  @-webkit-keyframes fadeIn {
-    from {
-      background: rgba(255, 255, 255, 0.1);
-      opacity: 0;
-      padding: 0;
-    }
-    to {
-      background: rgba(51, 51, 51, 0.1);
-      opacity: 1;
-      padding: 0 0 65px 0;
-    }
   }
   @keyframes fadeIn {
     from {
@@ -905,18 +714,6 @@
       background: rgba(51, 51, 51, 0.1);
       opacity: 1;
       padding: 0 0 65px 0;
-    }
-  }
-  @-webkit-keyframes fadeOut {
-    from {
-      background: rgba(51, 51, 51, 0.1);
-      opacity: 1;
-      height: 65px;
-    }
-    to {
-      background: rgba(255, 255, 255, 0.1);
-      opacity: 0;
-      height: 0;
     }
   }
   @keyframes fadeOut {
@@ -932,21 +729,14 @@
     }
   }
 }
-
 @media only screen and (min-width: 451px) and (max-width: 1024px) {
   * .footer {
     position: fixed;
     bottom: 0;
     width: 100vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     margin-left: 3%;
   }
   * .footer img {
@@ -954,28 +744,240 @@
     height: auto;
   }
 }
-
 @media only screen and (min-width: 1024px) {
   * {
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
   }
-  * .Header {
+  * * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  * body {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.925rem;
+  }
+  * a {
+    text-decoration: none;
+  }
+  * .container {
+    width: 1170px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  * .navbar,
+  * .navbar > .container {
     width: 100%;
-    position: fixed;
-    z-index: 4000000;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
   }
+}
+@media only screen and (min-width: 1024px) and (max-width: 768px) {
+  * .navbar,
+  * .navbar > .container {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  * .navbar {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    padding: 1rem 1.15rem;
+    border-bottom: 1px solid #eceef3;
+    /*
+    |-----------------------------------
+    | Start navbar logo or brand etc..
+    |-----------------------------------
+    */
+    /*
+    |-----------------------------------
+    | Start navbar menu
+    |-----------------------------------
+    */
+  }
+}
+@media only screen and (min-width: 1024px) and (min-width: 576px) {
+  * .navbar .container {
+    max-width: 540px;
+  }
+}
+@media only screen and (min-width: 1024px) and (min-width: 768px) {
+  * .navbar .container {
+    max-width: 720px;
+  }
+}
+@media only screen and (min-width: 1024px) and (min-width: 992px) {
+  * .navbar .container {
+    max-width: 960px;
+  }
+}
+@media only screen and (min-width: 1024px) and (min-width: 1200px) {
+  * .navbar .container {
+    max-width: 1140px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  * .navbar .navbar-header {
+    display: flex;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 768px) {
+  * .navbar .navbar-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  * .navbar .navbar-header .navbar-toggler {
+    cursor: pointer;
+    border: none;
+    display: none;
+    outline: none;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 768px) {
+  * .navbar .navbar-header .navbar-toggler {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  * .navbar .navbar-header .navbar-toggler span {
+    height: 2px;
+    width: 22px;
+    background-color: #929aad;
+    display: block;
+  }
+  * .navbar .navbar-header .navbar-toggler span:not(:last-child) {
+    margin-bottom: 0.2rem;
+  }
+  * .navbar .navbar-header > a {
+    font-weight: 500;
+    color: #3c4250;
+  }
+  * .navbar .navbar-menu {
+    display: flex;
+    align-items: center;
+    flex-basis: auto;
+    flex-grow: 1;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 768px) {
+  * .navbar .navbar-menu {
+    display: none;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  * .navbar .navbar-menu .navbar-nav {
+    margin-left: auto;
+    flex-direction: row;
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 768px) {
+  * .navbar .navbar-menu .navbar-nav {
+    width: 100%;
+    display: block;
+    border-top: 1px solid #EEE;
+    margin-top: 1rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  * .navbar .navbar-menu .navbar-nav > li > a {
+    color: #3c4250;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+  }
+  * .navbar .navbar-menu .navbar-nav > li > a:hover {
+    color: #66f;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 768px) {
+  * .navbar .navbar-menu .navbar-nav > li > a {
+    border-bottom: 1px solid #eceef3;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  * .navbar .navbar-menu .navbar-nav > li.active a {
+    color: #66f;
+  }
+  * .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown {
+    list-style: none;
+    position: absolute;
+    top: 150%;
+    left: 0;
+    background-color: #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    min-width: 160px;
+    width: auto;
+    white-space: nowrap;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    z-index: 99999;
+    border-radius: 0.75rem;
+    display: none;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 768px) {
+  * .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown {
+    position: relative;
+    box-shadow: none;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  * .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown li a {
+    color: #3c4250;
+    padding: 0.25rem 1rem;
+    display: block;
+  }
+  * .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown.show {
+    display: block !important;
+  }
+  * .navbar .navbar-menu .navbar-nav .dropdown > .separator {
+    height: 1px;
+    width: 100%;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    background-color: #eceef3;
+  }
+  * .navbar .navbar-dropdown {
+    position: relative;
+  }
+  * .navbar .navbar-header > a span {
+    color: #66f;
+  }
+  * .navbar .navbar-header h4 {
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 768px) {
+  * .navbar .navbar-header h4 {
+    font-size: 1.05rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
   * .footer {
     position: fixed;
     bottom: 0;
     width: 57vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     margin-left: 3%;
   }
   * .footer img {
@@ -987,10 +989,8 @@
   }
   * .Home .Home-section {
     padding-left: 4%;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 45% 45%;
-        grid-template-columns: 45% 45%;
+    grid-template-columns: 45% 45%;
     gap: 4%;
   }
   * .Home .Home-section .aboutMe {
@@ -1053,9 +1053,7 @@
     min-width: 200px;
     font-size: 14px;
     text-transform: uppercase;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     color: white;
     background: #081158;
   }
@@ -1064,20 +1062,16 @@
     font-size: 14px;
     color: white;
     padding: 9%;
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
+    transform: rotate(-2deg);
     margin: 6% -2% 0 -2%;
   }
   * .Home .onApp .putOnApp {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 30%;
   }
   * .Home .onApp .putOnApp div {
-    -webkit-transform: rotate(1deg);
-            transform: rotate(1deg);
+    transform: rotate(1deg);
   }
   * .Home .onApp .putOnApp div h3 {
     font-size: 30px;
@@ -1105,23 +1099,19 @@
     min-width: 200px;
     font-size: 14px;
     text-transform: uppercase;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     color: white;
     background: #081158;
   }
   * .Home .categories {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 4%;
     padding-left: 7%;
     text-decoration: none;
   }
   * .Home .categories h4 {
-    font-family: 'sato';
+    font-family: "sato";
     max-width: 350px;
   }
   * .Home .categories a {
@@ -1138,15 +1128,9 @@
     position: fixed;
     bottom: 0;
     width: 100vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     margin-left: 3%;
   }
   * .Home .footer img {
@@ -1177,9 +1161,7 @@
     padding: 2% 0 0 2%;
   }
   * .AddReport form {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-grow: 1;
     padding: 16px;
     width: 320px;
     margin: 0 auto;
@@ -1201,61 +1183,44 @@
   }
   * .AddReport input {
     margin-right: 8px;
-    -webkit-box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
-            box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
     width: 100%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    -webkit-transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
     transition: all 0.2s ease-in-out;
     -moz-appearance: none;
          appearance: none;
     -webkit-appearance: none;
   }
   * .AddReport input:focus {
-    -webkit-box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
-            box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
   }
   * .AddReport button {
     color: #61677C;
     font-weight: bold;
-    -webkit-box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
-            box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
-    -webkit-transition: all 0.2s ease-in-out;
+    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     font-weight: 600;
     margin: 21%;
   }
   * .AddReport button:hover {
-    -webkit-box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
-            box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
   }
   * .AddReport button:active {
-    -webkit-box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
-            box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
   }
   * .AddReport .input-group {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    align-items: center;
+    justify-content: flex-start;
   }
   * .AddReport .input-group label {
     margin: 0;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex: 1;
   }
   * .LoginAndRegister {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
+    align-content: center;
+    justify-content: space-around;
   }
-}
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

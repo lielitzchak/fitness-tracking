@@ -1,5 +1,6 @@
 const USER_MODEL = require("../Models/User-model");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 module.exports = {
   getAllUsers: (requestFromUser, responseFromServer) => {
     USER_MODEL.find()
@@ -34,15 +35,71 @@ module.exports = {
       });
   },
   getUserByEmail: (requestFromUser, responseFromServer) => {
-    console.log(requestFromUser.params);
-    USER_MODEL.findOne({ Email: requestFromUser.params.Email })
-      .then((dataFromServer) => {
-        if (CheckIfUserExists(dataFromServer))
-          return responseFromServer
-            .status(404)
-            .json({ Message: "No user found" });
+    const { Email, Password } = requestFromUser.params;
+    USER_MODEL.findOne({ Email })
+      .then((dataFromDB) => {
+        if (CheckIfUserExists(dataFromDB)) {
+          bcrypt.compare(Password, dataFromDB.Password, (err, isMatch) => {
+            if (err)
+              return responseFromServer
+                .status(400)
+                .send({ message: "error in pas" });
 
-        return responseFromServer.status(200).json(dataFromServer);
+            if (!isMatch) {
+              return responseFromServer
+                .status(403)
+                .send({ message: "Password incorrect" });
+            }
+            jwt.sign(
+              { Email, Password },
+              process.env.SECRET_KEY,
+              { expiresIn: "3d" },
+              (err, accessToken) => {
+                if (err)
+                  return responseFromServer
+                    .status(400)
+                    .send({ Error: `the err is: ${err}` });
+                responseFromServer
+                  .status(200)
+                  .send({ message: "Login Successfully", accessToken });
+                user.isLogin = true;
+                user.save();
+              }
+            );
+            // jwt.sign(
+            //   {
+            //     email: user.email,
+            //     id: user._id,
+            //   },
+            //   process.env.SECRET_KEY,
+            //
+            //   (err, accessToken) => {
+            //
+            //   }
+            // );
+
+            // if (err) {
+            //   return console.log(`error ${err}`);
+            // }
+            // if (isMatch) {
+            //   return console.log(`isMatch ${isMatch}`);
+            // }
+          });
+        }
+
+        //       return responseFromServer
+        //         .status(404)
+        //         .json({ Message: "No user found" });
+        //     bcrypt.compare(
+        //       requestFromUser.Password,
+        //       dataFromServer.Password,
+        //       (err, isMatch) => {
+        //         if (isMatch) return console.log(`${isMatch} isMatch`);
+        //         if (err) return console.log(`${err} err`);
+        //       }
+        //     );
+        // console.log(dataFromServer.Password);
+        // return responseFromServer.status(200).json(dataFromServer);
       })
       .catch((error) => {
         responseFromServer.status(500).json({
@@ -50,9 +107,8 @@ module.exports = {
           error: error,
         });
       });
-  },
+  }, 
   createUser: (requestFromUser, responseFromServer) => {
-    console.log(requestFromUser.body);
     bcrypt.hash(
       requestFromUser.body.Password,
       10,
@@ -108,5 +164,5 @@ module.exports = {
   },
 };
 function CheckIfUserExists(dataUser) {
-  return dataUser == null || dataUser == undefined || dataUser == "";
+  return dataUser != null || dataUser != undefined || dataUser != "";
 }
