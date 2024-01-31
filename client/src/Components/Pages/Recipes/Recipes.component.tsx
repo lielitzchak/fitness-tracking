@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import { recipeService } from "../../../service/Recipe-service";
 import { Link } from "react-router-dom";
+import { json } from "express";
 
 const Recipes = (): JSX.Element => {
-  const [recipes, setRecipes]: any = useState([]);
+  let [recipes, setRecipes]: any = useState([]);
   useEffect((): void => {
     recipeService
       .GetRecipes()
       .then((responseFromServer: any) => {
         setRecipes(responseFromServer);
-       })
+      })
       .catch((error) => error);
   }, []);
 
@@ -26,7 +27,7 @@ const Recipes = (): JSX.Element => {
         {recipes.map((recipe: any) => {
           return (
             <Link to={`/recipe/${recipe._id}`} key={recipe._id}>
-              {localStorage.setItem(`${recipe._id}`, JSON.stringify(recipe))}
+              {localStorage.setItem(recipe._id, JSON.stringify(recipe))}
               <div className="Recipes-container" key={recipe._id}>
                 <article className="recipe">
                   <div className="pizza-box">

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { TrainingProgramService } from "../../../service/Training-Program-service";
 
 const TrainingProgram = (): JSX.Element => {
-  let counter = 0;
+  // let counter = 0;
   const [gym, setGym]: any = useState([]);
 
   useEffect((): void => {
