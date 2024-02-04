@@ -14,7 +14,7 @@ const AddRecipe = (): JSX.Element => {
   };
   const HandleOnChange = (event: any): void => {
     console.log(event.target.name);
-    if (event.target.value == "on")
+    if (event.target.value === "on")
       setRecipe({ ...Recipe, [event.target.name]: true });
     setRecipe({ ...Recipe, [event.target.name]: false });
     console.log(Recipe);

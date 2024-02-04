@@ -6,11 +6,21 @@ interface LoginProps {
 }
 
 interface RegisterProps {
-  onRegister: (Email: string, Password: string) => void;
+  onRegister: (
+    UserName: String,
+    Email: string,
+    Password: string,
+    Image: string
+  ) => void;
 }
 
 const Login: React.FC<LoginProps> = ({ onLogin }) => {
-  const [formData, setFormData] = useState({ Email: "", Password: "" });
+  const [formData, setFormData] = useState({
+    UserName: "",
+    Password: "",
+    Email: "",
+    Image: "",
+  });
   const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +28,6 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   };
   const userInfo = (event: any) => {
     event.preventDefault();
-
     setFormData({ ...formData, [event.target.name]: event.target.value });
     console.log(formData);
   };
@@ -30,7 +39,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
       return;
     }
     onLogin(Email, Password);
-    setFormData({ Email: "", Password: "" });
+    setFormData({ UserName: "", Email: "", Password: "", Image: "" });
   };
   let something = () => {
     UserService.GetUserByEmail("liel@gmail.com", "0547080093")
@@ -47,6 +56,18 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
+          <label htmlFor="Password">Password:</label>
+          <input
+            type="Password"
+            placeholder="Password"
+            id="Password"
+            name="Password"
+            value={formData.Password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
           <label htmlFor="Email">Email:</label>
           <input
             type="Email"
@@ -59,13 +80,13 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
           />
         </div>
         <div>
-          <label htmlFor="Password">Password:</label>
+          <label htmlFor="Email">Email:</label>
           <input
-            type="Password"
-            placeholder="Password"
-            id="Password"
-            name="Password"
-            value={formData.Password}
+            type="Email"
+            placeholder="Email"
+            id="Email"
+            name="Email"
+            value={formData.Email}
             onChange={handleChange}
             required
           />
@@ -80,7 +101,12 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 };
 
 const Register: any = () => {
-  const [formData, setFormData] = useState({ Email: "", Password: "" });
+  const [formData, setFormData] = useState({
+    UserName: "",
+    Password: "",
+    Email: "",
+    Image: "",
+  });
   const [error, setError] = useState("");
   // !good
   const SaveUserData = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -105,11 +131,23 @@ const Register: any = () => {
       <h2>Register</h2>
       <form>
         <div>
+          <label htmlFor="Name">name:</label>
+          <input
+            type="text"
+            placeholder="Name"
+            id="UserName"
+            name="UserName"
+            value={formData.UserName}
+            onChange={(event) => SaveUserData(event)}
+          />
+        </div>
+        <div>
           <label htmlFor="Email">Email:</label>
           <input
             type="Email"
             id="Email"
             name="Email"
+            placeholder="Email"
             onChange={(event) => SaveUserData(event)}
             required
           />
