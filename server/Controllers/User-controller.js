@@ -1,6 +1,8 @@
 const USER_MODEL = require("../Models/User-model");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const UserModel = require("../Models/User-model");
+// const { use } = require("bcrypt/promises");
 module.exports = {
   getAllUsers: (requestFromUser, responseFromServer) => {
     USER_MODEL.find()
@@ -107,26 +109,33 @@ module.exports = {
           error: error,
         });
       });
-  }, 
+  },
   createUser: (requestFromUser, responseFromServer) => {
-    bcrypt.hash(
-      requestFromUser.body.Password,
-      10,
-      async (error, hashPassword) => {
-        if (error)
-          return responseFromServer
-            .status(500)
-            .json({ Message: error.Message });
-        requestFromUser.body.Password = hashPassword;
-        await USER_MODEL.create(requestFromUser.body)
-          .then((result) =>
-            responseFromServer
-              .status(201)
-              .json({ massage: "user added successfully", result })
-          )
-          .catch((err) => responseFromServer.status(500).json(err));
-      }
-    );
+     UserModel.create(requestFromUser.body)
+      .then((dataFromUser) => {
+        responseFromServer.status(201).json(dataFromUser);
+      })
+      .catch((err) => {
+        responseFromServer.status(500).json({ Message: err });
+      });
+    // bcrypt.hash(
+    //   requestFromUser.body.Password,
+    //   10,
+    //   async (error, hashPassword) => {
+    //     if (error)
+    //       return responseFromServer
+    //         .status(500)
+    //         .json({ Message: error.Message });
+    //     requestFromUser.body.Password = hashPassword;
+    //     await USER_MODEL.create(requestFromUser.body)
+    //       .then((result) =>
+    //         responseFromServer
+    //           .status(201)
+    //           .json({ massage: "user added successfully", result })
+    //       )
+    //       .catch((err) => responseFromServer.status(500).json(err));
+    //   }
+    // );
   },
   updateUser: (requestFromUser, responseFromServer) => {
     USER_MODEL.findByIdAndUpdate(
@@ -163,6 +172,6 @@ module.exports = {
       });
   },
 };
-function CheckIfUserExists(dataUser) {
+const CheckIfUserExists = (dataUser) => {
   return dataUser != null || dataUser != undefined || dataUser != "";
-}
+};

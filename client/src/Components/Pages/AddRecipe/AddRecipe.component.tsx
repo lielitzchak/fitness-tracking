@@ -5,12 +5,14 @@ const AddRecipe = (): JSX.Element => {
   const [Recipe, setRecipe] = useState({ Candy: false, vegan: false });
   const [messageFromServer, setMessageFromServer] = useState("");
 
-  const SaveValueInRecipeState = (event: any) => {
+  const SaveValueInRecipeState = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
     event.preventDefault();
     setRecipe({ ...Recipe, [event.target.name]: event.target.value });
     console.log(Recipe);
   };
-  const HandleOnChange = (event: any) => {
+  const HandleOnChange = (event: any): void => {
     console.log(event.target.name);
     if (event.target.value == "on")
       setRecipe({ ...Recipe, [event.target.name]: true });
