@@ -1,118 +1,136 @@
-// import { useContext } from "react";
-// import { authContext } from "../../Context/AuthProvider.component";
+import React, { useState } from "react";
 import { UserService } from "../../service/User-service";
 
-// import FormControlLabel from "@mui/material/FormControlLabel";
-// import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+interface LoginProps {
+  onLogin: (Email: string, Password: string) => void;
+}
 
-const theme = createTheme();
+interface RegisterProps {
+  onRegister: (Email: string, Password: string) => void;
+}
 
-const Login = () => {
-  // const userContext = useContext(authContext);
-  const handleSubmit = (event: any) => {
+const Login: React.FC<LoginProps> = ({ onLogin }) => {
+  const [formData, setFormData] = useState({ Email: "", Password: "" });
+  const [error, setError] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const userInfo = (event: any) => {
     event.preventDefault();
-    let Email: string = String(new FormData(event.currentTarget).get("Email"));
-    let Password: string = String(
-      new FormData(event.currentTarget).get("Password")
-    );
 
-    UserService.GetUserByEmail(Email, Password)
-      .then((responseFromServer): any => {
-        console.log(responseFromServer);
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+    console.log(formData);
+  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { Email, Password } = formData;
+    if (!Email || !Password) {
+      setError("Please provide both Email and Password.");
+      return;
+    }
+    onLogin(Email, Password);
+    setFormData({ Email: "", Password: "" });
+  };
+  let something = () => {
+    UserService.GetUserByEmail("liel@gmail.com", "0547080093")
+      .then((response) => {
+        console.log(response);
       })
-      .catch((errorFromServer: any) => {
-        console.log("this user are not exist");
-        console.log(errorFromServer);
+      .catch((response) => {
+        console.log(response + " error");
       });
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="Email"
-              label="Email"
-              name="Email"
-              autoComplete="Email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="Password"
-              label="Password"
-              type="Password"
-              id="Password"
-              autoComplete="current-Password"
-            />
-            {/* <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            /> */}
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                log in- hirashem
-                </Link>
-              </Grid>
-              <Grid item></Grid>
-            </Grid>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item></Grid>
-            </Grid>
-          </Box>
-        </Box>
-      </Container>
-    </ThemeProvider>
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="Email">Email:</label>
+          <input
+            type="Email"
+            placeholder="Email"
+            id="Email"
+            name="Email"
+            value={formData.Email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="Password">Password:</label>
+          <input
+            type="Password"
+            placeholder="Password"
+            id="Password"
+            name="Password"
+            value={formData.Password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button onClick={something} type="submit">
+          Login
+        </button>
+        {error && <div style={{ color: "red" }}>{error}</div>}
+      </form>
+    </div>
   );
 };
-export default Login;
+
+const Register: any = () => {
+  const [formData, setFormData] = useState({ Email: "", Password: "" });
+  const [error, setError] = useState("");
+  // !good
+  const SaveUserData = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    event.preventDefault();
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
+  let RegisterDB = (event: any) => {
+    event.preventDefault();
+    UserService.CreateUser(formData)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((er) => {
+        setError(er);
+        console.log(er);
+      });
+  };
+
+  return (
+    <div>
+      <h2>Register</h2>
+      <form>
+        <div>
+          <label htmlFor="Email">Email:</label>
+          <input
+            type="Email"
+            id="Email"
+            name="Email"
+            onChange={(event) => SaveUserData(event)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="Password">Password:</label>
+          <input
+            type="Password"
+            id="Password"
+            name="Password"
+            onChange={(event) => SaveUserData(event)}
+            required
+          />
+        </div>
+        <button onClick={RegisterDB} type="submit">
+          Register
+        </button>
+        {error && <div style={{ color: "red" }}>{error}</div>}
+      </form>
+    </div>
+  );
+};
+
+export { Login, Register };

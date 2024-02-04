@@ -28,6 +28,7 @@ const USER_SCHEMA = new mongoose.Schema(
     Email: {
       type: String,
       lowercase: true,
+      unique: true,
     },
     Image: { type: String, default: "https://did.li/yWjaa" },
     IsLogin: { type: Boolean, default: false },

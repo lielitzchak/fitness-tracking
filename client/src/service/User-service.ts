@@ -1,3 +1,4 @@
+import { json } from 'express';
 import BASIC_URL from "./DataForAll";
 export const UserService = {
   GetAllUsers: async (): Promise<any> => {
@@ -23,12 +24,14 @@ export const UserService = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
       },
       body: JSON.stringify(user),
     })
       .then((responseFromServer: Response) => responseFromServer.json())
-      .catch((error: Response) => error.json());
+       .catch((error: Response) => error.json());
   },
+
   UpdateUser: async (user: any): Promise<any> => {
     return await fetch(`${BASIC_URL}/user/${user.id}`, {
       method: "PUT",
