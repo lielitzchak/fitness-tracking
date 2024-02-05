@@ -3,5 +3,14 @@
         "bgcolor",
         "preventdefault",
         "stam"
-    ]
+    ],
+    "editor.suggest.showStatusBar": false,
+    "zenMode.hideStatusBar": true,
+    "beautify.options": {
+
+    },
+    "scss.showErrors": true,
+    "scss.lint.duplicateProperties": "warning",
+    "scss.validate": true,
+    "liveSassCompile.settings.watchOnLaunch": false
 }
