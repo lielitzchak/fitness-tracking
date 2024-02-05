@@ -33,8 +33,8 @@ const Login: React.FC<LoginProps> = () => {
     <div className="LoginComponent">
       <div className="container">
         <div className="screen">
-          <h2 className="login__content">Login</h2>
           <div className="screen__content">
+            <h2 className="login__content">Login</h2>
             <form className="login">
               <div className="login__field">
                 <i className="login__icon fas fa-user"></i>
