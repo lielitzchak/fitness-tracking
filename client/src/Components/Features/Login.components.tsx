@@ -4,133 +4,83 @@ import { UserService } from "../../service/User-service";
 interface LoginProps {
   onLogin: (Email: string, Password: string) => void;
 }
-
-interface RegisterProps {
-  onRegister: (Email: string, Password: string) => void;
-}
-
-const Login: React.FC<LoginProps> = ({ onLogin }) => {
-  const [formData, setFormData] = useState({ Email: "", Password: "" });
+const Login: React.FC<LoginProps> = () => {
+  const [formData, setFormData] = useState({
+    UserName: "",
+    Password: "",
+    Email: "",
+    Image: "",
+  });
   const [error, setError] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-  const userInfo = (event: any) => {
-    event.preventDefault();
-
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log(formData);
   };
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const { Email, Password } = formData;
-    if (!Email || !Password) {
-      setError("Please provide both Email and Password.");
-      return;
-    }
-    onLogin(Email, Password);
-    setFormData({ Email: "", Password: "" });
-  };
-  let something = () => {
-    UserService.GetUserByEmail("liel@gmail.com", "0547080093")
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    UserService.GetUserByEmail(formData.Email, formData.Password)
       .then((response) => {
         console.log(response);
+        return;
       })
-      .catch((response) => {
-        console.log(response + " error");
+      .catch((err) => {
+        setError(err);
+        console.log(error);
       });
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="Email">Email:</label>
-          <input
-            type="Email"
-            placeholder="Email"
-            id="Email"
-            name="Email"
-            value={formData.Email}
-            onChange={handleChange}
-            required
-          />
+    <div className="LoginComponent">
+      <div className="container">
+        <div className="screen">
+          <h2 className="login__content">Login</h2>
+          <div className="screen__content">
+            <form className="login">
+              <div className="login__field">
+                <i className="login__icon fas fa-user"></i>
+                <input
+                  type="Email"
+                  placeholder="Email"
+                  id="Email"
+                  name="Email"
+                  value={formData.Email}
+                  onChange={handleChange}
+                  className="login__input"
+                  required
+                />
+              </div>
+              <div className="login__field">
+                <i className="login__icon fas fa-lock"></i>
+                <input
+                  type="Password"
+                  placeholder="Password"
+                  className="login__input"
+                  id="Password"
+                  name="Password"
+                  value={formData.Password}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <button
+                onClick={(event) => handleSubmit(event)}
+                className="button login__submit"
+              >
+                <span className="button__text">Log In Now</span>
+                <i className="button__icon fas fa-chevron-right"></i>
+              </button>
+            </form>
+          </div>
+          <div className="screen__background">
+            <span className="screen__background__shape screen__background__shape4"></span>
+            <span className="screen__background__shape screen__background__shape3"></span>
+            <span className="screen__background__shape screen__background__shape2"></span>
+            <span className="screen__background__shape screen__background__shape1"></span>
+          </div>
         </div>
-        <div>
-          <label htmlFor="Password">Password:</label>
-          <input
-            type="Password"
-            placeholder="Password"
-            id="Password"
-            name="Password"
-            value={formData.Password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button onClick={something} type="submit">
-          Login
-        </button>
-        {error && <div style={{ color: "red" }}>{error}</div>}
-      </form>
+      </div>
     </div>
   );
 };
 
-const Register: any = () => {
-  const [formData, setFormData] = useState({ Email: "", Password: "" });
-  const [error, setError] = useState("");
-  // !good
-  const SaveUserData = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    event.preventDefault();
-    setFormData({ ...formData, [event.target.name]: event.target.value });
-  };
-
-  let RegisterDB = (event: any) => {
-    event.preventDefault();
-    UserService.CreateUser(formData)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((er) => {
-        setError(er);
-        console.log(er);
-      });
-  };
-
-  return (
-    <div>
-      <h2>Register</h2>
-      <form>
-        <div>
-          <label htmlFor="Email">Email:</label>
-          <input
-            type="Email"
-            id="Email"
-            name="Email"
-            onChange={(event) => SaveUserData(event)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="Password">Password:</label>
-          <input
-            type="Password"
-            id="Password"
-            name="Password"
-            onChange={(event) => SaveUserData(event)}
-            required
-          />
-        </div>
-        <button onClick={RegisterDB} type="submit">
-          Register
-        </button>
-        {error && <div style={{ color: "red" }}>{error}</div>}
-      </form>
-    </div>
-  );
-};
-
-export { Login, Register };
+export { Login };

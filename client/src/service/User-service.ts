@@ -1,4 +1,3 @@
-import { json } from 'express';
 import BASIC_URL from "./DataForAll";
 export const UserService = {
   GetAllUsers: async (): Promise<any> => {

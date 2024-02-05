@@ -40,7 +40,7 @@ module.exports = {
     const { Email, Password } = requestFromUser.params;
     USER_MODEL.findOne({ Email })
       .then((dataFromDB) => {
-        if (CheckIfUserExists(dataFromDB)) {
+        if (CheckIfUserExists(dataFromDB)== true) {
           bcrypt.compare(Password, dataFromDB.Password, (err, isMatch) => {
             if (err)
               return responseFromServer
@@ -111,7 +111,7 @@ module.exports = {
       });
   },
   createUser: (requestFromUser, responseFromServer) => {
-     UserModel.create(requestFromUser.body)
+    UserModel.create(requestFromUser.body)
       .then((dataFromUser) => {
         responseFromServer.status(201).json(dataFromUser);
       })
@@ -158,7 +158,7 @@ module.exports = {
   deleteUser: (requestFromUser, responseFromServer) => {
     USER_MODEL.findByIdAndDelete(requestFromUser.params.id)
       .then((dataFromServer) => {
-        if (CheckIfUserExists(dataFromServer))
+        if (CheckIfUserExists(dataFromServer) == true)
           return responseFromServer
             .status(404)
             .json({ Message: "No user found" });

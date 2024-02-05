@@ -1,109 +1,74 @@
-import { FormEvent, useState } from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import  { useState } from "react";
 import { UserService } from "../../service/User-service";
 
-const theme = createTheme();
-
-export default function Register() {
-  const [Action, SetActin] = useState("sign up!");
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+const Register: any = () => {
+  const [formData, setFormData] = useState({
+    UserName: "",
+    Password: "",
+    Email: "",
+    Image: "",
+  });
+  const [error, setError] = useState("");
+  const SaveUserData = (event: React.ChangeEvent<HTMLInputElement>): void => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    UserService.CreateUser({
-      Email: data.get("Email"),
-      Password: data.get("Password"),
-      UserName: data.get("UserName"),
-      Image: data.get("Image"),
-    }).then((responseFromServer: any) => {
-      console.log(responseFromServer);
-      console.log("just a test");
-    });
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
+  let RegisterDB = (event: any) => {
+    event.preventDefault();
+    UserService.CreateUser(formData)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((er) => {
+        setError(er);
+        console.log(er);
+      });
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            {Action}
-          </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              // id="UserName"
-              label="Name"
-              name="UserName"
-              // autoComplete="Name"
-              // autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="Password"
-              label="Password"
-              type="Password"
-              id="Password"
-              autoComplete="current-Password"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="Email"
-              label="Email"
-              type="email"
-              id="Email"
-              autoComplete="current-email"
-            />
-            <TextField
-              margin="normal"
-              fullWidth
-              name="Image"
-              label="Image"
-              type="url"
-              id="Image"
-              autoComplete="current-Image"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              // className={Action === "Login" ? "Submit gray" : "Submit"}
-            >
-              Sign In
-            </Button>
-          </Box>
-        </Box>
-      </Container>
-    </ThemeProvider>
+    <div>
+      <h2>Register</h2>
+      <form>
+        <div>
+          <label htmlFor="Name">Name:</label>
+          <input
+            type="text"
+            placeholder="Name"
+            id="UserName"
+            name="UserName"
+            value={formData.UserName}
+            onChange={(event) => SaveUserData(event)}
+          />
+        </div>
+        <div>
+          <label htmlFor="Email">Email:</label>
+          <input
+            type="Email"
+            id="Email"
+            name="Email"
+            placeholder="Email"
+            onChange={(event) => SaveUserData(event)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="Password">Password:</label>
+          <input
+            type="Password"
+            id="Password"
+            name="Password"
+            onChange={(event) => SaveUserData(event)}
+            required
+          />
+        </div>
+        <button onClick={RegisterDB} type="submit">
+          Register
+        </button>
+        {error && <div style={{ color: "red" }}>{error}</div>}
+      </form>
+    </div>
   );
-}
+};
+
+export { Register };
