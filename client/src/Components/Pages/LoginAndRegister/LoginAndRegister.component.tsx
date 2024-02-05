@@ -1,13 +1,13 @@
-import { Login, Register } from "../../Features/Login.components";
+import { Login } from "../../Features/Login.components";
 import { UserService } from "../../../service/User-service";
+import { Register } from "../../Features/Register.component";
 const LoginAndRegister = () => {
   return (
     <section className="LoginAndRegister">
       <article className="login">
-        {/* <Login onLogin={UserService.GetUserByEmail} /> */}
+        <Login onLogin={UserService.GetUserByEmail} />
       </article>
-
-      <Register onRegister={UserService.CreateUser} />
+      <Register />
     </section>
   );
 };
