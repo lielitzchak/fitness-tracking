@@ -1,6 +1,6 @@
 import { Login } from "../../Features/Login/Login.components";
 import { UserService } from "../../../service/User-service";
-import { Register } from "../../Features/Login/Register/Register.component";
+import { Register } from "../../Features/Register/Register.component";
 const LoginAndRegister = () => {
   return (
     <section className="LoginAndRegister">

@@ -31,7 +31,7 @@ const Login: React.FC<LoginProps> = () => {
 
   return (
     <div className="LoginComponent">
-      <div className="container">
+      <div className="container_Login_and_Register">
         <div className="screen">
           <div className="screen__content">
             <h2 className="login__content">Login</h2>

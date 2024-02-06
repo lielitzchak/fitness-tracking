@@ -6,7 +6,7 @@
 
     .LoginComponent {
 
-        .container {
+        .container_Login_and_Register {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -94,6 +94,9 @@
                             margin-left: auto;
                             color: #7875B5;
                         }
+                    }
+                    .register {
+                        padding-top: 60px
                     }
                 }
 
