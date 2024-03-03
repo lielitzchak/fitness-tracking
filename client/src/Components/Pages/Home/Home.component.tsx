@@ -8,10 +8,6 @@ const Home = (): JSX.Element => {
           <div className="imgDiv">
             <img src="https://did.li/qtvCN" alt="" />
           </div>
-          <div className="buttons">
-            <button className="btn1">forward</button>
-            <button className="btn2">back</button>
-          </div>
         </article>
         <article className="text-on-app">
           <h4>Hi i'm Liel Itzchak</h4>

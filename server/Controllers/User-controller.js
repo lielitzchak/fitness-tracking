@@ -40,7 +40,7 @@ module.exports = {
     const { Email, Password } = requestFromUser.params;
     USER_MODEL.findOne({ Email })
       .then((dataFromDB) => {
-        if (CheckIfUserExists(dataFromDB)== true) {
+        if (CheckIfUserExists(dataFromDB) == true) {
           bcrypt.compare(Password, dataFromDB.Password, (err, isMatch) => {
             if (err)
               return responseFromServer
@@ -50,7 +50,9 @@ module.exports = {
             if (!isMatch) {
               return responseFromServer
                 .status(403)
-                .send({ message: "Password incorrect" });
+                .send(
+                  // { message: "Password incorrect",
+                  { userInfo: {Email, Password } });
             }
             jwt.sign(
               { Email, Password },
