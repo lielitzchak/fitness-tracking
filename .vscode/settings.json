@@ -1,7 +1,14 @@
 {
     "cSpell.words": [
+        "avaible",
         "bgcolor",
+        "cbranch",
+        "lielitzchak",
         "preventdefault",
+        "Registe",
+        "sato",
+        "Selecter",
+        "Signin",
         "stam"
     ],
     "editor.suggest.showStatusBar": false,
@@ -12,5 +19,6 @@
     "scss.showErrors": true,
     "scss.lint.duplicateProperties": "warning",
     "scss.validate": true,
-    "liveSassCompile.settings.watchOnLaunch": false
+    "liveSassCompile.settings.watchOnLaunch": false,
+    "compile-hero.disable-compile-files-on-did-save-code": false
 }
