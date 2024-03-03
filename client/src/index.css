@@ -8,9 +8,12 @@
   overflow-x: hidden;
 }
 @media only screen and (min-width: 10px) and (max-width: 451px) {
+  * body {
+    @import url("https://fonts.googleapis.com/css2?family=Kite+One&display=swap");
+  }
   * body .navbar {
     font-family: "Poppins", sans-serif;
-    width: 116vw;
+    width: 100vw;
     box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
   }
   * body .navbar .container {
@@ -133,6 +136,126 @@
   * body .footer img {
     width: 57%;
     height: auto;
+  }
+  * body .HomeComponent {
+    overflow: hidden;
+  }
+  * body .HomeComponent a {
+    color: black;
+  }
+  * body .HomeComponent .Home-section .myPhoto {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  * body .HomeComponent .Home-section .myPhoto img {
+    padding: 9%;
+    width: 100%;
+    border-radius: 63px;
+  }
+  * body .HomeComponent .text-on-app h1 {
+    margin: auto auto 30px auto;
+    font-size: 21px;
+  }
+  * body .HomeComponent .text-on-app h4 {
+    color: hsl(233.25, 83.33%, 18.82%);
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: "Kite One";
+    margin-bottom: 30px;
+  }
+  * body .HomeComponent .text-on-app p {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.8em;
+  }
+  * body .HomeComponent .onApp {
+    background: #081158;
+    font-size: 14px;
+    color: white;
+    padding: 39%;
+    transform: rotate(-3deg);
+    margin: 13% -18% 39px -18%;
+  }
+  * body .HomeComponent .onApp .putOnApp {
+    display: grid;
+    align-content: space-evenly;
+    justify-content: space-around;
+    justify-items: start;
+    gap: 40%;
+    transform: rotate(3deg);
+  }
+  * body .HomeComponent .onApp .putOnApp div h3 {
+    font-size: 37px;
+    height: 1.1em;
+  }
+  * body .HomeComponent .onApp .putOnApp div p {
+    font-size: 20px;
+    height: 1.6em;
+  }
+  * body .HomeComponent .text h1 {
+    font-size: 32px;
+    text-align: center;
+    padding-bottom: 5%;
+  }
+  * body .HomeComponent button {
+    display: block;
+    min-width: 200px;
+    padding: 20px 20px 20px 40px;
+    border-radius: 6px;
+    background-color: var(--swatch_f6df8603);
+    background: #081158;
+    background-position: 20px 50%;
+    background-size: auto 15px;
+    line-height: 1.6em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: auto;
+    color: white;
+  }
+  * body .HomeComponent button a {
+    text-decoration: none;
+    color: white;
+  }
+  * body .categories {
+    text-decoration: none;
+    padding-top: 5%;
+  }
+  * body .categories section .HomeLink {
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+  }
+  * body .categories section .HomeLink img {
+    margin: auto;
+    animation: shadow-for-image 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border-radius: 15px;
+  }
+  * body .categories section .HomeLink h4 {
+    padding: 5% 0 5% 0;
+    font-family: "Sato";
+  }
+  * body .categories section .HomeLink p {
+    font-family: "Red Hat Display", sans-serif;
+    padding-bottom: 12%;
+    margin: 5%;
+  }
+  @keyframes shadow-for-image {
+    0% {
+      transform: translateZ(0);
+      box-shadow: 0 0 0 0 transparent;
+    }
+    100% {
+      transform: translateZ(50px);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+    }
   }
 }
 @media only screen and (min-width: 451px) and (max-width: 1024px) {
