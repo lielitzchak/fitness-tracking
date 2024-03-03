@@ -1,1 +1,14 @@
- 
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15%;
+
+  img {
+    width: 28.5%;
+    height: auto;
+  }
+}
