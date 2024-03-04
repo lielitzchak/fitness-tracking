@@ -8,9 +8,6 @@
   overflow-x: hidden;
 }
 @media only screen and (min-width: 10px) and (max-width: 451px) {
-  * body {
-    @import url("https://fonts.googleapis.com/css2?family=Kite+One&display=swap");
-  }
   * body .navbar {
     font-family: "Poppins", sans-serif;
     width: 100vw;
@@ -137,131 +134,8 @@
     width: 57%;
     height: auto;
   }
-  * body .HomeComponent {
-    overflow: hidden;
-  }
-  * body .HomeComponent a {
-    color: black;
-  }
-  * body .HomeComponent .Home-section .myPhoto {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  * body .HomeComponent .Home-section .myPhoto img {
-    padding: 9%;
-    width: 100%;
-    border-radius: 63px;
-  }
-  * body .HomeComponent .text-on-app h1 {
-    margin: auto auto 30px auto;
-    font-size: 21px;
-  }
-  * body .HomeComponent .text-on-app h4 {
-    color: hsl(233.25, 83.33%, 18.82%);
-    font-weight: 500;
-    letter-spacing: 1px;
-    font-family: "Kite One";
-    margin-bottom: 30px;
-  }
-  * body .HomeComponent .text-on-app p {
-    margin-bottom: 30px;
-    font-size: 16px;
-    line-height: 1.8em;
-  }
-  * body .HomeComponent .onApp {
-    background: #081158;
-    font-size: 14px;
-    color: white;
-    padding: 39%;
-    transform: rotate(-3deg);
-    margin: 13% -18% 39px -18%;
-  }
-  * body .HomeComponent .onApp .putOnApp {
-    display: grid;
-    align-content: space-evenly;
-    justify-content: space-around;
-    justify-items: start;
-    gap: 40%;
-    transform: rotate(3deg);
-  }
-  * body .HomeComponent .onApp .putOnApp div h3 {
-    font-size: 37px;
-    height: 1.1em;
-  }
-  * body .HomeComponent .onApp .putOnApp div p {
-    font-size: 20px;
-    height: 1.6em;
-  }
-  * body .HomeComponent .text h1 {
-    font-size: 32px;
-    text-align: center;
-    padding-bottom: 5%;
-  }
-  * body .HomeComponent button {
-    display: block;
-    min-width: 200px;
-    padding: 20px 20px 20px 40px;
-    border-radius: 6px;
-    background-color: var(--swatch_f6df8603);
-    background: #081158;
-    background-position: 20px 50%;
-    background-size: auto 15px;
-    line-height: 1.6em;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: auto;
-    color: white;
-  }
-  * body .HomeComponent button a {
-    text-decoration: none;
-    color: white;
-  }
-  * body .categories {
-    text-decoration: none;
-    padding-top: 5%;
-  }
-  * body .categories section .HomeLink {
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
-  }
-  * body .categories section .HomeLink img {
-    margin: auto;
-    animation: shadow-for-image 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-    border-radius: 15px;
-  }
-  * body .categories section .HomeLink h4 {
-    padding: 5% 0 5% 0;
-    font-family: "Sato";
-  }
-  * body .categories section .HomeLink p {
-    font-family: "Red Hat Display", sans-serif;
-    padding-bottom: 12%;
-    margin: 5%;
-  }
-  @keyframes shadow-for-image {
-    0% {
-      transform: translateZ(0);
-      box-shadow: 0 0 0 0 transparent;
-    }
-    100% {
-      transform: translateZ(50px);
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
-    }
-  }
 }
 @media only screen and (min-width: 451px) and (max-width: 1024px) {
-  * body {
-    @import url("https://fonts.googleapis.com/css2?family=Kite+One&display=swap");
-  }
   * body .navbar {
     font-family: "Poppins", sans-serif;
     width: 100vw;
@@ -387,131 +261,10 @@
     width: 28.5%;
     height: auto;
   }
-  * body .HomeComponent {
-    overflow: hidden;
-  }
-  * body .HomeComponent a {
-    color: black;
-  }
-  * body .HomeComponent .Home-section .myPhoto {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  * body .HomeComponent .Home-section .myPhoto img {
-    padding: 9%;
-    width: 100%;
-    border-radius: 130px;
-  }
-  * body .HomeComponent .text-on-app h1 {
-    margin: auto auto 30px auto;
-    font-size: 21px;
-  }
-  * body .HomeComponent .text-on-app h4 {
-    color: hsl(233.25, 83.33%, 18.82%);
-    font-weight: 500;
-    letter-spacing: 1px;
-    font-family: "Kite One";
-    margin-bottom: 30px;
-  }
-  * body .HomeComponent .text-on-app p {
-    margin-bottom: 30px;
-    font-size: 16px;
-    line-height: 1.8em;
-  }
-  * body .HomeComponent .onApp {
-    background: #081158;
-    font-size: 14px;
-    color: white;
-    padding: 39%;
-    transform: rotate(-3deg);
-    margin: 13% -18% 39px -18%;
-  }
-  * body .HomeComponent .onApp .putOnApp {
-    display: grid;
-    align-content: space-evenly;
-    justify-content: space-around;
-    justify-items: start;
-    gap: 40%;
-    transform: rotate(3deg);
-  }
-  * body .HomeComponent .onApp .putOnApp div h3 {
-    font-size: 37px;
-    height: 1.1em;
-  }
-  * body .HomeComponent .onApp .putOnApp div p {
-    font-size: 20px;
-    height: 1.6em;
-  }
-  * body .HomeComponent .text h1 {
-    font-size: 32px;
-    text-align: center;
-    padding-bottom: 5%;
-  }
-  * body .HomeComponent button {
-    display: block;
-    min-width: 200px;
-    padding: 20px 20px 20px 40px;
-    border-radius: 6px;
-    background-color: var(--swatch_f6df8603);
-    background: #081158;
-    background-position: 20px 50%;
-    background-size: auto 15px;
-    line-height: 1.6em;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: auto;
-    color: white;
-  }
-  * body .HomeComponent button a {
-    text-decoration: none;
-    color: white;
-  }
-  * body .categories {
-    text-decoration: none;
-    padding-top: 5%;
-  }
-  * body .categories section .HomeLink {
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
-  }
-  * body .categories section .HomeLink img {
-    margin: auto;
-    animation: shadow-for-image 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-    border-radius: 15px;
-  }
-  * body .categories section .HomeLink h4 {
-    padding: 5% 0 5% 0;
-    font-family: "Sato";
-  }
-  * body .categories section .HomeLink p {
-    font-family: "Red Hat Display", sans-serif;
-    padding-bottom: 12%;
-    margin: 5%;
-  }
-  @keyframes shadow-for-image {
-    0% {
-      transform: translateZ(0);
-      box-shadow: 0 0 0 0 transparent;
-    }
-    100% {
-      transform: translateZ(50px);
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
-    }
-  }
 }
 @media only screen and (min-width: 1024px) {
   * body {
     @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
-    @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
   }
   * body .navbar {
     font-family: "Poppins", sans-serif;
@@ -562,7 +315,6 @@
     cursor: pointer;
   }
   * body .nav-container .hamburger-lines {
-    display: block;
     height: 26px;
     width: 32px;
     position: absolute;
@@ -593,6 +345,7 @@
   }
   * body .navbar .menu-items {
     padding-top: 120px;
+    background: white;
     box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
     height: 100vh;
     width: 100%;
@@ -638,7 +391,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 3%;
+    margin-left: 25%;
   }
   * body .footer img {
     width: 28.5%;
@@ -653,366 +406,25 @@
     grid-template-columns: 45% 45%;
     gap: 4%;
   }
-  * body .Home .Home-section .aboutMe {
-    position: relative;
-  }
-  * body .Home .Home-section .aboutMe h2 {
-    position: absolute;
-    z-index: -2;
-    font-family: "Permanent Marker";
-    font-size: 4rem;
-    padding-left: 4%;
-  }
-  * body .Home .Home-section .aboutMe .imgDiv {
-    border-radius: 10px 10px 10px 10px;
-  }
-  * body .Home .Home-section .aboutMe .imgDiv img {
-    border-radius: 10px 10px 10px 10px;
-    width: 100%;
-    padding-top: 12%;
-    height: auto;
-    position: static;
-  }
-  * body .Home .Home-section .aboutMe .buttons button {
-    background: rgba(8, 17, 88, 0.2);
-    border-radius: 50%;
-    z-index: 4;
-    position: absolute;
-    top: 85%;
-    font-size: 16px;
-    padding: 12px 24px;
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-  }
-  * body .Home .Home-section .aboutMe .buttons :first-child {
-    left: 7%;
-  }
-  * body .Home .Home-section .aboutMe .buttons :nth-child(2) {
-    left: 67%;
-  }
-  * body .Home .Home-section .text-on-app {
-    padding-top: 19%;
-  }
-  * body .Home .Home-section .text-on-app p {
-    margin-top: 4cm;
-    font-size: 20px;
-  }
-  * body .Home .Home-section .text-on-app h1 {
-    font-size: 72px;
-  }
-  * body .Home .Home-section .text-on-app a {
-    cursor: pointer;
-    color: white;
-    text-decoration: none;
-  }
-  * body .Home .Home-section .text-on-app button {
-    margin-top: 46%;
-    padding: 20px 20px 20px 40px;
-    min-width: 200px;
-    font-size: 14px;
-    text-transform: uppercase;
-    align-items: center;
-    color: white;
-    background: #081158;
-  }
-  * body .Home .onApp {
-    background: #081158;
-    font-size: 14px;
-    color: white;
-    padding: 9%;
-    transform: rotate(-2deg);
-    margin: 6% -2% 0 -2%;
-  }
-  * body .Home .onApp .putOnApp {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30%;
-  }
-  * body .Home .onApp .putOnApp div {
-    transform: rotate(1deg);
-  }
-  * body .Home .onApp .putOnApp div h3 {
-    font-size: 30px;
-    height: 1.1em;
-  }
-  * body .Home .onApp .putOnApp div p {
-    font-size: 14px;
-    height: 1.6em;
-  }
-  * body .Home .text {
-    padding-top: 6%;
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-bottom: 4%;
-    color: #081158;
-    font-size: 14px;
-    text-align: center;
-  }
-  * body .Home .text h1 {
-    font-size: 72px;
-  }
-  * body .Home .text button {
-    margin-top: 4%;
-    padding: 20px 20px 20px 40px;
-    min-width: 200px;
-    font-size: 14px;
-    text-transform: uppercase;
-    align-items: center;
-    color: white;
-    background: #081158;
-  }
-  * body .Home .categories {
+  * body .Home .Home-section .categories {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4%;
     padding: 0 0 115px 7%;
     text-decoration: none;
   }
-  * body .Home .categories h4 {
+  * body .Home .Home-section .categories h4 {
     font-family: "sato";
     max-width: 350px;
   }
-  * body .Home .categories a {
+  * body .Home .Home-section .categories a {
     text-decoration: none;
   }
-  * body .Home .categories img {
+  * body .Home .Home-section .categories img {
     -o-object-fit: cover;
        object-fit: cover;
     width: 410px;
     height: 410px;
     border-radius: 5%;
-  }
-  * body .Home .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 3%;
-  }
-  * body .Home .footer img {
-    width: 28.5%;
-    height: auto;
-  }
-  * body .report {
-    padding-top: 5.7%;
-  }
-  * body .report .change-icon {
-    width: 14%;
-  }
-  * body .AddReport {
-    letter-spacing: -0.2px;
-    font-size: 16px;
-    position: relative;
-  }
-  * body .AddReport .note {
-    position: absolute;
-  }
-  * body .AddReport .note img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    width: 100%;
-    height: auto;
-    width: 410px;
-    height: 410px;
-    padding: 2% 0 0 2%;
-  }
-  * body .AddReport form {
-    flex-grow: 1;
-    padding: 16px;
-    width: 320px;
-    margin: 0 auto;
-  }
-  * body .AddReport button,
-  * body .AddReport input {
-    border: 0;
-    outline: 0;
-    font-size: 16px;
-    border-radius: 320px;
-    padding: 16px;
-    background-color: #EBECF0;
-    text-shadow: 1px 1px 0 #FFF;
-  }
-  * body .AddReport label {
-    display: block;
-    margin: 8px 0 0.25px 17px;
-    width: 100%;
-  }
-  * body .AddReport input {
-    margin-right: 8px;
-    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 0.2s ease-in-out;
-    -moz-appearance: none;
-         appearance: none;
-    -webkit-appearance: none;
-  }
-  * body .AddReport input:focus {
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
-  }
-  * body .AddReport button {
-    color: #61677C;
-    font-weight: bold;
-    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-    font-weight: 600;
-    margin: 21%;
-  }
-  * body .AddReport button:hover {
-    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
-  }
-  * body .AddReport button:active {
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
-  }
-  * body .AddReport .input-group {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  * body .AddReport .input-group label {
-    margin: 0;
-    flex: 1;
-  }
-  * body .LoginAndRegister {
-    display: flex;
-    align-content: center;
-    justify-content: space-around;
-    background: linear-gradient(90deg, #C7C5F4, #776BCC);
-  }
-  * body * {
-    font-family: Raleway, sans-serif;
-  }
-  * body * .LoginComponent .container_Login_and_Register {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen {
-    background: linear-gradient(90deg, #5D54A4, #7C78B8);
-    position: relative;
-    height: 600px;
-    width: 360px;
-    box-shadow: 0px 0px 24px #5C5696;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content {
-    z-index: 1;
-    position: relative;
-    height: 100%;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content h2 {
-    text-align: center;
-    border: 3px;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .login {
-    width: 320px;
-    padding: 30px;
-    padding-top: 156px;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .login .login__field {
-    padding: 20px 0px;
-    position: relative;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .login .login__field .login__icon {
-    position: absolute;
-    top: 30px;
-    color: #7875B5;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .login .login__field .login__input {
-    border: none;
-    border-bottom: 2px solid #D1D1D4;
-    background: none;
-    padding: 10px;
-    padding-left: 24px;
-    font-weight: 700;
-    width: 75%;
-    transition: 0.2s;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .login .login__field .login__input:active,
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .login .login__field .login__input:focus,
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .login .login__field .login__input:hover {
-    outline: none;
-    border-bottom-color: #6A679E;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .login .login__submit {
-    background: #fff;
-    font-size: 14px;
-    margin-top: 30px;
-    padding: 16px 20px;
-    border-radius: 26px;
-    border: 1px solid #D4D3E8;
-    text-transform: uppercase;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    color: #4C489D;
-    box-shadow: 0px 2px 2px #5C5696;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .login .login__submit:active,
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .login .login__submit:focus,
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .login .login__submit:hover {
-    border-color: #6A679E;
-    outline: none;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .login .button__icon {
-    font-size: 24px;
-    margin-left: auto;
-    color: #7875B5;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__content .register {
-    padding-top: 60px;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    -webkit-clip-path: inset(0 0 0 0);
-    clip-path: inset(0 0 0 0);
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__background .screen__background__shape {
-    transform: rotate(45deg);
-    position: absolute;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__background .screen__background__shape4 {
-    height: 400px;
-    width: 200px;
-    background: #7E7BB9;
-    top: 420px;
-    right: 50px;
-    border-radius: 60px;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__background .screen__background__shape3 {
-    height: 540px;
-    width: 190px;
-    background: linear-gradient(270deg, #5D54A4, #6A679E);
-    top: -24px;
-    right: 0;
-    border-radius: 32px;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__background .screen__background__shape2 {
-    height: 220px;
-    width: 220px;
-    background: #6C63AC;
-    top: -172px;
-    right: 0;
-    border-radius: 32px;
-  }
-  * body * .LoginComponent .container_Login_and_Register .screen .screen__background .screen__background__shape1 {
-    height: 520px;
-    width: 520px;
-    background: #FFF;
-    top: -50px;
-    right: 120px;
-    border-radius: 0 72px 0 0;
   }
 }/*# sourceMappingURL=index.css.map */
