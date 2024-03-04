@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
-
-export const authContext: any = React.createContext<any>({});
+// user|undefine
+export const authContext: any = React.createContext({ undefined });
 
 const AuthProvider = ({ children }: any) => {
   let [auth, setAuth]: any = useState({});
@@ -16,6 +16,7 @@ const AuthProvider = ({ children }: any) => {
     }
   }, []);
 
+  // { userInfo, setUserInfo, loading, setLoading ,
   return (
     <authContext.Provider
       value={{ userInfo, setUserInfo, loading, setLoading }}

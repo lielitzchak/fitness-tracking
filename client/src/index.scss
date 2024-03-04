@@ -1,44 +1,39 @@
-$blueColor:#081158;
+$blueColor: #081158;
 
 * {
-    border: 0;
-    margin: 0;
-    box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
 
-    body {
-        background-color: rgba(212, 211, 211, 255);
-        overflow-x: hidden;
-
-    }
+  body {
+    background-color: rgba(212, 211, 211, 255);
+    overflow-x: hidden;
 
     @media only screen and (min-width: 10px) and (max-width: 451px) {
-        @import "./Components/Layout/Header/Header-Mobile";
-        @import "./Components/Layout/Footer/Footer-Mobile";
-        @import "./Components/Pages/Home/Home-Mobile";
-        @import "./Components/Pages/Recipes/Recipe-Mobile";
-        @import "./Components/Pages/AddRecipe/AddRecipe-Mobile";
-        @import "./Components/Pages/Recipe/Recipe.scss";
-        @import "./Components/Pages/TrainingProgram/TrainingProgram-Mobile";
+      @import "./Components/Layout/Header/Header-Mobile";
+      @import "./Components/Layout/Footer/Footer-Mobile";
+      // @import "./Components/Pages/Home/Home-Mobile";
+      // @import "./Components/Pages/Recipes/Recipe-Mobile";
+      // @import "./Components/Pages/AddRecipe/AddRecipe-Mobile";
+      // @import "./Components/Pages/Recipe/Recipe.scss";
+      // @import "./Components/Pages/TrainingProgram/TrainingProgram-Mobile";
     }
 
-    @media only screen and (min-width:451px) and (max-width:1024px) {
-        @import "./Components/Layout/Header/Header-Tablet";
-        @import "./Components/Layout/Footer/Footer-Tablet";
-        @import "./Components/Pages/Home/Home-Tablet";
+    @media only screen and (min-width: 451px) and (max-width: 1024px) {
+      @import "./Components/Layout/Header/Header-Tablet";
+      @import "./Components/Layout/Footer/Footer-Tablet";
+      // @import "./Components/Pages/Home/Home-Tablet";
     }
 
     @media only screen and (min-width: 1024px) {
-        @import "./Components/Layout/Header/Header-Desktop";
-        @import "./Components/Layout/Footer/Footer-Desktop";
-        @import "./Components/Pages/Home/Home-Desktop";
-        @import "./Components/Pages/Report/Report-Desktop";
-        @import "./Components/Pages/AddReport/AddReport-Desktop";
-        @import "./Components/Pages/LoginAndRegister/LoginAndRegiste";
-        @import "./Components/Features/Login/Login-Desktop.scss";
-
-
+      @import "./Components/Layout/Header/Header-Desktop";
+      @import "./Components/Layout/Footer/Footer-Desktop";
+      @import "./Components/Pages/Home/Home-Desktop";
+      // @import "./Components/Pages/Report/Report-Desktop";
+      // @import "./Components/Pages/AddReport/AddReport-Desktop";
+      // @import "./Components/Pages/LoginAndRegister/LoginAndRegiste";
+      // @import "./Components/Features/Login/Login-Desktop.scss";
+      // @import "./Components/Pages/page404/page404";
     }
-
-    @import "./Components/Pages/page404/page404";
-    @import "./Components/Pages/page403/page403";
+  }
 }

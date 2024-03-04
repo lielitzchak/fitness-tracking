@@ -1,17 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Kite+One&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Red+Hat+Display:ital,wght@1,500&display=swap");
 
+.HomeComponent {
+  overflow: hidden;
+  a {
+    color: black;
+  }
+  .Home-section {
+    .myPhoto {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
 
-.footer {
-        position: fixed;
-        bottom: 0;
-        width: 100vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 3%;
+      img {
+        padding: 9%;
+        width: 100%;
+        border-radius:130px;
+      }
+    }
+  }
 
-        img {
-            width: 28.5%;
-            height: auto;
+  .text-on-app {
+    h1 {
+      margin: auto auto 30px auto;
+      font-size: 21px;
+    }
+
+    h4 {
+      color: hsla(233.25, 83.33%, 18.82%, 1);
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-family: "Kite One";
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 1.8em;
+    }
+  }
+
+  .onApp {
+    background: $blueColor;
+    font-size: 14px;
+    color: white;
+    padding: 39%;
+    transform: rotate(-3deg);
+    margin: 13% -18% 39px -18%;
+
+    .putOnApp {
+      display: grid;
+      align-content: space-evenly;
+      justify-content: space-around;
+      justify-items: start;
+      gap: 40%;
+      transform: rotate(3deg);
+
+      div {
+        h3 {
+          font-size: 37px;
+          height: 1.1em;
         }
-    
+
+        p {
+          font-size: 20px;
+          height: 1.6em;
+        }
+      }
+    }
+  }
+
+  .text {
+    h1 {
+      font-size: 32px;
+      text-align: center;
+      padding-bottom: 5%;
+    }
+  }
+  button {
+    display: block;
+    min-width: 200px;
+    padding: 20px 20px 20px 40px;
+    border-radius: 6px;
+    background-color: var(--swatch_f6df8603);
+    background: #081158;
+    background-position: 20px 50%;
+    background-size: auto 15px;
+    line-height: 1.6em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: auto;
+    color: white;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+.categories {
+  text-decoration: none;
+  padding-top: 5%;
+
+  section {
+    .HomeLink {
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+
+      img {
+        margin: auto;
+        animation: shadow-for-image 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+          both;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        border-radius: 15px;
+      }
+
+      h4 {
+        padding: 5% 0 5% 0;
+        font-family: "Sato";
+      }
+
+      p {
+        font-family: "Red Hat Display", sans-serif;
+        padding-bottom: 12%;
+        margin: 5%;
+      }
+    }
+  }
+}
+
+@keyframes shadow-for-image {
+  0% {
+    transform: translateZ(0);
+    box-shadow: 0 0 0 0 transparent;
+  }
+
+  100% {
+    transform: translateZ(50px);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+  }
 }

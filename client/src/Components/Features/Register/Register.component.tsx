@@ -42,7 +42,7 @@ const Register: any = () => {
                   name="Email"
                   value={formData.Email}
                   onChange={(event) => SaveUserData(event)}
-                  className="register__input"
+                  className="register__input login__input"
                   required
                 />
               </div>
@@ -89,8 +89,8 @@ const Register: any = () => {
               </button>
               {error && <div style={{ color: "red" }}>{error}</div>}
             </form>
-            
-          </div><div className="screen__background">
+          </div>
+          <div className="screen__background">
             <span className="screen__background__shape screen__background__shape4"></span>
             <span className="screen__background__shape screen__background__shape3"></span>
             <span className="screen__background__shape screen__background__shape2"></span>

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { UserService } from "../../../service/User-service";
-
+// import { useContext } from "react";
 interface LoginProps {
   onLogin: (Email: string, Password: string) => void;
 }
@@ -11,6 +11,7 @@ const Login: React.FC<LoginProps> = () => {
     Email: "",
     Image: "",
   });
+
   const [error, setError] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,6 +22,7 @@ const Login: React.FC<LoginProps> = () => {
     UserService.GetUserByEmail(formData.Email, formData.Password)
       .then((response) => {
         console.log(response);
+        // const user = useContext(UserContext);
         return;
       })
       .catch((err) => {

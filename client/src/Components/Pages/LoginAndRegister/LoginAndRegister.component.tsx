@@ -5,7 +5,7 @@ const LoginAndRegister = () => {
   return (
     <section className="LoginAndRegister">
       <article className="login">
-        <Login onLogin={UserService.GetUserByEmail} />
+        <Login onLogin={UserService.GetAllUsers} />
       </article>
       <Register />
     </section>
