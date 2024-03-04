@@ -14,7 +14,10 @@ const Recipe = new mongoose.Schema(
     Vegan: Boolean,
     NutritionalValues: NutritionalValuesSchema,
     Candy: Boolean,
-    Picture: String,
+    Picture: {
+      type: String,
+      default: "https://static.thenounproject.com/png/741653-200.png",
+    },
     IsMilk: Boolean,
     HowToMake: String,
     Summary: String,

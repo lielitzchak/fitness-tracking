@@ -13,7 +13,7 @@ $blueColor: #081158;
       @import "./Components/Layout/Header/Header-Mobile";
       @import "./Components/Layout/Footer/Footer-Mobile";
       @import "./Components/Pages/Home/Home-Mobile";
-      // @import "./Components/Pages/Recipes/Recipe-Mobile";
+      @import "./Components/Pages/Recipes/Recipes-Mobile";
       // @import "./Components/Pages/AddRecipe/AddRecipe-Mobile";
       // @import "./Components/Pages/Recipe/Recipe.scss";
       // @import "./Components/Pages/TrainingProgram/TrainingProgram-Mobile";
@@ -23,12 +23,15 @@ $blueColor: #081158;
       @import "./Components/Layout/Header/Header-Tablet";
       @import "./Components/Layout/Footer/Footer-Tablet";
       @import "./Components/Pages/Home/Home-Tablet";
+      @import "./Components/Pages/Recipes/Recipes-Tablet";
     }
 
     @media only screen and (min-width: 1024px) {
       @import "./Components/Layout/Header/Header-Desktop";
       @import "./Components/Layout/Footer/Footer-Desktop";
       @import "./Components/Pages/Home/Home-Desktop";
+      @import "./Components/Pages/Recipes/Recipes-Desktop";
+
       // @import "./Components/Pages/Report/Report-Desktop";
       // @import "./Components/Pages/AddReport/AddReport-Desktop";
       // @import "./Components/Pages/LoginAndRegister/LoginAndRegiste";
