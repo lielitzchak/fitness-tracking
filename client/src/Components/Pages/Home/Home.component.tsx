@@ -19,7 +19,7 @@ const Home = (): JSX.Element => {
             started working with people all around and changing their lives
             forever.
           </p>
-          <button>
+          <button className="buttons">
             <Link to={"/profile"}>go to your profile</Link>
           </button>
         </article>
@@ -39,9 +39,9 @@ const Home = (): JSX.Element => {
       </section>
       <article className="text">
         <h1>The journey to a healthier body starts right now</h1>
-       <button> <Link to="/">
-          online program
-        </Link></button>
+        <button className="buttons">
+          <Link to="/">online program</Link>
+        </button>
       </article>
       <section className="categories">
         <section>
