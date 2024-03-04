@@ -1,169 +1,180 @@
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kite+One&display=swap");
 
-.Home {
-   
-  padding-top: 3%;
+@keyframes a-ltr-after {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(101%);
+  }
+}
+
+@keyframes a-ltr-before {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+.HomeComponent {
+  padding-top: 1%;
   .Home-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    .aboutMe {
+      height: auto;
+      width: 100%;
+      padding-left: 10.2%;
+      img {
+        border-radius: 10px;
+        width: 63%;
+      }
+    }
+    .text-on-app {
+      z-index: -1;
+      padding-right: 10.2%;
+      h4 {
+        font-size: 54px;
+        font-weight: normal;
+      }
+      h4,
+      h1 {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        line-height: 1.2;
+      }
+
+      h4::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        animation: a-ltr-after 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+        transform: translateX(-101%);
+      }
+
+      h4::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: #d8d8d8;
+        animation: a-ltr-before 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+        transform: translateX(0);
+      }
+
+      h1,
+      h4:nth-of-type(1)::before,
+      h1,
+      h4:nth-of-type(1)::after {
+        animation-delay: 1s;
+      }
+
+      h1,
+      h4:nth-of-type(2)::before,
+      h1,
+      h4:nth-of-type(2)::after {
+        animation-delay: 1.5s;
+      }
+    }
+  }
+
+  .buttons {
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    margin-top: 3%;
+    padding: 20px 20px 20px 40px;
+    min-width: 200px;
+    text-transform: uppercase;
+    align-items: center;
+    background: $blueColor;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 6px;
+    line-height: 1.6em;
+    letter-spacing: 2px;
+  }
+  //   }
+
+  .onApp {
+    background: $blueColor;
+    font-size: 14px;
+    color: white;
+    padding: 9%;
+    transform: rotate(-2deg);
+    margin: 6% -2% 0 -2%;
+
+    .putOnApp {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30%;
+
+      div {
+        transform: rotate(1deg);
+
+        h3 {
+          font-size: 30px;
+          height: 1.1em;
+        }
+
+        p {
+          font-size: 14px;
+          height: 1.6em;
+        }
+      }
+    }
+  }
+
+  .text {
+    padding-top: 6%;
     padding-left: 4%;
-    display: grid;
-    grid-template-columns: 45% 45%;
-    gap: 4%;
+    padding-right: 4%;
+    padding-bottom: 4%;
+    color: $blueColor;
+    font-size: 14px;
+    text-align: center;
 
-//     .aboutMe {
-//       position: relative;
-
-//       h2 {
-//         position: absolute;
-//         z-index: -2;
-//         font-family: "Permanent Marker";
-//         font-size: 4rem;
-//         padding-left: 4%;
-//       }
-
-//       .imgDiv {
-//         border-radius: 10px 10px 10px 10px;
-
-//         img {
-//           border-radius: 10px 10px 10px 10px;
-//           width: 100%;
-//           padding-top: 12%;
-//           height: auto;
-//           position: static;
-//         }
-//       }
-
-//       .buttons {
-//         button {
-//           background: rgba(8, 17, 88, 0.2);
-//           // padding: 20px 20px 20px 40px;
-//           border-radius: 50%;
-//           z-index: 4;
-//           position: absolute;
-//           top: 85%;
-//           font-size: 16px;
-//           padding: 12px 24px;
-//           width: 100px;
-//           height: 100px;
-//           cursor: pointer;
-//         }
-
-//         :first-child {
-//           left: 7%;
-//         }
-
-//         :nth-child(2) {
-//           left: 67%;
-//         }
-//       }
-//     }
-
-//     .text-on-app {
-//       padding-top: 19%;
-
-//       p {
-//         margin-top: 4cm;
-//         font-size: 20px;
-//       }
-
-//       h1 {
-//         font-size: 72px;
-//       }
-
-//       a {
-//         cursor: pointer;
-//         color: white;
-//         text-decoration: none;
-//       }
-
-//       button {
-//         margin-top: 46%;
-//         padding: 20px 20px 20px 40px;
-//         min-width: 200px;
-//         font-size: 14px;
-//         text-transform: uppercase;
-//         align-items: center;
-//         color: white;
-//         background: $blueColor;
-//       }
-//     }
-//   }
-
-//   .onApp {
-//     background: $blueColor;
-//     font-size: 14px;
-//     color: white;
-//     padding: 9%;
-//     transform: rotate(-2deg);
-//     margin: 6% -2% 0 -2%;
-
-//     .putOnApp {
-//       display: grid;
-//       grid-template-columns: 1fr 1fr 1fr;
-//       gap: 30%;
-
-//       div {
-//         transform: rotate(1deg);
-
-//         h3 {
-//           font-size: 30px;
-//           height: 1.1em;
-//         }
-
-//         p {
-//           font-size: 14px;
-//           height: 1.6em;
-//         }
-//       }
-//     }
-//   }
-
-//   .text {
-//     padding-top: 6%;
-//     padding-left: 4%;
-//     padding-right: 4%;
-//     padding-bottom: 4%;
-//     color: $blueColor;
-//     font-size: 14px;
-//     text-align: center;
-
-//     h1 {
-//       font-size: 72px;
-//     }
-
-//     button {
-//       margin-top: 4%;
-//       padding: 20px 20px 20px 40px;
-//       min-width: 200px;
-//       font-size: 14px;
-//       text-transform: uppercase;
-//       align-items: center;
-//       color: white;
-//       background: $blueColor;
-//     }
-//   }
+    h1 {
+      font-size: 72px;
+    }
+  }
 
   .categories {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4%;
     padding: 0 0 115px 7%;
-    text-decoration: none;
-
-    h4 {
-      font-family: "sato";
-      max-width: 350px;
+    section {
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      img {
+        object-fit: cover;
+        width: 410px;
+        height: 410px;
+        border-radius: 5%;
+      }
+      h4 {
+        padding: 1% 0 0 29%;
+        // font-family: "sato";
+        // max-width: 350px;
+      }
+      p {
+        padding-right: 28%;
+      }
     }
-
-    a {
-      text-decoration: none;
-    }
-
-    img {
-      object-fit: cover;
-      width: 410px;
-      height: 410px;
-      border-radius: 5%;
-    }
-  }
   }
 }
