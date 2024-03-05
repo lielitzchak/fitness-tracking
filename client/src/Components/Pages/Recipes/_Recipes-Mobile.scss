@@ -1,21 +1,31 @@
 .RecipesComponent {
   .add-recipe {
+    position: fixed;
+    z-index: 1;
+    padding-top: 340px;
+    img {
+      background: #bbb1b1;
+      border-radius: 78px;
+      width: 70px;
+      height: auto;
+    }
   }
+
   .Recipes-data {
     .main {
-      max-width: 1200px;
-      margin: 0 auto;
       .cards {
-        display: grid;
-        // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        display: inline-block;
         list-style: none;
-        margin: 0;
-        padding: 1px;
         .cards_item {
-          display: flex;
           padding: 1rem;
-          padding-left: 4rem;
           filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25));
+          flex-direction: row;
+          align-content: center;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: baseline;
+
           .card {
             background-color: white;
             border-radius: 0.25rem;
@@ -70,6 +80,10 @@
               .card_text {
                 p {
                   margin: 1.2rem 0;
+                }
+                img {
+                  width: 34px;
+                  height: auto;
                 }
               }
             }

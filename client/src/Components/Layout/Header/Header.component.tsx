@@ -11,7 +11,7 @@ const Header = () => {
           <span className="line line3"></span>
         </div>
         <div className="logo">
-          <h1>Navbar</h1>
+        <Link to="/"><h1>Navbar</h1></Link>
         </div>
         <div className="menu-items">
           <li>
