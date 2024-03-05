@@ -15,13 +15,9 @@ const Recipes = (): JSX.Element => {
 
   return (
     <div className="RecipesComponent">
-      {/* <Link to={"/add-new-recipe"}>
-        <img
-          className="add-recipe"
-          src="https://did.li/uQLNf"
-          alt="add recipe"
-        />
-      </Link> */}
+      <Link className="add-recipe" to={"/add-new-recipe"}>
+        <img src="https://did.li/uQLNf" alt="add recipe" />
+      </Link>
 
       <div className="Recipes-data">
         {recipes.map((recipe: any) => {
@@ -44,9 +40,19 @@ const Recipes = (): JSX.Element => {
                     <div className="card_content">
                       <h2 className="card_title">{recipe.Name}</h2>
                       <div className="card_text">
-                        <p> Time To Cook:  {recipe.TimeToCook > 60 ? "minuets" : "hours"}</p>
+                        <p>
+                          Time To Cook:
+                          {recipe.TimeToCook > 60 ? "minuets" : "hours"}
+                        </p>
                         <p>Candy: {recipe.Candy ? "Candy" : "not a Candy"}</p>
-                        <p> cosher: {recipe.IsMilk ? "milk" : "meat"}</p>
+                        <p>
+                          cosher:
+                          {recipe.IsMilk ? (
+                            <img src="https://did.li/jqHTY" alt="meat" />
+                          ) : (
+                            <img src="https://did.li/8X4Nf" alt="mile" />
+                          )}
+                        </p>
                         <p> Summary: {recipe.Summary}</p>
                       </div>
                     </div>
